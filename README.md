@@ -1,6 +1,6 @@
 # HackMerced-IX-Live
 Frontend Tech Stack:
--HTML, CSS, JS
+- HTML, CSS, JS
 ## Pages
 The Frontend of the HM-IX Live page should contain the following:
 - Dashboard/Landing Page
