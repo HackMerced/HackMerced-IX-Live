@@ -1,4 +1,5 @@
 # HackMerced-IX-Live
+## Tech Stack
 Frontend Tech Stack:
 - HTML, CSS, JS
 ## Pages
