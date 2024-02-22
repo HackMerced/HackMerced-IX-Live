@@ -4,7 +4,7 @@ Frontend Tech Stack:
 - HTML, CSS, JS
 Backend Tech Stack:
 - Python / Flask, Jinja
-# FRONTEND
+# Frontend
 ## File Structure
 All .HTML pages should go inside `code/templates/` and any components such as the navbar can go inside `code/templates/components`. 
 All CSS files should be placed inside `code/static/css`.
