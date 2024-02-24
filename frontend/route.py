@@ -26,8 +26,8 @@ def application():
 
 	return render_template("app.html")
 
-@app.route("/entitlements", methods=["GET"])
-def entitlements():
+@app.route("/punches", methods=["GET"])
+def punches():
 
-	return render_template("entitlements.html")
+	return render_template("punches.html")
 
