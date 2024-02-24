@@ -135,6 +135,18 @@ input[type="submit"] {
 	padding: 16px;
 }
 
+.punch {
+	width: 48px;
+}
+
+.punch img {
+	width: 48px;
+}
+
+.punch-spacer {
+	width: 4px;
+}
+
 /* End Punch Card */
 
 /* Navbar */
