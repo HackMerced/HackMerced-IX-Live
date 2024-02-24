@@ -1,18 +1,18 @@
-html {
-	margin: 0;
+html, body {
 	height: 100%;
 }
 
 body {
 	margin: 0;
-	height: 100%;
 	font-family: "K2D";
+	/* Keep this line below as a backup in case background-image fails. */
 	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-image: url("/static/png/hmix-bg-300.png"), linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-position: right bottom;
 	background-repeat: no-repeat;
 }
 
+/* Styling for input forms. */
 input[type="text"] {
 	background-color: #EDEFF280;
 	padding: 8px 1em;
@@ -21,7 +21,6 @@ input[type="text"] {
 	border-radius: 12px;
 	color: white;
 }
-
 input[type="submit"] {
 	background-color: #D77B2691;
 	font-size: 16px;
@@ -30,12 +29,23 @@ input[type="submit"] {
 	color: white;
 }
 
-/* Absolutely center something both vertically and horizontally. */
-.total-center {
+/* *Absolutely* center something both vertically and horizontally. */
+.absolute-center {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
+}
+
+/* Two columns are used a lot, so these classes help with that. */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.column {
+	float: left;
+	width: 50%;
 }
 
 #login-form, #registration-form {
@@ -48,3 +58,68 @@ input[type="submit"] {
 #registration-form input[type="text"] {
 	margin: 8px;
 }
+
+#home-container {
+	margin-top: 48px;
+	width: 75%;
+}
+
+#home-banner {
+	color: #EEDEFDD9;
+	background-color: #342153;
+	height: 80px;
+	width: 100%;
+	border-radius: 20px;
+	padding-top: 1px;
+}
+
+#home-countdown, #home-countdown-text {
+	color: white;
+	background-color: #D77B2633;
+	padding: 12px;
+	border-radius: 20px;
+	margin-bottom: 16px;
+	margin: 16px 8px 16px 0px;
+}
+
+#home-announcements {
+	color: white;
+	background-color: #D77B2633;
+	padding: 12px;
+	border-radius: 20px;
+	margin: 16px 0px 16px 8px;
+}
+
+.announcement {
+	background-color: #372358BA;
+	padding: 2px 16px;
+	text-align: left;
+	border-radius: 20px;
+}
+
+/* Navbar start. */
+
+#navbar {
+	display: flex;
+	align-items: center;
+	background-color: #342153;
+	width: 100%;
+	height: 88px;
+	padding-left: 16px;
+}
+
+.navbar-link {
+	font-size: 24px;
+	display: inline-block;
+	background-color: #D77B2633;
+	padding: 8px 16px;
+	margin: 0px 8px;
+	border-radius: 5px;
+}
+
+.navbar-link a, .navbar-link a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+/* Navbar end. */

@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-{% set pageTitle = "CHANGE ME IN app.html" %}{% include "includes/header.html" %}
+{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
 
 <body>
 
-	<h1>Default Application Page</h1>
+	{% include "includes/navbar.html" %}
 
-	<a href="/logout">Log Out</a>
+	<center>
+		<div id="home-container">
+			<div id="home-banner">
+					<h1>HackMerced IX Home Page</h1>
+			</div>
+			<div class="row">
+				<div class="column">
+					<div id="home-countdown">
+						<h1>Live Countdown</h1>
+						<h2>00:00:00</h2>
+					</div>
+					<div id="home-countdown-text">
+						<h3>Countdown Until Hacking Ends!</h3>
+						<p>Lorem ipsum dolor sit amet.</p>
+					</div>
+				</div>
+				<div class="column">
+					<div id="home-announcements">
+						<h2>Event Announcements</h2>
+						<div id="home-announcements-container">
+							<div class="announcement">
+								<p>Extra pizza is in room 1A.</p>
+								<p><i>13 minutes ago by Jane Doe</i></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
 
 </body>
 

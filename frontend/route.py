@@ -20,9 +20,9 @@ def login2():
 
 	return render_template("login2.html")
 
-#@app.route("/app", methods=["GET"])
+@app.route("/app", methods=["GET"])
 #@login_required
-#def application():
-#
-#	return render_template("app.html")
-#
+def application():
+
+	return render_template("app.html")
+
