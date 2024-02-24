@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-{% set pageTitle = "CHANGE ME IN index.html" %}{% include "includes/header.html" %}
+{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
 
 <body>
 
-	<h1>Default Index Page</h1>
+	<div id="login-form" class="total-center">
 
-	<form action="/login" method="POST">
-		<input type="text" id="username" name="username" placeholder="username" />
-		<input type="password" id="username" name="password" placeholder="********" />
-		<input type="submit" value="Log In" />
-	</form>
+		<center>
 
-	{% if failed %}
-		<p style="color: red">Login failed.</p>
-	{% endif %}
+			<h1>User Login</h1>
+
+			<form action="/login" method="POST">
+				<input type="text" id="code" name="code" placeholder="Badge Code" />
+				<br><br>
+				<input type="submit" value="Log In" />
+			</form>
+
+		</center>
+
+	</div>
 
 </body>
 

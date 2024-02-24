@@ -1,0 +1,46 @@
+html {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	font-family: "K2D";
+	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
+	background-image: url("/static/png/hmix-bg-300.png"), linear-gradient(to bottom, #342153 0%, #D77B26 100%);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+input[type="text"] {
+	background-color: #EDEFF280;
+	padding: 8px 1em;
+	font-size: 24px;
+	border: none;
+	border-radius: 12px;
+	color: white;
+}
+
+input[type="submit"] {
+	background-color: #D77B2691;
+	font-size: 16px;
+	padding: 12px 32px;
+	border: none;
+	color: white;
+}
+
+/* Absolutely center something both vertically and horizontally. */
+.total-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+#login-form {
+	background-color: #D77B2633;
+	border-radius: 20px;
+	padding: 32px;
+	color: white;
+}
