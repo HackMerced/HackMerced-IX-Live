@@ -15,14 +15,19 @@ def register():
 
 	return render_template("register.html")
 
-@app.route("/login2", methods=["GET"])
+@app.route("/password", methods=["GET"])
 def login2():
 
-	return render_template("login2.html")
+	return render_template("password.html")
 
 @app.route("/app", methods=["GET"])
 #@login_required
 def application():
 
 	return render_template("app.html")
+
+@app.route("/entitlements", methods=["GET"])
+def entitlements():
+
+	return render_template("entitlements.html")
 
