@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+.background{
+    background: linear-gradient(#342153,#C0593A, #D77B26);
+}
+.container-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-child{
+    font-family: 'K2D';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    border-radius: 5%;
+    background-color: rgba(215, 123, 38, 0.2); 
+    backdrop-filter: blur(10px); 
+}
+.table-parent{
+    border-collapse: collapse;
+    margin: 2rem;
+    width: 90%;
+    text-align: center;
+    background-color: #55142fc5;
+    border: 2px solid #342153; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table-parent th{
+    background-color: #5c134ac5;
+    border: 2px solid #342153;
+}
+.table-parent td{
+    padding: 5px;
+    background-color: #501121c5;
+    border: 2px solid #342153;
+}
+.table-parent td:first-child, th:first-child{
+    border-radius:20px 0 0 20px;
+}
+.table-parent td:last-child, th:last-child{
+    border-radius:0 20px 20px 0;
+}
+.claim-container{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    background-color: rgba(71, 9, 112, 0.781);
+    border-radius: 5%;
+    padding: 1rem;
+    box-shadow: 5px 5px 5px #342153;
+}
+.button ,.button-2{
+    display: flex;
+    background-color: rgba(215, 123, 38, .4);
+    border: none;
+    border-radius: 5%;
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 5px 5px 5px #532b16;
+    transition-duration: .1s;
+    font-family: 'K2D';
+    margin: .5rem;
+}
+.button:hover, .button-2:hover{
+    cursor:pointer;
+    filter: saturate(200%);
+    transform: translate(.05rem,.05rem);
+}
+.button-2{
+    background-color: #342153;
+    box-shadow: 5px 5px 5px #1d0e36;
+}
+/*VIEWPORTS*/
+
+@media screen and (min-width:200px) and (max-width:880px) {
+
+    .container-child{
+        width: auto;
+        height: 60vh;
+    }
+    .button, .button-2{
+        width: auto;
+    }
+   
+}
