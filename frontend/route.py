@@ -10,6 +10,11 @@ def index():
 #		return redirect(url_for("application"))
 	return render_template("index.html")
 
+@app.route("/register", methods=["GET"])
+def register():
+
+	return render_template("register.html")
+
 #@app.route("/app", methods=["GET"])
 #@login_required
 #def application():
