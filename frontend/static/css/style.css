@@ -122,4 +122,13 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
+#navbar-profile {
+	margin-left: auto;
+	margin-right: 48px;
+}
+
+#navbar-profile a img {
+	height: 64px;
+}
+
 /* Navbar end. */
