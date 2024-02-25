@@ -178,11 +178,11 @@ input[type="submit"] {
 
 #punches tr {
 	margin: 16px;
-	background-color: #D77B2691;
 	border-radius: 20px;
 }
 
 #punches td {
+	background-color: #D77B2691;
 	padding: 16px;
 }
 
