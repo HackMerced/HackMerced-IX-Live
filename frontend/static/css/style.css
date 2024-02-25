@@ -304,6 +304,43 @@ input[type="submit"] {
 
 /* End Punch Card */
 
+/* Profile */
+
+.profile-window {
+	background-color: #D77B2633;
+	border-radius: 20px;
+	margin-bottom: 8px;
+}
+
+.profile-window h2 {
+	margin: 0;
+	padding: 8px 0px;
+	border-radius: 20px;
+	background-color: #342153;
+	color: #EEDEFDD9;
+}
+
+.profile-window #points {
+	font-size: 48px;
+	font-weight: 800;
+}
+
+#update-profile {
+	margin-top: 16px;
+}
+
+#update-profile input[type="text"] {
+	margin: 8px;
+}
+
+#update-profile input[type="submit"] {
+	float: left;
+	margin-left: 32px;
+	margin-bottom: 16px;
+}
+
+/* End Profile */
+
 /* Navbar */
 
 #navbar {
