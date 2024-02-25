@@ -6,11 +6,10 @@ body {
 	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-image: url("/static/png/hmix-bg-300.png"), linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-position: right bottom;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	height: 100vh;
 }
-
-
 
 body.auth {
 	margin: 0;
