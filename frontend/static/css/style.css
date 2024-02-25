@@ -13,6 +13,18 @@ body {
 	background-repeat: no-repeat;
 }
 
+
+
+body.auth {
+	margin: 0;
+	font-family: "K2D";
+	color: white;
+	/* Keep this line below as a backup in case background-image fails. */
+	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
+	background-repeat: no-repeat;
+}
+
+
 input[type="text"] {
 	background-color: #EDEFF280;
 	padding: 8px 1em;
@@ -28,6 +40,7 @@ input[type="submit"] {
 	padding: 12px 32px;
 	border: none;
 	color: white;
+	border-radius: 10px;
 }
 
 /* Absolutely center something both vertically and horizontally. */
@@ -129,6 +142,7 @@ input[type="submit"] {
 #punches tr {
 	margin: 16px;
 	background-color: #D77B2691;
+	border-radius: 20px;
 }
 
 #punches td {
@@ -141,11 +155,22 @@ input[type="submit"] {
 
 .punch img {
 	width: 48px;
+	border-radius: 50%;
 }
 
 .punch-spacer {
 	width: 4px;
 }
+
+.punch-rounded-start {
+	border-top-left-radius: 10px; /* Set your desired border radius for the top-left corner */
+	border-bottom-left-radius: 10px; /* Set your desired border radius for the bottom-left corner */
+  }
+
+  .punch-rounded-end {
+	border-top-right-radius: 10px; /* Set your desired border radius for the top-right corner */
+	border-bottom-right-radius: 10px; /* Set your desired border radius for the bottom-right corner */
+  }
 
 /* End Punch Card */
 
