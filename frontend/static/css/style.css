@@ -1,4 +1,3 @@
-
 body {
 	margin: 0;
 	font-family: "K2D";
@@ -7,11 +6,10 @@ body {
 	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-image: url("/static/png/hmix-bg-300.png"), linear-gradient(to bottom, #342153 0%, #D77B26 100%);
 	background-position: right bottom;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	height: 100vh;
 }
-
-
 
 body.auth {
 	margin: 0;
@@ -76,10 +74,6 @@ input[type="submit"] {
 	border-radius: 20px;
 	margin-bottom: 16px;
 	box-shadow: 5px 5px 5px #241930;
-}
-
-.main-banner h1 {
-	padding-top: 16px;
 }
 
 /* Styling for "round-row" tables. */
@@ -161,6 +155,104 @@ input[type="submit"] {
 
 /* End Home */
 
+/* Prizes */
+
+#prizes-points-balance {
+	margin-top: 32px;
+	text-align: right;
+	color: #EEDEFDD9;
+}
+
+#points {
+	padding: 0px 2em;
+}
+
+#prizes tbody tr td {
+	height: 64px;
+}
+
+.prize-claim {
+	text-align: center;
+	font-size: 20px;
+	background-color: #5A0F66;
+	border: none;
+	border-radius: 20px;
+	color: #EEDEFDD9;
+	padding: 8px 16px;
+	margin: 16px 0px;
+}
+.prize-claim:hover {
+	cursor: pointer;
+}
+
+/* End Prizes */
+
+/* Schedule */
+
+#schedule-days {
+	margin-bottom: 16px;
+}
+
+.schedule-day {
+	width: 128px;
+	color: #EEDEFDD9;
+	float: left;
+	display: inline-block;
+	background-color: #57124E;
+	border-radius: 20px;
+	margin-right: 16px;
+}
+
+.day-header {
+	font-size: 20px;
+	font-weight: 800;
+	padding: 4px 16px 8px 16px;
+	border-radius: 20px;
+	background-color: #3A0617;
+}
+
+.day-number {
+	font-size: 24px;
+	font-weight: 800;
+	padding: 8px 0px 16px 0px;
+}
+
+.today {
+	background-color: #AB3F58;
+}
+.today .day-header {
+	background-color: #E86662;
+}
+
+.schedule-map-preview img {
+	padding: 16px 0px;
+	max-width: 200px;
+}
+
+.schedule-info,
+.schedule-description
+{
+	padding-top: 16px;
+	vertical-align: top;
+}
+
+.schedule-info p,
+.schedule-description p
+{
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: left;
+	padding-left: 16px;
+}
+
+.schedule-time {
+	background-color: #550C14;
+	padding: 8px 24px;
+	border-radius: 20px;
+}
+
+/* End Schedule */
+
 /* Punch Card */
 
 #punch-container {
@@ -178,11 +270,11 @@ input[type="submit"] {
 
 #punches tr {
 	margin: 16px;
-	background-color: #D77B2691;
 	border-radius: 20px;
 }
 
 #punches td {
+	background-color: #D77B2691;
 	padding: 16px;
 }
 
@@ -211,19 +303,42 @@ input[type="submit"] {
 
 /* End Punch Card */
 
-/* Prizes */
+/* Profile */
 
-#prizes-points-balance {
-	margin-top: 32px;
-	text-align: right;
+.profile-window {
+	background-color: #D77B2633;
+	border-radius: 20px;
+	margin-bottom: 8px;
+}
+
+.profile-window h2 {
+	margin: 0;
+	padding: 8px 0px;
+	border-radius: 20px;
+	background-color: #342153;
 	color: #EEDEFDD9;
 }
 
-#points {
-	padding: 0px 2em;
+.profile-window #points {
+	font-size: 48px;
+	font-weight: 800;
 }
 
-/* End Prizes */
+#update-profile {
+	margin-top: 16px;
+}
+
+#update-profile input[type="text"] {
+	margin: 8px;
+}
+
+#update-profile input[type="submit"] {
+	float: left;
+	margin-left: 32px;
+	margin-bottom: 16px;
+}
+
+/* End Profile */
 
 /* Navbar */
 
@@ -231,8 +346,8 @@ input[type="submit"] {
 	display: flex;
 	align-items: center;
 	background-color: #342153;
-	width: 100vw;
-	height: 88px;
+	width: 100%;
+	height: 70px;
 	box-shadow: 5px 5px 5px #241930;
 	gap: 1em;
 	flex-wrap:nowrap;
@@ -241,7 +356,7 @@ input[type="submit"] {
 .navbar-link {
 	font-size: 1rem;
 	background-color: #D77B2633;
-	padding: 1em;
+	padding: 8px 16px;;
 	border-radius: 5px;
 	box-shadow: 5px 5px 5px #241930;
 	transition-duration: 0.4s;
@@ -262,7 +377,8 @@ input[type="submit"] {
 }
 
 #navbar-profile a img {
-	height: 50px;
+	padding-top: 4px;
+	height: 32px;
 }
 
 /* End Navbar */

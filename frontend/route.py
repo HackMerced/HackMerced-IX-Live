@@ -31,8 +31,18 @@ def prizes():
 
 	return render_template("prizes.html")
 
+@app.route("/schedule", methods=["GET"])
+def schedule():
+
+	return render_template("schedule.html")
+
 @app.route("/punches", methods=["GET"])
 def punches():
 
 	return render_template("punches.html")
+
+@app.route("/profile", methods=["GET"])
+def profile():
+
+	return render_template("profile.html")
 
