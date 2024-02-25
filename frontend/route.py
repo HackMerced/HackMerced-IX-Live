@@ -26,6 +26,11 @@ def application():
 
 	return render_template("app.html")
 
+@app.route("/prizes", methods=["GET"])
+def prizes():
+
+	return render_template("prizes.html")
+
 @app.route("/punches", methods=["GET"])
 def punches():
 

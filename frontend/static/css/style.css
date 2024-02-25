@@ -69,6 +69,41 @@ input[type="submit"] {
 	padding-top: 16px;
 }
 
+/* Styling for "round-row" tables. */
+.rounded-table {
+	color: #EEDEFDD9;
+	width: 100%;
+	background-color: #9A4922;
+	border-spacing: 0px 0px;
+	border-radius: 20px;
+}
+.rounded-table tbody:first-child th {
+	background-color: #550C14;
+	font-size: 18px;
+	padding: 4px;
+}
+.rounded-table tbody tr th:first-child,
+.rounded-table tbody tr td:first-child
+{
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.rounded-table tbody tr th:last-child,
+.rounded-table tbody tr td:last-child
+{
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+.rounded-table tbody tr td {
+	background-color: #5B1C32CC;
+	font-size: 20px;
+	text-align: center;
+}
+.table-spacer {
+	height: 2px;
+}
+
+
 /* End Common */
 
 /* Login and Registration */
@@ -148,6 +183,20 @@ input[type="submit"] {
 }
 
 /* End Punch Card */
+
+/* Prizes */
+
+#prizes-points-balance {
+	margin-top: 32px;
+	text-align: right;
+	color: #EEDEFDD9;
+}
+
+#points {
+	padding: 0px 2em;
+}
+
+/* End Prizes */
 
 /* Navbar */
 
