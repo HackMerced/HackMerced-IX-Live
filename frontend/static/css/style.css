@@ -168,6 +168,24 @@ input[type="submit"] {
 	padding: 0px 2em;
 }
 
+#prizes tbody tr td {
+	height: 64px;
+}
+
+.prize-claim {
+	text-align: center;
+	font-size: 20px;
+	background-color: #5A0F66;
+	border: none;
+	border-radius: 20px;
+	color: #EEDEFDD9;
+	padding: 8px 16px;
+	margin: 16px 0px;
+}
+.prize-claim:hover {
+	cursor: pointer;
+}
+
 /* End Prizes */
 
 /* Schedule */
