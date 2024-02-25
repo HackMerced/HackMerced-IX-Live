@@ -41,3 +41,8 @@ def punches():
 
 	return render_template("punches.html")
 
+@app.route("/profile", methods=["GET"])
+def profile():
+
+	return render_template("profile.html")
+
