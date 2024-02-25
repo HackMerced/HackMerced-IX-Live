@@ -3,12 +3,14 @@
 
 {% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
 
-<body>
+<body class="auth">
 
 	<div id="login-form" class="absolute-center">
 
 		<center>
-
+			
+			<img src="{{ url_for('static', filename='png/hmix-bg-300.png') }}" alt="HackMerced IX" style="width: 70%;">
+			
 			<h1>User Login</h1>
 
 			<form action="/login" method="POST">
