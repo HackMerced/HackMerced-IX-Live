@@ -251,7 +251,10 @@ input[type="submit"] {
 	color: white;
 	text-decoration: none;
 }
-
+.navbar-link a:hover {
+	color: #D77B26;
+	text-decoration: none;
+}
 #navbar-profile {
 	margin-left: auto;
 	margin-right: 32px;
@@ -262,6 +265,17 @@ input[type="submit"] {
 }
 
 /* End Navbar */
+
+/* Hamburger Menu */
+.sidebar > .hidden-link a, .hidden-link a:visited{
+	display: none;
+}
+
+.hamburger-menu{
+	display: none;
+}
+   
+/*END Hamburger Menu*/
 
 /*Viewports*/
 @media screen and (min-width:300px) and (max-width:880px) {
@@ -276,7 +290,13 @@ input[type="submit"] {
 		
 	}
 	/*Navbar*/
-	.column {
+
+	.navbar-link{
+		display: none;
+	}
+
+
+	/* .column {
 		float:none;
 		width: 100%;
 	}
@@ -288,9 +308,89 @@ input[type="submit"] {
 		margin-left: 0;
 		padding: .7em;
 	}
-   #navbar-profile a img{
-	height: 2em;
-   }
-   /*END Navbar*/
+   	#navbar-profile a img{
+		height: 2em;
+   	} */
+   	/*END Navbar*/
+
+   	/* Hamburger Menu */
+   	
+	.hamburger-menu {
+	    display: flex;
+	    flex-direction: column;
+	    gap: 0.4rem;
+	    width: max-content;
+	    z-index: 2;
+		position: absolute;
+		top: 1.5rem;
+		left: 1rem;
+		cursor: pointer;
+	}
+
+	.hamburger-menu::before,
+	.hamburger-menu::after,
+	.hamburger-menu input{
+	    content: "";
+	    width: 3rem;
+	    height: 0.5rem;
+	    background-color: white;
+	    border-radius: 10000rem;
+	    transition-duration: 0.4s;
+		cursor: pointer;
+	}
+
+	.hamburger-menu input {
+	    appearance: none;
+	    padding: 0;
+	    margin: 0;
+	    pointer-events: none;
+	}
+
+	.hamburger-menu input:checked {
+	    opacity: 0;
+	    width: 0;
+	}
+
+	.hamburger-menu:has(input:checked)::before {
+	    transform: rotate(-45deg) translate(-1rem, 0.25rem);
+	    width: 4rem;
+	    transition-duration: 0.4s;
+	}
+
+	.hamburger-menu:has(input:checked)::after {
+	    transform: rotate(45deg) translate(-1rem, -0.25rem);
+	    width: 4rem;
+	    transition-duration: 0.4s;
+	}
+	
+	.hamburger-menu:has(input:checked) + .sidebar{
+		background-color: #342153;
+		position: absolute;
+		top: 5rem;
+		left: 0rem;
+		height: max-content;
+		width: max-content;
+		transition-duration: 0.4s;
+	}
+
+	.hamburger-menu:has(input:checked) + .sidebar > .hidden-link a, .hidden-link a:visited{
+		
+		display: flex;
+		flex-direction: column;
+		
+		margin: 1rem;
+		color: white;
+		text-decoration: none;
+		transition-duration: 0.4s;
+	}
+	
+	.hamburger-menu:has(input:checked) + .sidebar > .hidden-link a:hover{
+		color: #D77B26;
+		background: #D77B2633;
+	}
+	
+	
+
+   /*END Hamburger Menu*/
 }
 /*End Viewports*/
