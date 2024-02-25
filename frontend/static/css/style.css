@@ -246,11 +246,7 @@ input[type="submit"] {
 	box-shadow: 5px 5px 5px #241930;
 	transition-duration: 0.4s;
 }
-.navbar-link:hover{
-	filter: brightness(150%);
-	transition-duration: 0.4s;
-	cursor: pointer;
-}
+
 
 .navbar-link a, .navbar-link a:visited {
 	color: white;
@@ -272,11 +268,10 @@ input[type="submit"] {
 /* End Navbar */
 
 /* Hamburger Menu */
-.sidebar > .hidden-link a, .hidden-link a:visited{
-	display: none;
-}
+
 .sidebar{
 	display: none;
+	-webkit-appearance: none;
 }
 
 .hamburger-menu{
@@ -347,26 +342,44 @@ input[type="submit"] {
 
 	.hamburger-menu input {
 	    appearance: none;
+		-webkit-appearance: none;
 	    padding: 0;
 	    margin: 0;
 	    pointer-events: none;
 	}
-
+	.sidebar{
+		
+		appearance: none;
+		position: absolute;
+		top: -30rem;
+		left: 0rem;
+	}
 	.hamburger-menu input:checked {
 	    opacity: 0;
 	    width: 0;
 	}
+	.hamburger-menu input:checked + .sidebar{
+		position: absolute;
+		top: 0rem;
+		left: 0rem;
+	}
 
 	.hamburger-menu:has(input:checked)::before {
-	    transform: rotate(-45deg) translate(-1rem, 0.25rem);
+		-webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+		transform: rotate(-45deg) translate(-1rem, 0.25rem);
 	    width: 4rem;
 	    transition-duration: 0.4s;
 	}
-
+	
+   
 	.hamburger-menu:has(input:checked)::after {
-	    transform: rotate(45deg) translate(-1rem, -0.25rem);
+	    -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+		transform: rotate(45deg) translate(-1rem, -0.25rem);
 	    width: 4rem;
 	    transition-duration: 0.4s;
+	}
+	.hamburger-menu input:checked + .sidebar {
+		display: block;
 	}
 	
 	.hamburger-menu:has(input:checked) + .sidebar{
