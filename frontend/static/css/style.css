@@ -414,11 +414,22 @@ input[type="submit"] {
 }
 /*End Viewports*/
 
+/*Safari Filter*/
+/*Safari does not like my hamburger menu, 
+this is so hamburger menu does not show for safari*/
+/*when safari browser is small make the buttons small*/ 
 @supports not (backdrop-filter: blur()){
 	.hamburger-menu{
 		display: none;
 	}
-	.navbar-link{
-		display: block;
+	@media screen and (min-width:300px) and (max-width:880px)  {
+		.navbar-link{
+			display: block;
+			background-color: #D77B2633;
+			padding: 0.5rem;
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px #241930;
+		}
 	}
 }
+/*End Safari Filter*/
