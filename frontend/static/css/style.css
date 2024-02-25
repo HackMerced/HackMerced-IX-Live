@@ -190,6 +190,41 @@ input[type="submit"] {
 
 /* Schedule */
 
+#schedule-days {
+	margin-bottom: 16px;
+}
+
+.schedule-day {
+	width: 128px;
+	color: #EEDEFDD9;
+	float: left;
+	display: inline-block;
+	background-color: #57124E;
+	border-radius: 20px;
+	margin-right: 16px;
+}
+
+.day-header {
+	font-size: 20px;
+	font-weight: 800;
+	padding: 4px 16px 8px 16px;
+	border-radius: 20px;
+	background-color: #3A0617;
+}
+
+.day-number {
+	font-size: 24px;
+	font-weight: 800;
+	padding: 8px 0px 16px 0px;
+}
+
+.today {
+	background-color: #AB3F58;
+}
+.today .day-header {
+	background-color: #E86662;
+}
+
 .schedule-map-preview img {
 	padding: 16px 0px;
 	max-width: 200px;
