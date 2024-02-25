@@ -413,3 +413,12 @@ input[type="submit"] {
    /*END Hamburger Menu*/
 }
 /*End Viewports*/
+
+@supports not (backdrop-filter: blur()){
+	.hamburger-menu{
+		display: none;
+	}
+	.navbar-link{
+		display: block;
+	}
+}
