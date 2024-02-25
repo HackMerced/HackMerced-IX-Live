@@ -156,6 +156,51 @@ input[type="submit"] {
 
 /* End Home */
 
+/* Prizes */
+
+#prizes-points-balance {
+	margin-top: 32px;
+	text-align: right;
+	color: #EEDEFDD9;
+}
+
+#points {
+	padding: 0px 2em;
+}
+
+/* End Prizes */
+
+/* Schedule */
+
+.schedule-map-preview img {
+	padding: 16px 0px;
+	max-width: 200px;
+}
+
+.schedule-info,
+.schedule-description
+{
+	padding-top: 16px;
+	vertical-align: top;
+}
+
+.schedule-info p,
+.schedule-description p
+{
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: left;
+	padding-left: 16px;
+}
+
+.schedule-time {
+	background-color: #550C14;
+	padding: 8px 24px;
+	border-radius: 20px;
+}
+
+/* End Schedule */
+
 /* Punch Card */
 
 #punch-container {
@@ -205,20 +250,6 @@ input[type="submit"] {
   }
 
 /* End Punch Card */
-
-/* Prizes */
-
-#prizes-points-balance {
-	margin-top: 32px;
-	text-align: right;
-	color: #EEDEFDD9;
-}
-
-#points {
-	padding: 0px 2em;
-}
-
-/* End Prizes */
 
 /* Navbar */
 
