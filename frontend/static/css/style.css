@@ -8,6 +8,7 @@
 	--orange-glass      : #D77B2633;
 	--orange-glass-less : #D77B2699;
 	--yellow-glass      : #EDEFF280;
+	--purple-glass      : #372358BA;
 
 	/* Standard quantities. */
 	--radius: 20px;
@@ -15,6 +16,7 @@
 	--shadow: 0px 4px 4px 0px #00000040;
 
 	/* Standard spacing. */
+	--pad-teeny  :  2px;
 	--pad-tiny   :  8px;
 	--pad-small  : 16px;
 	--pad-medium : 32px;
@@ -69,6 +71,23 @@ body {
 	}
 }
 
+.main {
+	margin: var(--pad-big) auto;
+	width: 75%;
+	.banner {
+		width: 100%;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background-color: var(--purple);
+		border-radius: var(--radius);
+		margin-bottom: var(--pad-small);
+		box-shadow: var(--shadow);
+		* {
+			padding: var(--pad-small) 0;
+		}
+	}
+}
+
 .window {
 	margin-bottom: var(--pad-small);
 	background-color: var(--orange-glass);
@@ -81,6 +100,10 @@ body {
 		background-color: var(--purple);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
+	}
+	.titlebar.plain {
+		background-color: #0000;
+		box-shadow: none;
 	}
 	.titlebar * {
 		margin: 0;
@@ -120,40 +143,43 @@ input[type="submit"] {
 }
 
 /* Two columns are used a lot, so these classes help with that. */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
+.row {
+	display: flex;
 }
 .column {
-	float: left;
-	width: 50%;
+	flex: 50%;
+	&.left {
+		margin-right: var(--pad-small);
+	}
 }
 
-/* For: /login, /register */
+/* Login and Registration */
+
 #login-form, #registration-form {
 	padding-bottom: var(--pad-small);
-	background-color: #D77B2633;
-	border-radius: 20px;
+	background-color: var(--orange-glass);
+	border-radius: var(--radius);
 }
 
-/* Common */
+/* End Login and Registration */
 
-.main-container {
-	margin-top: 48px;
-	width: 75%;
-	display: flex;
-	flex-direction: column;
+/* Home Page */
+
+#countdown {
+	text-align: center;
 }
 
-.main-banner {
-	color: #EEDEFDD9;
-	background-color: #342153;
-	width: 100%;
-	border-radius: 20px;
-	margin-bottom: 16px;
-	box-shadow: 5px 5px 5px #241930;
+#announcements {
+	padding-bottom: var(--pad-tiny);
+	.announcement {
+		margin: var(--pad-tiny);
+		padding: var(--pad-teeny) var(--pad-small);
+		background-color: var(--purple-glass);
+		border-radius: var(--radius);
+	}
 }
+
+/* End Home Page */
 
 /* Styling for "round-row" tables. */
 .rounded-table {
@@ -191,34 +217,6 @@ input[type="submit"] {
 
 
 /* End Common */
-
-/* Home */
-
-#home-countdown, #home-countdown-text {
-	background-color: #D77B2633;
-	padding: 12px;
-	border-radius: 20px;
-	margin-bottom: 16px;
-	margin-right: 8px;
-	box-shadow: 5px 5px 5px #44290f93;
-}
-
-#home-announcements {
-	background-color: #D77B2633;
-	padding: 12px;
-	border-radius: 20px;
-	margin-left: 8px;
-	box-shadow: 5px 5px 5px #44290f93;
-}
-
-.announcement {
-	background-color: #372358BA;
-	padding: 2px 16px;
-	text-align: left;
-	border-radius: 20px;
-}
-
-/* End Home */
 
 /* Prizes */
 
