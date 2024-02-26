@@ -6,9 +6,12 @@
 	--white             : #FFFFFF;
 	--faded-white-glass : #EEDEFDD9;
 	--orange-glass      : #D77B2633;
+	--orange-glass-less : #D77B2699;
+	--yellow-glass      : #EDEFF280;
 
 	/* Standard quantities. */
 	--radius: 20px;
+	--radius-slight: 12px;
 	--shadow: 0px 4px 4px 0px #00000040;
 
 	/* Standard spacing. */
@@ -16,6 +19,10 @@
 	--pad-small  : 16px;
 	--pad-medium : 32px;
 	--pad-big    : 48px;
+
+	/* Standard font sizes and weights. */
+	--font-big: 24px;
+	--font-heavy: 700;
 
 	/* Standard qualities. */
 	--font-main: "K2D";
@@ -34,23 +41,27 @@ body {
 	color: var(--white);
 
 	/* Fallback, gradient only. */
-	background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%);
+	background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
 
 	/* Graphic + gradient. */
 	background:
 		url("/static/png/hmix-bg-300.png") fixed right bottom no-repeat,
-		linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed right bottom no-repeat;
+		linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
+
+	&.no-graphic {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
+	}
 }
 
 .main {
 	margin: var(--pad-big) auto;
 	width: 75%;
-	& .header {
-		text-align: center;
+	.header {
+		margin-bottom: var(--pad-small);
 		color: var(--faded-white-glass);
+		text-align: center;
 		background-color: var(--purple);
 		border-radius: var(--radius);
-		margin-bottom: var(--pad-small);
 		box-shadow: var(--shadow);
 		& * {
 			padding: var(--pad-small) 0;
@@ -59,52 +70,46 @@ body {
 }
 
 .window {
+	margin-bottom: var(--pad-small);
 	background-color: var(--orange-glass);
 	border-radius: var(--radius);
-	margin-bottom: var(--pad-small);
 	box-shadow: var(--shadow);
-	& .titlebar {
-		text-align: center;
+	.titlebar {
 		padding: var(--pad-tiny) 0;
-		border-radius: var(--radius);
-		background-color: var(--purple);
 		color: var(--faded-white-glass);
+		text-align: center;
+		background-color: var(--purple);
+		border-radius: var(--radius);
 		box-shadow: var(--shadow);
 	}
-	& .titlebar * {
+	.titlebar * {
 		margin: 0;
 	}
-	& .article {
+	.article {
 		padding: var(--pad-tiny) var(--pad-medium);
 	}
 }
 
-body.auth {
-	margin: 0;
-	font-family: "K2D";
-	color: white;
-	/* Keep this line below as a backup in case background-image fails. */
-	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
-	background-repeat: no-repeat;
-}
-
-
 input[type="text"] {
-	background-color: #EDEFF280;
-	padding: 8px 1em;
-	font-size: 24px;
+	margin: 0 var(--pad-small) var(--pad-small) 0;
+	padding: var(--pad-tiny) 1em;
+	color: var(--white);
+	font-size: var(--font-big);
+	font-weight: var(--font-heavy);
+	background-color: var(--yellow-glass);
 	border: none;
-	border-radius: 12px;
-	color: white;
+	border-radius: var(--radius-slight);
 }
 
 input[type="submit"] {
-	background-color: #D77B2691;
-	font-size: 16px;
-	padding: 12px 32px;
+	padding: var(--pad-tiny) 1em;
+	color: var(--faded-white-glass);
+	font-size: var(--font-big);
+	font-weight: var(--font-heavy);
+	background-color: var(--orange-glass-less);
 	border: none;
-	color: white;
-	border-radius: 10px;
+	border-radius: var(--radius-slight);
+	box-shadow: var(--shadow);
 }
 
 /* Absolutely center something both vertically and horizontally. */
