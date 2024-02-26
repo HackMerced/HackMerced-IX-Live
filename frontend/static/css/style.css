@@ -30,7 +30,9 @@
 	--font-slight : 18px;
 	--font-medium : 20px;
 	--font-big    : 24px;
-	--font-heavy: 700;
+	--font-huge   : 32px;
+	--font-heavy  : 700;
+	--font-heavier: 800;
 
 	/* Standard qualities. */
 	--font-main: "K2D";
@@ -260,66 +262,63 @@ input[type="submit"] {
 
 /* Schedule */
 
-#schedule-days {
-	margin-bottom: 16px;
+#calendar {
+	margin-bottom: var(--pad-small);
+
+	.day {
+		width: 128px;
+		margin-right: var(--pad-small);
+		display: inline-block;
+		color: var(--faded-white-glass);
+		background-color: #57124E;
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+
+		.header {
+			padding: 4px 16px 8px 16px;
+			font-size: var(--font-medium);
+			font-weight: var(--font-heavier);
+			background-color: #3A0617;
+			border-radius: var(--radius);
+		}
+
+		.number {
+			padding-bottom: var(--pad-small);
+			text-align: center;
+			font-size: var(--font-big);
+			font-weight: var(--font-heavier);
+		}
+
+		&.today {
+			background-color: #AB3F58;
+			.header {
+				background-color: #E86662;
+				box-shadow: none;
+			}
+		}
+	}
 }
 
-.schedule-day {
-	width: 128px;
-	color: #EEDEFDD9;
-	float: left;
-	display: inline-block;
-	background-color: #57124E;
-	border-radius: 20px;
-	margin-right: 16px;
-}
-
-.day-header {
-	font-size: 20px;
-	font-weight: 800;
-	padding: 4px 16px 8px 16px;
-	border-radius: 20px;
-	background-color: #3A0617;
-}
-
-.day-number {
-	font-size: 24px;
-	font-weight: 800;
-	padding: 8px 0px 16px 0px;
-}
-
-.today {
-	background-color: #AB3F58;
-}
-.today .day-header {
-	background-color: #E86662;
-}
-
-.schedule-map-preview img {
-	padding: 16px 0px;
-	max-width: 200px;
-}
-
-.schedule-info,
-.schedule-description
-{
-	padding-top: 16px;
-	vertical-align: top;
-}
-
-.schedule-info p,
-.schedule-description p
-{
-	margin-bottom: 0;
-	margin-top: 0;
-	text-align: left;
-	padding-left: 16px;
-}
-
-.schedule-time {
-	background-color: #550C14;
-	padding: 8px 24px;
-	border-radius: 20px;
+#schedule {
+	.map img {
+		padding: var(--pad-small) 0px;
+		max-width: 200px;
+	}
+	.info, .description {
+		padding-top: var(--pad-small);
+		vertical-align: top;
+		p {
+			margin-bottom: 0;
+			margin-top: 0;
+			padding-left: var(--pad-small);
+			text-align: left;
+		}
+		.time {
+			background-color: #550C14;
+			padding: 8px 24px;
+			border-radius: 20px;
+		}
+	}
 }
 
 /* End Schedule */
