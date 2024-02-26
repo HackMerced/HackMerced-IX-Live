@@ -2,9 +2,14 @@
    take effect over the entire sheet. Enjoy! */
 :root {
 	/* Color scheme. */
+	--peach             : #E86662;
+	--dark-peach        : #AB3F58;
 	--maroon            : #550C14;
 	--blood             : #77232A;
 	--purple            : #342153;
+	--blue-purple       : #5A0F66;
+	--blue-purple-alt   : #57124E;
+	--dark-purple       : #3A0617;
 	--white             : #FFFFFF;
 	--blood-glass       : #8D4334AA;
 	--faded-white-glass : #EEDEFDD9;
@@ -14,8 +19,9 @@
 	--purple-glass      : #372358BA;
 
 	/* Standard quantities. */
-	--radius: 20px;
-	--radius-slight: 12px;
+	--radius          : 20px;
+	--radius-slight   : 12px;
+	--radius-slighter :  5px;
 	--shadow: 0px 4px 4px 0px #00000040;
 
 	/* Standard spacing. */
@@ -74,7 +80,7 @@ body {
 		margin-bottom: var(--pad-small);
 		color: var(--faded-white-glass);
 		text-align: center;
-		background-color: var(--purple);
+		background: var(--purple);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
 		& * {
@@ -90,7 +96,7 @@ body {
 		width: 100%;
 		color: var(--faded-white-glass);
 		text-align: center;
-		background-color: var(--purple);
+		background: var(--purple);
 		border-radius: var(--radius);
 		margin-bottom: var(--pad-small);
 		box-shadow: var(--shadow);
@@ -102,19 +108,19 @@ body {
 
 .window {
 	margin-bottom: var(--pad-small);
-	background-color: var(--orange-glass);
+	background: var(--orange-glass);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	.titlebar {
 		padding: var(--pad-tiny) 0;
 		color: var(--faded-white-glass);
 		text-align: center;
-		background-color: var(--purple);
+		background: var(--purple);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
 	}
 	.titlebar.plain {
-		background-color: #0000;
+		background: #0000;
 		box-shadow: none;
 	}
 	.titlebar * {
@@ -130,9 +136,13 @@ input {
 	color: var(--white);
 	font-size: var(--font-big);
 	font-weight: var(--font-heavy);
-	background-color: var(--yellow-glass);
+	background: var(--yellow-glass);
 	border: none;
 	border-radius: var(--radius-slight);
+	&::placeholder {
+		opacity: 1;
+		color: var(--white);
+	}
 }
 
 input[type="submit"] {
@@ -140,7 +150,7 @@ input[type="submit"] {
 	color: var(--faded-white-glass);
 	font-size: var(--font-big);
 	font-weight: var(--font-heavy);
-	background-color: var(--orange-glass-less);
+	background: var(--orange-glass-less);
 	border: none;
 	border-radius: var(--radius-slight);
 	box-shadow: var(--shadow);
@@ -169,19 +179,19 @@ input[type="submit"] {
 .rounded-table {
 	width: 100%;
 	color: var(--faded-white-glass);
-	background-color: var(--blood-glass);
+	background: var(--blood-glass);
 	border-spacing: 0;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	&.no-color {
-		background-color: #0000;
+		background: #0000;
 		box-shadow: none;
 	}
 	tbody {
 		&:first-child th {
 			padding: var(--pad-weeny);
 			font-size: var(--font-slight);
-			background-color: var(--maroon);
+			background: var(--maroon);
 		}
 		tr {
 			th:first-child, td:first-child {
@@ -193,7 +203,7 @@ input[type="submit"] {
 				border-bottom-right-radius: var(--radius);
 			}
 			td {
-				background-color: var(--blood);
+				background: var(--blood);
 				font-size: var(--font-medium);
 				text-align: center;
 			}
@@ -208,7 +218,7 @@ input[type="submit"] {
 
 #login-form, #registration-form {
 	padding-bottom: var(--pad-small);
-	background-color: var(--orange-glass);
+	background: var(--orange-glass);
 	border-radius: var(--radius);
 }
 
@@ -225,7 +235,7 @@ input[type="submit"] {
 	.announcement, .log {
 		margin: var(--pad-tiny);
 		padding: var(--pad-teeny) var(--pad-small);
-		background-color: var(--purple-glass);
+		background: var(--purple-glass);
 		border-radius: var(--radius);
 	}
 }
@@ -239,26 +249,24 @@ input[type="submit"] {
 	text-align: right;
 	color: var(--faded-white-glass);
 	#points {
-		padding: 0px 2em;
+		padding: 0 2em;
 	}
 }
 
-#prizes tbody tr td {
+#prizes td {
 	padding: var(--pad-tiny) 0;
-}
-
-/* TODO Cleanup. */
-.prize-claim {
-	text-align: center;
-	font-size: 20px;
-	background-color: #5A0F66;
-	border: none;
-	border-radius: 20px;
-	color: #EEDEFDD9;
-	padding: 8px 16px;
-	margin: 16px 0px;
-	&:hover {
-		cursor: pointer;
+	.claim {
+		padding: var(--pad-tiny) var(--pad-small);
+		margin: var(--pad-small) 0;
+		color: var(--faded-white-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+		background: var(--blue-purple);
+		border: none;
+		border-radius: var(--radius);
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 
@@ -266,48 +274,42 @@ input[type="submit"] {
 
 /* Schedule */
 
-/* TODO Cleanup. */
 #calendar {
 	margin-bottom: var(--pad-small);
-
 	.day {
 		width: 128px;
 		margin-right: var(--pad-small);
 		display: inline-block;
 		color: var(--faded-white-glass);
-		background-color: #57124E;
+		background: var(--blue-purple-alt);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
-
 		.header {
-			padding: 4px 16px 8px 16px;
+			padding: var(--pad-weeny) var(--pad-small) var(--pad-tiny) var(--pad-small);
 			font-size: var(--font-medium);
 			font-weight: var(--font-heavier);
-			background-color: #3A0617;
+			background: var(--dark-purple);
 			border-radius: var(--radius);
 		}
-
 		.number {
 			padding-bottom: var(--pad-small);
 			text-align: center;
 			font-size: var(--font-big);
 			font-weight: var(--font-heavier);
 		}
-
 		&.today {
-			background-color: #AB3F58;
+			background: var(--dark-peach);
 			.header {
-				background-color: #E86662;
+				background: var(--peach);
 				box-shadow: none;
 			}
 		}
 	}
 }
 
-/* TODO Cleanup. */
 #schedule {
 	.map img {
-		padding: var(--pad-small) 0px;
+		padding: var(--pad-small) 0;
 		max-width: 200px;
 	}
 	.info, .description {
@@ -320,9 +322,9 @@ input[type="submit"] {
 			text-align: left;
 		}
 		.time {
-			background-color: #550C14;
-			padding: 8px 24px;
-			border-radius: 20px;
+			padding: var(--pad-tiny) var(--pad-small);
+			background: var(--maroon);
+			border-radius: var(--radius);
 		}
 	}
 }
@@ -331,12 +333,11 @@ input[type="submit"] {
 
 /* Punch Card */
 
-/* TODO Cleanup. */
 #punches {
 	width: 90%;
 	margin: 0 auto;
 	padding-top: var(--pad-medium);
-	font-size: 30px;
+	font-size: var(--font-huge);
 	border-spacing: 0px 10px;
 	tr {
 		margin: var(--pad-small);
@@ -345,21 +346,30 @@ input[type="submit"] {
 	}
 	td {
 		padding: var(--pad-small);
-		background-color: #D77B2691;
+		background: var(--orange-glass-less);
+		&:not(:first-child):not(:last-child) {
+			width: 48px;
+		}
 	}
 	.title {
 		padding-left: var(--pad-big);
 		text-align: left;
-	}
-	.spacer {
-		width: 4px;
+		font-size: var(--font-big);
+		font-weight: var(--font-heavier);
 	}
 	.punch {
+		height: 48px;
 		width: 48px;
-		img {
-			width: 48px;
-			border-radius: 50%;
+		border-radius: 50%;
+		&.true {
+			background: var(--purple);
 		}
+		&.false {
+			background: var(--faded-white-glass);
+		}
+	}
+	.spacer {
+		width: var(--pad-weeny);
 	}
 }
 
@@ -376,40 +386,37 @@ input[type="submit"] {
 
 /* Navbar */
 
-/* TODO Cleanup. */
 #navbar {
 	display: flex;
+	flex-wrap: nowrap;
+	gap: 1em;
 	align-items: center;
-	background-color: #342153;
 	width: 100%;
 	height: 70px;
-	box-shadow: 5px 5px 5px #241930;
-	gap: 1em;
-	flex-wrap:nowrap;
-}
-
-.navbar-link {
-	font-size: 1rem;
-	background-color: #D77B2633;
-	padding: 8px 16px;;
-	border-radius: 5px;
-	box-shadow: 5px 5px 5px #241930;
-	
-}
-
-.navbar-link a, .navbar-link a:visited {
-	color: white;
-	text-decoration: none;
-}
-
-#navbar-profile {
-	margin-left: auto;
-	margin-right: 32px;
-}
-
-#navbar-profile a img {
-	padding-top: 4px;
-	height: 32px;
+	background: var(--purple);
+	box-shadow: var(--shadow);
+	.link {
+		font-size: 1rem;
+		background: var(--orange-glass);
+		padding: var(--pad-tiny) var(--pad-small);
+		border-radius: var(--radius-slighter);
+		box-shadow: var(--shadow);
+		&:first-child {
+			margin-left: var(--pad-medium);
+		}
+		a, a:visited {
+			color: var(--white);
+			text-decoration: none;
+		}
+	}
+	#profile {
+		margin-left: auto;
+		margin-right: var(--pad-medium);
+		img {
+			padding-top: var(--pad-weeny);
+			height: var(--pad-medium);
+		}
+	}
 }
 
 /* End Navbar */

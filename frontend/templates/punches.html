@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
+{% set pageTitle = "Punch Card" %}{% include "includes/header.html" %}
 
 <body class="no-graphic">
 
@@ -10,7 +10,7 @@
 	<div class="main">
 
 		<div class="banner">
-				<h1>HackMerced IX Punch Card</h1>
+				<h1>Punch Card</h1>
 		</div>
 
 		<div class="article">
@@ -18,23 +18,23 @@
 				<table id="punches" class="rounded-table no-color">
 					<tr>
 						<td class="title">Breakfast</td>
-						<td class="punch"><img src="/static/png/punch-false.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
+						<td><div class="punch false"></td>
 						<td class="spacer"></td>
 					</tr>
 					<tr>
 						<td class="title">Lunch</td>
-						<td class="punch"><img src="/static/png/punch-false.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
 						<td class="spacer"></td>
 					</tr>
 					<tr>
 						<td class="title">Dinner</td>
-						<td class="punch"><img src="/static/png/punch-false.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch"><img src="/static/png/punch-true.png" /></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
 						<td class="spacer"></td>
 					</tr>
 				</table>
