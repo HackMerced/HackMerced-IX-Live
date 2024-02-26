@@ -46,3 +46,8 @@ def profile():
 
 	return render_template("profile.html")
 
+@app.route("/asset-pack", methods=["GET"])
+def asset_pack():
+
+	return render_template("asset-pack.html")
+

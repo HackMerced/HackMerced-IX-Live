@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Asset Pack" %}{% include "includes/header.html" %}
+
+<body>
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="header">
+			<h1>HackMerced IX Asset Pack</h1>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Intro</h1>
+			</div>
+			<div class="article">
+				<p>This page showcases several common assets such as buttons, windows, tables, etc. This is useful if you're developing code and need something to reference, or if you're changing styling and want to see what it looks like.</p>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Colors</h1>
+			</div>
+			<div class="article">
+				<p>You can see these change when you change their variable values in the CSS.</p>
+				<h2>purple</h2>
+				<p><span style="color: var(--purple)">Lorem ipsum dolor sit amet. <b>Lorem ipsum dolor sit amet.</b> <i>Lorem ipsum dolor sit amet.</i> <b><i>Lorem ipsum dolor sit amet.</i></b></span></p>
+				<h2>white</h2>
+				<p><span style="color: var(--white)">Lorem ipsum dolor sit amet. <b>Lorem ipsum dolor sit amet.</b> <i>Lorem ipsum dolor sit amet.</i> <b><i>Lorem ipsum dolor sit amet.</i></b></span></p>
+				<h2>faded-white-glass</h2>
+				<p><span style="color: var(--faded-white-glass)">Lorem ipsum dolor sit amet. <b>Lorem ipsum dolor sit amet.</b> <i>Lorem ipsum dolor sit amet.</i> <b><i>Lorem ipsum dolor sit amet.</i></b></span></p>
+				<h2>orange-glass</h2>
+				<p>Orange glass is the mostly transluscent background color of this window.</p>
+				<h2>bg-gradient-A</h2>
+				<p><span style="color: var(--bg-gradient-A)">Lorem ipsum dolor sit amet. <b>Lorem ipsum dolor sit amet.</b> <i>Lorem ipsum dolor sit amet.</i> <b><i>Lorem ipsum dolor sit amet.</i></b></span></p>
+				<h2>bg-gradient-B</h2>
+				<p><span style="color: var(--bg-gradient-B)">Lorem ipsum dolor sit amet. <b>Lorem ipsum dolor sit amet.</b> <i>Lorem ipsum dolor sit amet.</i> <b><i>Lorem ipsum dolor sit amet.</i></b></span></p>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Standard Quantities and Qualities</h1>
+			</div>
+			<div class="article">
+				<p>Border radius is 20px.</p>
+				<p>Box shadow is 0px 4px 4px 0px #00000040.</p>
+				<p>Padding/margin values are 8px, 16px, 32px, and 48px.</p>
+				<p>Font is "K2D".</p>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
