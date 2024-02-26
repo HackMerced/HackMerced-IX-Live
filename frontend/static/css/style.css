@@ -324,15 +324,24 @@ input[type="submit"] {
 	font-weight: 800;
 }
 
-#update-profile {
+#update-profile,
+#update-password,
+#submit-voucher
+{
 	margin-top: 16px;
 }
 
-#update-profile input[type="text"] {
+#update-profile input[type="text"],
+#update-password input[type="text"],
+#submit-voucher input[type="text"]
+{
 	margin: 8px;
 }
 
-#update-profile input[type="submit"] {
+#update-profile input[type="submit"],
+#update-password input[type="submit"],
+#submit-voucher input[type="submit"]
+{
 	float: left;
 	margin-left: 32px;
 	margin-bottom: 16px;
