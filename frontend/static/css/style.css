@@ -142,7 +142,7 @@ input[type="submit"] {
 	transform: translateX(-50%) translateY(-50%);
 }
 
-/* Two columns are used a lot, so these classes help with that. */
+/* For two column setups. */
 .row {
 	display: flex;
 }
