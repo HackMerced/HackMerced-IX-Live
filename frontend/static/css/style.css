@@ -2,8 +2,11 @@
    take effect over the entire sheet. Enjoy! */
 :root {
 	/* Color scheme. */
+	--maroon            : #550C14;
+	--blood             : #77232A;
 	--purple            : #342153;
 	--white             : #FFFFFF;
+	--blood-glass       : #8D4334AA;
 	--faded-white-glass : #EEDEFDD9;
 	--orange-glass      : #D77B2633;
 	--orange-glass-less : #D77B2699;
@@ -17,13 +20,16 @@
 
 	/* Standard spacing. */
 	--pad-teeny  :  2px;
+	--pad-weeny  :  4px;
 	--pad-tiny   :  8px;
 	--pad-small  : 16px;
 	--pad-medium : 32px;
 	--pad-big    : 48px;
 
 	/* Standard font sizes and weights. */
-	--font-big: 24px;
+	--font-slight : 18px;
+	--font-medium : 20px;
+	--font-big    : 24px;
 	--font-heavy: 700;
 
 	/* Standard qualities. */
@@ -52,6 +58,10 @@ body {
 
 	&.no-graphic {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
+	}
+
+	&.radial {
+		/* @Alisson, this is where you'd put the code for the radial gradient. -Shawn */
 	}
 }
 
@@ -153,6 +163,42 @@ input[type="submit"] {
 	}
 }
 
+/* Styling for the red "rounded-row" tables. */
+.rounded-table {
+	width: 100%;
+	color: var(--faded-white-glass);
+	background-color: var(--blood-glass);
+	border-spacing: 0;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	tbody {
+		&:first-child th {
+			padding: var(--pad-weeny);
+			font-size: var(--font-slight);
+			background-color: var(--maroon);
+		}
+		tr {
+			th:first-child, td:first-child {
+				border-top-left-radius: var(--radius);
+				border-bottom-left-radius: var(--radius);
+			}
+			th:last-child, td:last-child {
+				border-top-right-radius: var(--radius);
+				border-bottom-right-radius: var(--radius);
+			}
+			td {
+				background-color: var(--blood);
+				font-size: var(--font-medium);
+				text-align: center;
+			}
+		}
+	}
+
+	.table-spacer {
+		height: 2px;
+	}
+}
+
 /* Login and Registration */
 
 #login-form, #registration-form {
@@ -181,57 +227,19 @@ input[type="submit"] {
 
 /* End Home Page */
 
-/* Styling for "round-row" tables. */
-.rounded-table {
-	color: #EEDEFDD9;
-	width: 100%;
-	background-color: #9A4922;
-	border-spacing: 0px 0px;
-	border-radius: 20px;
-}
-.rounded-table tbody:first-child th {
-	background-color: #550C14;
-	font-size: 18px;
-	padding: 4px;
-}
-.rounded-table tbody tr th:first-child,
-.rounded-table tbody tr td:first-child
-{
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-.rounded-table tbody tr th:last-child,
-.rounded-table tbody tr td:last-child
-{
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
-}
-.rounded-table tbody tr td {
-	background-color: #5B1C32CC;
-	font-size: 20px;
-	text-align: center;
-}
-.table-spacer {
-	height: 2px;
-}
-
-
-/* End Common */
-
 /* Prizes */
 
-#prizes-points-balance {
-	margin-top: 32px;
+#balance {
+	margin-top: var(--pad-medium);
 	text-align: right;
-	color: #EEDEFDD9;
-}
-
-#points {
-	padding: 0px 2em;
+	color: var(--faded-white-glass);
+	#points {
+		padding: 0px 2em;
+	}
 }
 
 #prizes tbody tr td {
-	height: 64px;
+	padding: var(--pad-tiny) 0;
 }
 
 .prize-claim {
@@ -243,9 +251,9 @@ input[type="submit"] {
 	color: #EEDEFDD9;
 	padding: 8px 16px;
 	margin: 16px 0px;
-}
-.prize-claim:hover {
-	cursor: pointer;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 /* End Prizes */
