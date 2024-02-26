@@ -90,8 +90,7 @@ body {
 	}
 }
 
-input[type="text"] {
-	margin: 0 var(--pad-small) var(--pad-small) 0;
+input {
 	padding: var(--pad-tiny) 1em;
 	color: var(--white);
 	font-size: var(--font-big);
@@ -129,6 +128,13 @@ input[type="submit"] {
 .column {
 	float: left;
 	width: 50%;
+}
+
+/* For: /login, /register */
+#login-form, #registration-form {
+	padding-bottom: var(--pad-small);
+	background-color: #D77B2633;
+	border-radius: 20px;
 }
 
 /* Common */
@@ -185,20 +191,6 @@ input[type="submit"] {
 
 
 /* End Common */
-
-/* Login and Registration */
-
-#login-form, #registration-form {
-	background-color: #D77B2633;
-	border-radius: 20px;
-	padding: 32px;
-}
-
-#registration-form input[type="text"] {
-	margin: 8px;
-}
-
-/* End Login and Registration */
 
 /* Home */
 
