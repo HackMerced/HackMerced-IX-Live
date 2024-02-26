@@ -200,7 +200,7 @@ input[type="submit"] {
 		}
 	}
 	.table-spacer {
-		height: 2px;
+		height: var(--pad-teeny);
 	}
 }
 
@@ -220,9 +220,9 @@ input[type="submit"] {
 	text-align: center;
 }
 
-#announcements {
+#announcements, #logs {
 	padding-bottom: var(--pad-tiny);
-	.announcement {
+	.announcement, .log {
 		margin: var(--pad-tiny);
 		padding: var(--pad-teeny) var(--pad-small);
 		background-color: var(--purple-glass);
@@ -247,6 +247,7 @@ input[type="submit"] {
 	padding: var(--pad-tiny) 0;
 }
 
+/* TODO Cleanup. */
 .prize-claim {
 	text-align: center;
 	font-size: 20px;
@@ -265,6 +266,7 @@ input[type="submit"] {
 
 /* Schedule */
 
+/* TODO Cleanup. */
 #calendar {
 	margin-bottom: var(--pad-small);
 
@@ -302,6 +304,7 @@ input[type="submit"] {
 	}
 }
 
+/* TODO Cleanup. */
 #schedule {
 	.map img {
 		padding: var(--pad-small) 0px;
@@ -328,6 +331,7 @@ input[type="submit"] {
 
 /* Punch Card */
 
+/* TODO Cleanup. */
 #punches {
 	width: 90%;
 	margin: 0 auto;
@@ -363,52 +367,16 @@ input[type="submit"] {
 
 /* Profile */
 
-.profile-window {
-	background-color: #D77B2633;
-	border-radius: 20px;
-	margin-bottom: 8px;
-}
-
-.profile-window h2 {
-	margin: 0;
-	padding: 8px 0px;
-	border-radius: 20px;
-	background-color: #342153;
-	color: #EEDEFDD9;
-}
-
-.profile-window #points {
-	font-size: 48px;
-	font-weight: 800;
-}
-
-#update-profile,
-#update-password,
-#submit-voucher
-{
-	margin-top: 16px;
-}
-
-#update-profile input[type="text"],
-#update-password input[type="text"],
-#submit-voucher input[type="text"]
-{
-	margin: 8px;
-}
-
-#update-profile input[type="submit"],
-#update-password input[type="submit"],
-#submit-voucher input[type="submit"]
-{
-	float: left;
-	margin-left: 32px;
-	margin-bottom: 16px;
+#profile-points {
+	font-size: var(--font-huge);
+	font-weight: var(--font-heavier);
 }
 
 /* End Profile */
 
 /* Navbar */
 
+/* TODO Cleanup. */
 #navbar {
 	display: flex;
 	align-items: center;
