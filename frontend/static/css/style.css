@@ -173,6 +173,10 @@ input[type="submit"] {
 	border-spacing: 0;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
+	&.no-color {
+		background-color: #0000;
+		box-shadow: none;
+	}
 	tbody {
 		&:first-child th {
 			padding: var(--pad-weeny);
@@ -195,7 +199,6 @@ input[type="submit"] {
 			}
 		}
 	}
-
 	.table-spacer {
 		height: 2px;
 	}
@@ -325,51 +328,36 @@ input[type="submit"] {
 
 /* Punch Card */
 
-#punch-container {
-	background-color: #D77B2633;
-	width: 100%;
-	border-radius: 20px;
-	padding: 48px 0px 32px 0px;
-}
-
 #punches {
-	font-size: 30px;
 	width: 90%;
+	margin: 0 auto;
+	padding-top: var(--pad-medium);
+	font-size: 30px;
 	border-spacing: 0px 10px;
+	tr {
+		margin: var(--pad-small);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+	td {
+		padding: var(--pad-small);
+		background-color: #D77B2691;
+	}
+	.title {
+		padding-left: var(--pad-big);
+		text-align: left;
+	}
+	.spacer {
+		width: 4px;
+	}
+	.punch {
+		width: 48px;
+		img {
+			width: 48px;
+			border-radius: 50%;
+		}
+	}
 }
-
-#punches tr {
-	margin: 16px;
-	border-radius: 20px;
-}
-
-#punches td {
-	background-color: #D77B2691;
-	padding: 16px;
-}
-
-.punch {
-	width: 48px;
-}
-
-.punch img {
-	width: 48px;
-	border-radius: 50%;
-}
-
-.punch-spacer {
-	width: 4px;
-}
-
-.punch-rounded-start {
-	border-top-left-radius: 10px; /* Set your desired border radius for the top-left corner */
-	border-bottom-left-radius: 10px; /* Set your desired border radius for the bottom-left corner */
-  }
-
-  .punch-rounded-end {
-	border-top-right-radius: 10px; /* Set your desired border radius for the top-right corner */
-	border-bottom-right-radius: 10px; /* Set your desired border radius for the bottom-right corner */
-  }
 
 /* End Punch Card */
 

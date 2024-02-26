@@ -3,43 +3,49 @@
 
 {% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
 
-<body>
+<body class="no-graphic radial">
 
 	{% include "includes/navbar.html" %}
 
-	<center>
-		<div class="main-container">
-			<div class="main-banner">
-					<h1>HackMerced IX Punch Card</h1>
-			</div>
-			<div id="punch-container">
-				<table id="punches">
+	<div class="main">
+
+		<div class="banner">
+				<h1>HackMerced IX Punch Card</h1>
+		</div>
+
+		<div class="article">
+			<div class="window">
+				<table id="punches" class="rounded-table no-color">
 					<tr>
-						<td class="punch-title punch-rounded-start">Breakfast</td>
+						<td class="title">Breakfast</td>
 						<td class="punch"><img src="/static/png/punch-false.png" /></td>
 						<td class="punch"><img src="/static/png/punch-true.png" /></td>
 						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch-spacer punch-rounded-end"></td>
+						<td class="spacer"></td>
 					</tr>
 					<tr>
-						<td class="punch-title punch-rounded-start">Lunch</td>
-						<td class="punch"><img src="/static/png/punch-false.png" /></td>
+						<td class="title">Lunch</td>
 						<td class="punch"><img src="/static/png/punch-false.png" /></td>
 						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch-spacer punch-rounded-end"></td>
+						<td class="punch"><img src="/static/png/punch-true.png" /></td>
+						<td class="spacer"></td>
 					</tr>
 					<tr>
-						<td class="punch-title punch-rounded-start">Dinner</td>
+						<td class="title">Dinner</td>
 						<td class="punch"><img src="/static/png/punch-false.png" /></td>
 						<td class="punch"><img src="/static/png/punch-true.png" /></td>
 						<td class="punch"><img src="/static/png/punch-true.png" /></td>
-						<td class="punch-spacer punch-rounded-end"></td>
+						<td class="spacer"></td>
 					</tr>
 				</table>
-				<p>Your card is automatically punched when you scan at a punch station.</p>
+				<center>
+					<p>Your card is automatically punched when you scan at a punch station.</p>
+				</center>
+				<br>
 			</div>
 		</div>
-	</center>
+
+	</div>
 
 </body>
 
