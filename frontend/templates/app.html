@@ -7,36 +7,59 @@
 
 	{% include "includes/navbar.html" %}
 
-	<center>
-		<div class="main-container">
-			<div class="main-banner">
-					<h1>HackMerced IX Home Page</h1>
-			</div>
-			<div class="row">
-				<div class="column">
-					<div id="home-countdown">
-						<h1>Live Countdown</h1>
-						<h2>00:00:00</h2>
+	<div class="main">
+
+		<div class="banner">
+				<h1>HackMerced IX</h1>
+		</div>
+
+		<div class="row">
+
+			<div class="column left">
+
+				<div class="window">
+					<div class="titlebar plain">
+						<h2>Live Countdown</h2>
 					</div>
-					<div id="home-countdown-text">
-						<h3>Countdown Until Hacking Ends!</h3>
-						<p>Lorem ipsum dolor sit amet.</p>
+					<div class="article">
+						<h1 id="countdown">00:00:00</h1>
 					</div>
 				</div>
-				<div class="column">
-					<div id="home-announcements">
+
+				<div class="window">
+					<div class="titlebar plain">
+						<h2>Countdown Until Hacking Ends!</h2>
+					</div>
+					<div class="article">
+						<p>HackMerced IX takes place for 36-hours at the (CLASSROOM NAME) located at the UC Merced campus from March 8-10, 2024. Our main tracks are (Track1, Track2, and Track3).</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="column">
+
+				<div class="window">
+					<div class="titlebar plain">
 						<h2>Event Announcements</h2>
-						<div id="home-announcements-container">
-							<div class="announcement">
-								<p>Extra pizza is in room 1A.</p>
-								<p><i>13 minutes ago by Jane Doe</i></p>
-							</div>
+					</div>
+					<div id="announcements">
+						<div class="announcement">
+							<p>Extra pizza is in room 1A.</p>
+							<p><i>13 minutes ago by Jane Doe</i></p>
+						</div>
+						<div class="announcement">
+							<p>Extra pizza is in room 1A.</p>
+							<p><i>13 minutes ago by Jane Doe</i></p>
 						</div>
 					</div>
 				</div>
+
 			</div>
+
 		</div>
-	</center>
+
+	</div>
 
 </body>
 
