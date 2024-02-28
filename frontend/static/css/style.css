@@ -112,7 +112,7 @@ body {
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	.titlebar {
-		padding: var(--pad-tiny) 0;
+		padding: var(--pad-tiny) 1em;
 		color: var(--faded-white-glass);
 		text-align: center;
 		background: var(--purple);
@@ -421,31 +421,39 @@ input[type="submit"] {
 
 /* End Navbar */
 
-/*Viewports*/
-@media screen and (min-width:300px) and (max-width:880px) {
-	body{
-		background-image: none;
-		background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
+/* Viewports */
+
+@media screen and (min-width: 300px) and (max-width: 880px) {
+
+	body {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
 		overflow-x: hidden;
 	}
-	
-	.main-container{
+
+	.main {
 		width: 90%;
-		
 	}
-	/*Navbar*/
-	.column {
-		float:none;
-		width: 100%;
+
+	.row {
+		display: block;
+		.left {
+			margin-right: 0;
+		}
 	}
-	#navbar{
+
+	/* Navbar */
+
+	#navbar {
 		gap:.7em;
+		.link {
+			font-size: smaller;
+			margin-left: 0;
+			padding: .7em;
+		}
 	}
-	.navbar-link{
-		font-size: smaller;
-		margin-left: 0;
-		padding: .7em;
-	}
-   /*END Navbar*/
+
+	/* End Navbar */
+
 }
-/*End Viewports*/
+
+/* End Viewports */
