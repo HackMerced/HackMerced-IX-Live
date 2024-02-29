@@ -1,4 +1,3 @@
-#python venv
-/__pycache__/
+*.swp
 venv/
-
+__pycache__

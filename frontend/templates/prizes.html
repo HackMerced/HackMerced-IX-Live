@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Prizes" %}{% include "includes/header.html" %}
+
+<body class="no-graphic radial">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Prizes</h1>
+		</div>
+
+		<div class="article">
+			<p id="balance">Your Points: <span id="points">999</span></p>
+			<table id="prizes" class="rounded-table">
+				<tbody>
+					<tr>
+						<th>Prize</th>
+						<th>Description</th>
+						<th>Cost</th>
+						<th>Qty</th>
+						<th></th>
+					</tr>
+					<tr class="table-spacer"></tr>
+					<tr>
+						<td>Sticker Pack</td>
+						<td>Lorem ipsum dolor sit amet.</td>
+						<td>50 Points</td>
+						<td>10/30</td>
+						<td><button class="claim">Claim</button></td>
+					</tr>
+					<tr class="table-spacer"></tr>
+					<tr>
+						<td>Sticker Pack</td>
+						<td>Lorem ipsum dolor sit amet.</td>
+						<td>50 Points</td>
+						<td>29/30</td>
+						<td><button class="claim">Claim</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
