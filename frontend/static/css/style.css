@@ -112,7 +112,7 @@ body {
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	.titlebar {
-		padding: var(--pad-tiny) 0;
+		padding: var(--pad-tiny) 1em;
 		color: var(--faded-white-glass);
 		text-align: center;
 		background: var(--purple);
@@ -452,6 +452,8 @@ input[type="submit"] {
 
 /* End Navbar */
 
+
+
 /* Hamburger Menu */
 
 .sidebar{
@@ -465,135 +467,134 @@ input[type="submit"] {
    
 /*END Hamburger Menu*/
 
-/*Viewports*/
-@media screen and (min-width:300px) and (max-width:880px) {
-	body{
-		background-image: none;
-		background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
+/* Viewports */
+
+@media screen and (min-width: 300px) and (max-width: 880px) {
+
+	body {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
 		overflow-x: hidden;
 	}
-	
-	.main-container{
+
+	.main {
 		width: 90%;
-		
 	}
 
-	/*Navbar*/
-	.navbar-link{
-		display: none;
+	.row {
+		display: block;
+		.left {
+			margin-right: 0;
+		}
 	}
-	/* .column {
-		float:none;
-		width: 100%;
-	}
-	#navbar{
+
+	/* Navbar */
+
+	#navbar {
 		gap:.7em;
-	}
-	.navbar-link{
-		font-size: smaller;
-		margin-left: 0;
-		padding: .7em;
-	}
-   	#navbar-profile a img{
-		height: 2em;
-   	} */
-   	/*END Navbar*/
-
-   	/* Hamburger Menu */
-   	
-	.hamburger-menu {
-	    display: flex;
-	    flex-direction: column;
-	    gap: 0.4rem;
-	    width: max-content;
-	    z-index: 2;
-		position: absolute;
-		top: 1.5rem;
-		left: 1rem;
-		cursor: pointer;
+		.link {
+			font-size: smaller;
+			margin-left: 0;
+			padding: .7em;
+		}
 	}
 
-	.hamburger-menu::before,
-	.hamburger-menu::after,
-	.hamburger-menu input{
-	    content: "";
-	    width: 3rem;
-	    height: 0.5rem;
-	    background-color: white;
-	    border-radius: 10000rem;
-	    transition-duration: 0.4s;
-		cursor: pointer;
-	}
+	/* End Navbar */
 
-	.hamburger-menu input {
-	    appearance: none;
-		-webkit-appearance: none;
-	    padding: 0;
-	    margin: 0;
-	    pointer-events: none;
-	}
-	.sidebar{
-		
-		appearance: none;
-		position: absolute;
-		top: -30rem;
-		left: 0rem;
-	}
-	.hamburger-menu input:checked {
-	    opacity: 0;
-	    width: 0;
-	}
-	.hamburger-menu input:checked + .sidebar{
-		position: absolute;
-		top: 0rem;
-		left: 0rem;
-	}
+    /* Hamburger Menu */
+    
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        width: max-content;
+        z-index: 2;
+        position: absolute;
+        top: 1.5rem;
+        left: 1rem;
+        cursor: pointer;
+    }
 
-	.hamburger-menu:has(input:checked)::before {
-		-webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
-		transform: rotate(-45deg) translate(-1rem, 0.25rem);
-	    width: 4rem;
-	    transition-duration: 0.4s;
-	}
-	
+    .hamburger-menu::before,
+    .hamburger-menu::after,
+    .hamburger-menu input{
+        content: "";
+        width: 3rem;
+        height: 0.5rem;
+        background-color: white;
+        border-radius: 10000rem;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .hamburger-menu input {
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+    .sidebar{
+        
+        appearance: none;
+        position: absolute;
+        top: -30rem;
+        left: 0rem;
+    }
+    .hamburger-menu input:checked {
+        opacity: 0;
+        width: 0;
+    }
+    .hamburger-menu input:checked + .sidebar{
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+        transform: rotate(-45deg) translate(-1rem, 0.25rem);
+        width: 4rem;
+        transition-duration: 0.4s;
+    }
+    
    
-	.hamburger-menu:has(input:checked)::after {
-	    -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
-		transform: rotate(45deg) translate(-1rem, -0.25rem);
-	    width: 4rem;
-	    transition-duration: 0.4s;
-	}
-	.hamburger-menu input:checked + .sidebar {
-		display: block;
-	}
-	
-	.hamburger-menu:has(input:checked) + .sidebar{
-		background-color: #342153;
-		display: block;
-		position: absolute;
-		top: 5rem;
-		left: 0rem;
-		height: max-content;
-		width: max-content;
-		transition-duration: 0.4s;
-	}
+    .hamburger-menu:has(input:checked)::after {
+        -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+        transform: rotate(45deg) translate(-1rem, -0.25rem);
+        width: 4rem;
+        transition-duration: 0.4s;
+    }
+    .hamburger-menu input:checked + .sidebar {
+        display: block;
+    }
+    
+    .hamburger-menu:has(input:checked) + .sidebar{
+        background-color: #342153;
+        display: block;
+        position: absolute;
+        top: 5rem;
+        left: 0rem;
+        height: max-content;
+        width: max-content;
+        transition-duration: 0.4s;
+    }
 
-	
-	.hidden-link a, .hidden-link a:visited{
-		display: flex;
-		flex-direction:column;
-		color: white;
-		text-decoration: none;
-		transition-duration: 0.4s;
-		padding:1rem;
-	}
-	.hidden-link a:hover{
-		color: #D77B26;
-		background: #D77B2633;
-		transition-duration: 0.4s;
-	}
-	
-	
+    
+    .hidden-link a, .hidden-link a:visited{
+        display: flex;
+        flex-direction:column;
+        color: white;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        padding:1rem;
+    }
+    .hidden-link a:hover{
+        color: #D77B26;
+        background: #D77B2633;
+        transition-duration: 0.4s;
+    }
+    
+    
 
    /*END Hamburger Menu*/
 }
@@ -604,17 +605,17 @@ input[type="submit"] {
 this is so hamburger menu does not show for safari*/
 /*when safari browser is small make the buttons small*/ 
 @supports not (backdrop-filter: blur()){
-	.hamburger-menu{
-		display: none;
-	}
-	@media screen and (min-width:300px) and (max-width:880px)  {
-		.navbar-link{
-			display: block;
-			background-color: #D77B2633;
-			padding: 0.5rem;
-			border-radius: 5px;
-			box-shadow: 5px 5px 5px #241930;
-		}
-	}
+    .hamburger-menu{
+        display: none;
+    }
+    @media screen and (min-width:300px) and (max-width:880px)  {
+        .navbar-link{
+            display: block;
+            background-color: #D77B2633;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px #241930;
+        }
+    }
 }
 /*End Safari Filter*/
