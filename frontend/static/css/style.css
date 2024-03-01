@@ -396,9 +396,10 @@ input[type="submit"] {
 	box-shadow: 5px 5px 5px #241930;
 	gap: 1em;
 	flex-wrap:nowrap;
+	justify-content: right;
 }
 
-.navbar-link {
+.link {
 	font-size: 1rem;
 	background-color: #D77B2633;
 	padding: 8px 16px;;
@@ -408,11 +409,11 @@ input[type="submit"] {
 }
 
 
-.navbar-link a, .navbar-link a:visited {
+.link a, .link a:visited {
 	color: white;
 	text-decoration: none;
 }
-.navbar-link a:hover {
+.link a:hover {
 	color: #D77B26;
 	transition-duration: 0.4s;
 }
@@ -492,9 +493,10 @@ input[type="submit"] {
 	#navbar {
 		gap:.7em;
 		.link {
-			font-size: smaller;
+			/* font-size: smaller;
 			margin-left: 0;
-			padding: .7em;
+			padding: .7em; */
+			display: none;
 		}
 	}
 
@@ -509,7 +511,7 @@ input[type="submit"] {
         width: max-content;
         z-index: 2;
         position: absolute;
-        top: 1.5rem;
+        top: 1rem;
         left: 1rem;
         cursor: pointer;
     }
@@ -609,12 +611,13 @@ this is so hamburger menu does not show for safari*/
         display: none;
     }
     @media screen and (min-width:300px) and (max-width:880px)  {
-        .navbar-link{
+        .link{
             display: block;
             background-color: #D77B2633;
             padding: 0.5rem;
             border-radius: 5px;
             box-shadow: 5px 5px 5px #241930;
+			
         }
     }
 }
