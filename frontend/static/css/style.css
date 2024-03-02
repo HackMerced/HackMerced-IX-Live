@@ -176,7 +176,7 @@ input[type="submit"] {
 }
 
 /* Styling for the red "rounded-row" tables. */
-.rounded-table {
+.rounded-table, .schedule-table {
 	width: 100%;
 	color: var(--faded-white-glass);
 	background: var(--blood-glass);
@@ -448,11 +448,68 @@ input[type="submit"] {
 		.link {
 			font-size: smaller;
 			margin-left: 0;
-			padding: .7em;
+			padding: .1em;
 		}
 	}
 
 	/* End Navbar */
+	#punches td{
+		padding: 0.1em;
+	}
+	#punches .title{
+		padding-left: var(--pad-small);
+	}
+	#punches .punch{
+		width: 30px;
+		height: 30px;
+	}
+	/*End punches*/
+
+	.table-content{
+		display: flex;
+		flex-direction: column;
+	}
+	#calendar{
+		display: flex;
+		justify-content: center;
+	}
+	#calendar .day{
+		margin-right: 0px;
+		margin: .5em;
+		width: max-content;
+	}
+	#schedule .description p{
+		margin-bottom: 1em;
+	}
+	#schedule tbody tr{
+		overflow:hidden;
+		border-radius: 20px;
+	}
+	.schedule-table > tbody > tr > td:first-child {
+		border-top-left-radius:unset;
+		border-bottom-left-radius: unset;
+	}
+	.schedule-table > tbody > tr > td:last-child {
+		border-top-right-radius: unset;
+		border-bottom-right-radius: unset;
+	}	
+
+	/*End Schedule*/
+	input{
+		font-size: medium;
+		margin-top: 1em;
+	}
+	.row, .column{
+		display: flex;
+		flex-direction: column;
+	}
+	.column{
+		flex-wrap: wrap;
+	}
+	.column > input[type="submit"]{
+		justify-self: flex-end;
+	}
+
 
 }
 
