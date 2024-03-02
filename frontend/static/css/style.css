@@ -1,46 +1,159 @@
-html, body {
-	height: 100%;
+/* Defining everything with variables lets you change a value once and it'll
+   take effect over the entire sheet. Enjoy! */
+:root {
+	/* Color scheme. */
+	--peach             : #E86662;
+	--dark-peach        : #AB3F58;
+	--maroon            : #550C14;
+	--blood             : #77232A;
+	--purple            : #342153;
+	--blue-purple       : #5A0F66;
+	--blue-purple-alt   : #57124E;
+	--dark-purple       : #3A0617;
+	--white             : #FFFFFF;
+	--blood-glass       : #8D4334AA;
+	--faded-white-glass : #EEDEFDD9;
+	--orange-glass      : #D77B2633;
+	--orange-glass-less : #D77B2699;
+	--yellow-glass      : #EDEFF280;
+	--purple-glass      : #372358BA;
+
+	/* Standard quantities. */
+	--radius          : 20px;
+	--radius-slight   : 12px;
+	--radius-slighter :  5px;
+	--shadow: 0px 4px 4px 0px #00000040;
+
+	/* Standard spacing. */
+	--pad-teeny  :  2px;
+	--pad-weeny  :  4px;
+	--pad-tiny   :  8px;
+	--pad-small  : 16px;
+	--pad-medium : 32px;
+	--pad-big    : 48px;
+
+	/* Standard font sizes and weights. */
+	--font-slight : 18px;
+	--font-medium : 20px;
+	--font-big    : 24px;
+	--font-huge   : 32px;
+	--font-heavy  : 700;
+	--font-heavier: 800;
+
+	/* Standard qualities. */
+	--font-main: "K2D";
+
+	/* Gradient. */
+	--bg-gradient-A: #342153;
+	--bg-gradient-B: #D77B26;
 }
 
 body {
 	margin: 0;
-	font-family: "K2D";
-	color: white;
-	/* Keep this line below as a backup in case background-image fails. */
-	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
-	background-image: url("/static/png/hmix-bg-300.png"), linear-gradient(to bottom, #342153 0%, #D77B26 100%);
-	background-position: right bottom;
-	background-repeat: no-repeat;
+	height: 100%;
+
+	/* Defaults. */
+	font-family: var(--font-main);
+	color: var(--white);
+
+	/* Fallback, gradient only. */
+	background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
+
+	/* Graphic + gradient. */
+	background:
+		url("/static/png/hmix-bg-300.png") fixed right bottom no-repeat,
+		linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
+
+	&.no-graphic {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
+	}
+
+	&.radial {
+		/* @Alisson, this is where you'd put the code for the radial gradient. -Shawn */
+	}
 }
 
-
-
-body.auth {
-	margin: 0;
-	font-family: "K2D";
-	color: white;
-	/* Keep this line below as a backup in case background-image fails. */
-	background: linear-gradient(to bottom, #342153 0%, #D77B26 100%);
-	background-repeat: no-repeat;
+.main {
+	margin: var(--pad-big) auto;
+	width: 75%;
+	.header {
+		margin-bottom: var(--pad-small);
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		& * {
+			padding: var(--pad-small) 0;
+		}
+	}
 }
 
+.main {
+	margin: var(--pad-big) auto;
+	width: 75%;
+	.banner {
+		width: 100%;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		margin-bottom: var(--pad-small);
+		box-shadow: var(--shadow);
+		* {
+			padding: var(--pad-small) 0;
+		}
+	}
+}
 
-input[type="text"] {
-	background-color: #EDEFF280;
-	padding: 8px 1em;
-	font-size: 24px;
+.window {
+	margin-bottom: var(--pad-small);
+	background: var(--orange-glass);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	.titlebar {
+		padding: var(--pad-tiny) 1em;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+	.titlebar.plain {
+		background: #0000;
+		box-shadow: none;
+	}
+	.titlebar * {
+		margin: 0;
+	}
+	.article {
+		padding: var(--pad-tiny) var(--pad-medium);
+	}
+}
+
+input {
+	padding: var(--pad-tiny) 1em;
+	color: var(--white);
+	font-size: var(--font-big);
+	font-weight: var(--font-heavy);
+	background: var(--yellow-glass);
 	border: none;
-	border-radius: 12px;
-	color: white;
+	border-radius: var(--radius-slight);
+	&::placeholder {
+		opacity: 1;
+		color: var(--white);
+	}
 }
 
 input[type="submit"] {
-	background-color: #D77B2691;
-	font-size: 16px;
-	padding: 12px 32px;
+	padding: var(--pad-tiny) 1em;
+	color: var(--faded-white-glass);
+	font-size: var(--font-big);
+	font-weight: var(--font-heavy);
+	background: var(--orange-glass-less);
 	border: none;
-	color: white;
-	border-radius: 10px;
+	border-radius: var(--radius-slight);
+	box-shadow: var(--shadow);
 }
 
 /* Absolutely center something both vertically and horizontally. */
@@ -51,115 +164,213 @@ input[type="submit"] {
 	transform: translateX(-50%) translateY(-50%);
 }
 
-/* Two columns are used a lot, so these classes help with that. */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
+/* For two column setups. */
+.row {
+	display: flex;
 }
 .column {
-	float: left;
-	width: 50%;
+	flex: 50%;
+	&.left {
+		margin-right: var(--pad-small);
+	}
 }
 
-/* Common */
-
-.main-container {
-	margin-top: 48px;
-	width: 75%;
-}
-
-.main-banner {
-	color: #EEDEFDD9;
-	background-color: #342153;
-	height: 80px;
+/* Styling for the red "rounded-row" tables. */
+.rounded-table {
 	width: 100%;
-	border-radius: 20px;
-	margin-bottom: 16px;
+	color: var(--faded-white-glass);
+	background: var(--blood-glass);
+	border-spacing: 0;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	&.no-color {
+		background: #0000;
+		box-shadow: none;
+	}
+	tbody {
+		&:first-child th {
+			padding: var(--pad-weeny);
+			font-size: var(--font-slight);
+			background: var(--maroon);
+		}
+		tr {
+			th:first-child, td:first-child {
+				border-top-left-radius: var(--radius);
+				border-bottom-left-radius: var(--radius);
+			}
+			th:last-child, td:last-child {
+				border-top-right-radius: var(--radius);
+				border-bottom-right-radius: var(--radius);
+			}
+			td {
+				background: var(--blood);
+				font-size: var(--font-medium);
+				text-align: center;
+			}
+		}
+	}
+	.table-spacer {
+		height: var(--pad-teeny);
+	}
 }
-
-.main-banner h1 {
-	padding-top: 16px;
-}
-
-/* End Common */
 
 /* Login and Registration */
 
 #login-form, #registration-form {
-	background-color: #D77B2633;
-	border-radius: 20px;
-	padding: 32px;
-}
-
-#registration-form input[type="text"] {
-	margin: 8px;
+	padding-bottom: var(--pad-small);
+	background: var(--orange-glass);
+	border-radius: var(--radius);
 }
 
 /* End Login and Registration */
 
-/* Home */
+/* Home Page */
 
-#home-countdown, #home-countdown-text {
-	background-color: #D77B2633;
-	padding: 12px;
-	border-radius: 20px;
-	margin-bottom: 16px;
-	margin-right: 8px;
+#countdown {
+	text-align: center;
 }
 
-#home-announcements {
-	background-color: #D77B2633;
-	padding: 12px;
-	border-radius: 20px;
-	margin-left: 8px;
+#announcements, #logs {
+	padding-bottom: var(--pad-tiny);
+	.announcement, .log {
+		margin: var(--pad-tiny);
+		padding: var(--pad-teeny) var(--pad-small);
+		background: var(--purple-glass);
+		border-radius: var(--radius);
+	}
 }
 
-.announcement {
-	background-color: #372358BA;
-	padding: 2px 16px;
-	text-align: left;
-	border-radius: 20px;
+/* End Home Page */
+
+/* Prizes */
+
+#balance {
+	margin-top: var(--pad-medium);
+	text-align: right;
+	color: var(--faded-white-glass);
+	#points {
+		padding: 0 2em;
+	}
 }
 
-/* End Home */
+#prizes td {
+	padding: var(--pad-tiny) 0;
+	.claim {
+		padding: var(--pad-tiny) var(--pad-small);
+		margin: var(--pad-small) 0;
+		color: var(--faded-white-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+		background: var(--blue-purple);
+		border: none;
+		border-radius: var(--radius);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+/* End Prizes */
+
+/* Schedule */
+
+#calendar {
+	margin-bottom: var(--pad-small);
+	.day {
+		width: 128px;
+		margin-right: var(--pad-small);
+		display: inline-block;
+		color: var(--faded-white-glass);
+		background: var(--blue-purple-alt);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		.header {
+			padding: var(--pad-weeny) var(--pad-small) var(--pad-tiny) var(--pad-small);
+			font-size: var(--font-medium);
+			font-weight: var(--font-heavier);
+			background: var(--dark-purple);
+			border-radius: var(--radius);
+		}
+		.number {
+			padding-bottom: var(--pad-small);
+			text-align: center;
+			font-size: var(--font-big);
+			font-weight: var(--font-heavier);
+		}
+		&.today {
+			background: var(--dark-peach);
+			.header {
+				background: var(--peach);
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+#schedule {
+	.map img {
+		padding: var(--pad-small) 0;
+		max-width: 200px;
+	}
+	.info, .description {
+		padding-top: var(--pad-small);
+		vertical-align: top;
+		p {
+			margin-bottom: 0;
+			margin-top: 0;
+			padding-left: var(--pad-small);
+			text-align: left;
+		}
+		.time {
+			padding: var(--pad-tiny) var(--pad-small);
+			background: var(--maroon);
+			border-radius: var(--radius);
+		}
+	}
+}
+
+/* End Schedule */
 
 /* Punch Card */
 
-#punch-container {
-	background-color: #D77B2633;
-	width: 100%;
-	border-radius: 20px;
-	padding: 48px 0px 32px 0px;
-}
-
 #punches {
-	font-size: 30px;
 	width: 90%;
+	margin: 0 auto;
+	padding-top: var(--pad-medium);
+	font-size: var(--font-huge);
 	border-spacing: 0px 10px;
-}
-
-#punches tr {
-	margin: 16px;
-	background-color: #D77B2691;
-	border-radius: 20px;
-}
-
-#punches td {
-	padding: 16px;
-}
-
-.punch {
-	width: 48px;
-}
-
-.punch img {
-	width: 48px;
-	border-radius: 50%;
-}
-
-.punch-spacer {
-	width: 4px;
+	tr {
+		margin: var(--pad-small);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+	td {
+		padding: var(--pad-small);
+		background: var(--orange-glass-less);
+		&:not(:first-child):not(:last-child) {
+			width: 48px;
+		}
+	}
+	.title {
+		padding-left: var(--pad-big);
+		text-align: left;
+		font-size: var(--font-big);
+		font-weight: var(--font-heavier);
+	}
+	.punch {
+		height: 48px;
+		width: 48px;
+		border-radius: 50%;
+		&.true {
+			background: var(--purple);
+		}
+		&.false {
+			background: var(--faded-white-glass);
+		}
+	}
+	.spacer {
+		width: var(--pad-weeny);
+	}
 }
 
 .punch-rounded-start {
@@ -174,37 +385,85 @@ input[type="submit"] {
 
 /* End Punch Card */
 
+/* Profile */
+
+#profile-points {
+	font-size: var(--font-huge);
+	font-weight: var(--font-heavier);
+}
+
+/* End Profile */
+
 /* Navbar */
 
 #navbar {
 	display: flex;
+	flex-wrap: nowrap;
+	gap: 1em;
 	align-items: center;
-	background-color: #342153;
 	width: 100%;
-	height: 88px;
-}
-
-.navbar-link {
-	font-size: 24px;
-	display: inline-block;
-	background-color: #D77B2633;
-	padding: 8px 16px;
-	margin: 0px 8px;
-	border-radius: 5px;
-}
-
-.navbar-link a, .navbar-link a:visited {
-	color: white;
-	text-decoration: none;
-}
-
-#navbar-profile {
-	margin-left: auto;
-	margin-right: 32px;
-}
-
-#navbar-profile a img {
-	height: 64px;
+	height: 70px;
+	background: var(--purple);
+	box-shadow: var(--shadow);
+	.link {
+		font-size: 1rem;
+		background: var(--orange-glass);
+		padding: var(--pad-tiny) var(--pad-small);
+		border-radius: var(--radius-slighter);
+		box-shadow: var(--shadow);
+		&:first-child {
+			margin-left: var(--pad-medium);
+		}
+		a, a:visited {
+			color: var(--white);
+			text-decoration: none;
+		}
+	}
+	#profile {
+		margin-left: auto;
+		margin-right: var(--pad-medium);
+		img {
+			padding-top: var(--pad-weeny);
+			height: var(--pad-medium);
+		}
+	}
 }
 
 /* End Navbar */
+
+/* Viewports */
+
+@media screen and (min-width: 300px) and (max-width: 880px) {
+
+	body {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
+		overflow-x: hidden;
+	}
+
+	.main {
+		width: 90%;
+	}
+
+	.row {
+		display: block;
+		.left {
+			margin-right: 0;
+		}
+	}
+
+	/* Navbar */
+
+	#navbar {
+		gap:.7em;
+		.link {
+			font-size: smaller;
+			margin-left: 0;
+			padding: .7em;
+		}
+	}
+
+	/* End Navbar */
+
+}
+
+/* End Viewports */

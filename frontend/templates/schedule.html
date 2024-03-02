@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Schedule" %}{% include "includes/header.html" %}
+
+<body class="no-graphic radial">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Schedule</h1>
+		</div>
+
+		<div class="article">
+
+			<div id="calendar">
+				<div class="day today">
+					<div class="header">Today</div>
+					<div class="number">9th</div>
+				</div>
+				<div class="day">
+					<div class="header">Saturday</div>
+					<div class="number">10th</div>
+				</div>
+				<div class="day">
+					<div class="header">Sunday</div>
+					<div class="number">11th</div>
+				</div>
+			</div>
+
+			<table id="schedule" class="rounded-table">
+				<tbody>
+					<tr>
+						<th colspan=3>Event Showings</th>
+					</tr>
+					<tr class="table-spacer"></tr>
+					<tr>
+						<td class="map">
+							<img src="/static/png/map-default.png" /></td>
+						<td class="info">
+							<p>Event Name</p>
+							<p>Event Room</p>
+						</td>
+						<td class="description">
+							<p>Lorem ipsum dolor sit amet.</p>
+							<br>
+							<p><span class="time">9 pm</span></p>
+						</td>
+					</tr>
+					<tr class="table-spacer"></tr>
+					<tr>
+						<td class="map">
+							<img src="/static/png/map-default.png" /></td>
+						<td class="info">
+							<p>Event Name</p>
+							<p>Event Room</p>
+						</td>
+						<td class="description">
+							<p>Lorem ipsum dolor sit amet.</p>
+							<br>
+							<p><span class="time">9 pm</span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
