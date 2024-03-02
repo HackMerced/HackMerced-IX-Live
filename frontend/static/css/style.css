@@ -373,16 +373,6 @@ input[type="submit"] {
 	}
 }
 
-.punch-rounded-start {
-	border-top-left-radius: 10px; /* Set your desired border radius for the top-left corner */
-	border-bottom-left-radius: 10px; /* Set your desired border radius for the bottom-left corner */
-  }
-
-  .punch-rounded-end {
-	border-top-right-radius: 10px; /* Set your desired border radius for the top-right corner */
-	border-bottom-right-radius: 10px; /* Set your desired border radius for the bottom-right corner */
-  }
-
 /* End Punch Card */
 
 /* Profile */
