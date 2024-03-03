@@ -77,8 +77,8 @@ body {
 .shooting-star{
 	position: absolute;
 	opacity: 50%;
-	top: 3rem;
-	left: -3rem;
+	top: 0rem;
+	left: -1rem;
 }
 .shooting-star div{
 	font-size: 1.8em;
@@ -126,7 +126,7 @@ body {
 @keyframes star-animation1 {
   0% {
     opacity: 50%;
-    top: 7rem;
+    top: 3rem;
 	left: -1rem;
   } 
   100% {
@@ -151,7 +151,7 @@ body {
   @keyframes star-animation3 {
 	0% {
 	  opacity: 50%;
-	  top: 5rem;
+	  top: -5rem;
 	  left: -1.5rem;
 	}
   
