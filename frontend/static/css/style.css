@@ -381,7 +381,23 @@ input[type="submit"] {
 	font-size: var(--font-huge);
 	font-weight: var(--font-heavier);
 }
-
+.flexbox-container{
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: stretch;
+	padding: 1em;
+	height: 25vh;
+	column-gap: 5%;
+	width: 100%;
+	overflow-x: hidden;
+}
+.flexbox-container>*{
+	display: flex;
+	flex-basis: 0px;
+	width: 40%;
+	margin: 2px;
+}
 /* End Profile */
 
 /* Navbar */
@@ -453,6 +469,7 @@ input[type="submit"] {
 	}
 
 	/* End Navbar */
+	/*Punches*/
 	#punches td{
 		padding: 0.1em;
 	}
@@ -464,7 +481,7 @@ input[type="submit"] {
 		height: 30px;
 	}
 	/*End punches*/
-
+	/*Schedule*/
 	.table-content{
 		display: flex;
 		flex-direction: column;
@@ -495,20 +512,33 @@ input[type="submit"] {
 	}	
 
 	/*End Schedule*/
-	input{
-		font-size: medium;
-		margin-top: 1em;
-	}
-	.row, .column{
+	/*Profile*/
+	.flexbox-container{
 		display: flex;
 		flex-direction: column;
-	}
-	.column{
+		height: unset;
+		width: unset;
 		flex-wrap: wrap;
+		justify-content: space-evenly;
 	}
-	.column > input[type="submit"]{
-		justify-self: flex-end;
+	.flexbox-container > *{
+		max-width: unset;
+		width: auto;
 	}
+	.flexbox-item{
+		
+		margin-top: 1em;
+		font-size: medium;
+		flex-grow: 1;
+	}
+	.flexbox-container :nth-child(10){
+		order: 7;
+		
+	}
+	.flexbox-item input , .flexbox-button{
+		font-size: medium;
+	}
+	/*End Profile*/
 
 
 }
