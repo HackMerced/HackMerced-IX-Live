@@ -502,6 +502,17 @@ input[type="submit"] {
 #profile-points {
 	font-size: var(--font-huge);
 	font-weight: var(--font-heavier);
+	color: var(--peach);
+	animation: colorspin 3s linear infinite;
+}
+
+@keyframes colorspin {
+	0%{
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	100%{
+		filter: hue-rotate(360deg) saturate(200%);
+	}
 }
 
 /* End Profile */
