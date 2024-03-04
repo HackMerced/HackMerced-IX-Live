@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  {% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
+
+  <body>
+    {% include "includes/navbar.html" %}
+
+    <div class="main">
+      <div class="banner">
+        <h1>Live Streams</h1>
+      </div>
+
+      <!-- Slideshow container -->
+      <div class="slideshow-container fade">
+        <!-- stream 1 (hackmerced_streamacc) -->
+        <div class="Containers">
+          <div class="stream-and-chat-container">
+            <iframe
+              class="stream"
+              src="https://player.twitch.tv/?channel=hackmerced_stream&parent=127.0.0.1"
+              frameborder="0"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+
+            <iframe
+              class="chat"
+              src="https://www.twitch.tv/embed/hackmerced_stream/chat?parent=127.0.0.1"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- stream 2 (hackmerced_streamacc2) -->
+        <div class="Containers">
+          <div class="stream-and-chat-container">
+            <iframe
+              class="stream"
+              src="https://player.twitch.tv/?channel=hackmerced_stream2&parent=127.0.0.1"
+              frameborder="0"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+
+            <iframe
+              class="chat"
+              src="https://www.twitch.tv/embed/hackmerced_stream2/chat?parent=127.0.0.1"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- stream 3 (hackmerced_streamacc3) -->
+        <div class="Containers">
+          <div class="stream-and-chat-container">
+            <iframe
+              class="stream"
+              src="https://player.twitch.tv/?channel=hackmerced_stream3&parent=127.0.0.1"
+              frameborder="0"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+
+            <iframe
+              class="chat"
+              src="https://www.twitch.tv/embed/hackmerced_stream3/chat?parent=127.0.0.1"
+              allowfullscreen="true"
+              scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- Prev and Next buttons -->
+        <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <!-- The dots -->
+      <div style="text-align: center">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+      </div>
+      <script>
+        var slidePosition = 1;
+        SlideShow(slidePosition);
+
+        // forward/Back controls
+        function plusSlides(n) {
+          SlideShow((slidePosition += n));
+        }
+
+        //  images controls
+        function currentSlide(n) {
+          SlideShow((slidePosition = n));
+        }
+
+        function SlideShow(n) {
+          var i;
+          var slides = document.getElementsByClassName("Containers");
+          var circles = document.getElementsByClassName("dots");
+          if (n > slides.length) {
+            slidePosition = 1;
+          }
+          if (n < 1) {
+            slidePosition = slides.length;
+          }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < circles.length; i++) {
+            circles[i].className = circles[i].className.replace(" enable", "");
+          }
+          slides[slidePosition - 1].style.display = "block";
+          circles[slidePosition - 1].className += " enable";
+        }
+      </script>
+    </div>
+  </body>
+</html>
