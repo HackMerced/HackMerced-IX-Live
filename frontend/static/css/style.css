@@ -82,9 +82,9 @@ body {
       fixed no-repeat;
   }
 
-  &.radial {
-    /* @Alisson, this is where you'd put the code for the radial gradient. -Shawn */
-  }
+  /* &.radial {
+    @Alisson, this is where you'd put the code for the radial gradient. -Shawn
+  } */
 }
 
 .main {
@@ -492,8 +492,8 @@ input[type="submit"] {
   flex-direction: row;
   align-items: stretch;
   border: 1px solid black;
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: 70vh;
 }
 
 .stream {
@@ -504,113 +504,6 @@ input[type="submit"] {
 .chat {
   width: 25%;
   height: 100%;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-}
-
-/* Make the images invisible by default */
-.Containers {
-  display: none;
-  position: relative;
-  width: auto;
-  height: 80vh;
-}
-
-/* forward & Back buttons */
-.Back,
-.forward {
-  cursor: pointer;
-  position: absolute;
-  top: 48%;
-  width: auto;
-  margin-top: -23px;
-  padding: 17px;
-  color: grey;
-  font-weight: bold;
-  font-size: 19px;
-  transition: 0.4s ease;
-  border-radius: 0 5px 5px 0;
-  user-select: none;
-}
-
-/* Place the "forward button" to the right */
-.forward {
-  right: 0;
-  border-radius: 4px 0 0 4px;
-}
-
-/*when the user hovers,add a black background with some little opacity */
-.Back:hover,
-.forward:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption Info */
-.info {
-  color: #e3e3e3;
-  font-size: 16px;
-  padding: 10px 14px;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Content */
-.info {
-  color: #f2f2f3;
-  font-size: 14px;
-  padding: 10px 14px;
-  position: absolute;
-  top: 0;
-}
-
-/* The circles or bullets indicators */
-.dots {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  margin: 0 3px;
-  background: linear-gradient(92.18deg, #e94949 -25.78%, #92db43 123.02%);
-  opacity: 0.3;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.5s ease;
-}
-
-.enable,
-.dots:hover {
-  background: linear-gradient(92.18deg, #e9a949 -25.78%, #43db64 123.02%);
-  opacity: 1;
-}
-
-/* Faint animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.4s;
-  animation-name: fade;
-  animation-duration: 1.4s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 2;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 2;
-  }
 }
 
 /* End Viewports */
