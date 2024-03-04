@@ -20,11 +20,6 @@ def login2():
 
 	return render_template("password.html")
 
-@app.route("/live", methods=["GET"])
-def live():
-
-	return render_template("live.html")
-
 @app.route("/app", methods=["GET"])
 #@login_required
 def application():
