@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Manage Events" %}{% include "includes/header.html" %}
+
+<body>
+
+	<a class="nodecor" href="/admin">&#8592; Return to management panel</a>
+	<h1>Manage Events</h1>
+
+	<p><a href="/admin/events/create">Create a New Event</a></p>
+	<p><a href="/admin/events/attendances">View Attendances</a></p>
+	<h3>All Events</h3>
+	<table id="event-table" style="width: 100%"></table>
+
+	<script src="/static/js/jquery-3.6.0.min.js"></script>
+	<script src="/static/js/common.js"></script>
+	<script src="/static/js/events/common.js"></script>
+	<script src="/static/js/events/manage.js"></script>
+
+	<script>
+		load_events(true);
+	</script>
+
+</body>
+
+</html>

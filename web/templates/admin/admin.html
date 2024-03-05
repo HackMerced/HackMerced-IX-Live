@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Management Panel" %}{% include "includes/header.html" %}
+
+<body>
+
+	<a class="nodecor" href="/logout">&#8592; Logout</a>
+
+	<div>
+		<h1>Management Panel</h1>
+		<ul>
+			<li><a href="/admin/password/change">Change Password</a></li>
+			<li><a href="/admin/announcements/manage">Manage Announcements</a></li>
+			<li><a href="/admin/events/manage">Manage Events</a></li>
+			<li><a href="/admin/codes/manage">Manage Codes</a></li>
+			<li><a href="/admin/rewards/manage">Manage Rewards</a></li>
+			<li><a href="/admin/stamps/manage">Manage Stamps</a></li>
+			<li><a href="/admin/badgers/manage">Manage Badgers</a></li>
+			<li><a href="/admin/users/manage">Manage Users</a></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>

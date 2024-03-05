@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = title %}{% include "includes/header.html" %}
+
+<body>
+
+	<a class="nodecor" href="{{ backlink }}">&#8592; Return to previous page</a>
+
+	<div id="event-page">
+		<br>
+		<h1>{{ title }}</h1>
+		<h3>by {{ author }}</h3>
+		<h1>|</h1>
+		<h3>{{ location }} @ <span id="event-start"></span></h3>
+		<br>
+		<p><b>Duration: {{ duration }} - Reward: {{ points }} points</b></p>
+		{% if weblink != "" %}
+			<a href="{{ weblink }}" target="_blank">External URL</a>
+		{% endif %}
+		<p id="description">{{ description | safe }}</p>
+	</div>
+
+	<script src="/static/js/jquery-3.6.0.min.js"></script>
+	<script src="/static/js/common.js"></script>
+	<script>
+		let t = new Date({{ start }}*1000);
+		$("#event-start").text(to_stamp(t));
+	</script>
+
+</body>
+
+</html>

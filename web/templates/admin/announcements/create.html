@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Create Announcement" %}{% include "includes/header.html" %}
+
+<body>
+
+	<a class="nodecor" href="/admin/announcements/manage">&#8592; Return to announcement management panel</a>
+	<h1>Create Announcement</h1>
+
+	<form id="create-form">
+		<label for="create-content">Content:</label><br>
+		<textarea id="create-content" name="create-content" rows=4 style="width:100%"></textarea>
+		<input type="submit" value="Submit">
+	</form>
+
+	<div>
+		<p>Preview:</p>
+		<span id="preview-content">
+		</span>
+	</div>
+
+	<script src="/static/js/jquery-3.6.0.min.js"></script>
+	<script src="/static/js/announcements/create.js"></script>
+
+</body>
+
+</html>
