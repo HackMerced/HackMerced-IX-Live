@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Profile" %}{% include "includes/header.html" %}
+
+<body class="no-graphic">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Profile</h1>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Points</h1>
+			</div>
+			<div class="article">
+				<center>
+					<p><span id="profile-points">100</span></p>
+				</center>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>User Information</h1>
+			</div>
+				<form action="#" method="POST">
+					<br>
+					<div class="flexbox-container">
+						
+						<input class="flexbox-item" type="text" id="fname"  name="fname"  placeholder="First Name" /><br><br>
+						<input class="flexbox-item" type="text" id="lname"  name="lname"  placeholder="Last Name" /><br><br>
+						<input class="flexbox-item" type="text" id="school" name="school" placeholder="School" /><br><br>
+						<input class="flexbox-button" type="submit" value="Update Profile" />
+						<input class="flexbox-item" type="email" id="email" name="email" placeholder="Email Address" /><br><br>
+						<input class="flexbox-item" type="text"  id="phone" name="phone" placeholder="Phone Number" /><br><br>
+						<input class="flexbox-item" type="text"  id="major" name="major" placeholder="Major" /><br><br>
+	
+					</div>
+					<br>
+				</form>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Change Password</h1>
+			</div>
+			<div class="article">
+				<form action="#" method="POST">
+					<br>
+					<div class="row">
+						<div class="column left">
+							<input type="password" id="oldPass" name="oldPass" placeholder="Old Password" /><br><br>
+							<input type="submit" value="Update Password" />
+						</div>
+						<div class="column">
+							<input type="password" id="password" name="password" placeholder="New Password" /><br><br>
+							<input type="password" id="confirm"  name="confirm"  placeholder="Confirm Password" /><br><br>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Voucher Codes</h1>
+			</div>
+			<div class="article">
+				<form action="#" method="POST">
+					<br>
+					<div class="row">
+						<div class="column left">
+							<input type="txt" id="code" name="code" placeholder="Code" /><br><br>
+						</div>
+						<div class="column">
+							<input type="submit" value="Submit" />
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>User Activity Logs</h1>
+			</div>
+			<div class="article">
+				<div id="logs">
+					<div class="log">
+						<p>You went to event A and earned 100 points.</p>
+						<p><i>13 minutes ago.</i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<!--
+		<div class="main-container">
+			<div class="main-banner">
+					<h1>HackerPass Profile</h1>
+			</div>
+			<div class="profile-window">
+				<h2>HackerPass Points</h2>
+				<p><span id="points">100</span></p>
+			</div>
+			<div class="profile-window">
+				<h2>User Information</h2>
+				<form action="#" method="POST" id="update-profile">
+					<input type="text" id="fname"    name="fname"    placeholder="First Name" />
+					<input type="text" id="lname"    name="lname"    placeholder="Last Name" />
+					<input type="text" id="email"    name="email"    placeholder="Email Address" />
+					<input type="text" id="phone"    name="phone"    placeholder="Phone Number" />
+					<input type="text" id="school"   name="school"   placeholder="School" />
+					<input type="text" id="major"    name="major"    placeholder="Major" />
+					<input type="text" id="password" name="password" placeholder="Password" />
+					<input type="text" id="confirm"  name="confirm"  placeholder="Confirm Password" />
+					<br><br>
+					<input type="submit" value="Update Profile" />
+					<br><br>
+				</form>
+			</div>
+			<div class="profile-window">
+				<h2>Change Password</h2>
+				<form action="#" method="POST" id="update-password">
+					<input type="text" id="newPassword" name="newPassword" placeholder="New Password" />
+					<input type="text" id="confirmPass" name="confirmPass" placeholder="Confirm Password" />
+					<br><br>
+					<input type="submit" value="Update Password" />
+					<br><br>
+				</form>
+			</div>
+			<div class="profile-window">
+				<h2>Enter Voucher Code</h2>
+				<form action="#" method="POST" id="submit-voucher">
+					<input type="text" id="voucher" name="voucher" placeholder="Voucher Code" />
+					<br>
+					<br>
+					<input type="submit" value="Submit" />
+					<br><br>
+				</form>
+			</div>
+			<div class="profile-window">
+				<h2>User Activity Logs</h2>
+				<div id="profile-logs">
+					<p>Lorem ipsum dolor dit amet.</p>
+				</div>
+			</div>
+		</div>
+-->
+
+</body>
+
+</html>

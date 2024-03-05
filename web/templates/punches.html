@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Punch Card" %}{% include "includes/header.html" %}
+
+<body class="no-graphic">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Punch Card</h1>
+		</div>
+
+		<div class="article">
+			<div class="window">
+				<table id="punches" class="rounded-table no-color">
+					<tr>
+						<td class="title">Breakfast</td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
+						<td><div class="punch false"></td>
+						<td class="spacer"></td>
+					</tr>
+					<tr>
+						<td class="title">Lunch</td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
+						<td class="spacer"></td>
+					</tr>
+					<tr>
+						<td class="title">Dinner</td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch true"></div></td>
+						<td><div class="punch false"></td>
+						<td class="spacer"></td>
+					</tr>
+				</table>
+				<center>
+					<p>Your card is automatically punched when you scan at a punch station.</p>
+				</center>
+				<br>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
