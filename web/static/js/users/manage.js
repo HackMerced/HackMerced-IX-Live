@@ -36,7 +36,7 @@ function update()
 						"<td>"+data.Users[i].school+"</td>"+
 						"<td>"+data.Users[i].major+"</td>"+
 						"<td>"+data.Users[i].points+"</td>"+
-						"<td><center><span class='delete'></span></center></td>"+
+						"<td><center><span class='edit-icon'></span><span class='delete'></span></center></td>"+
 					"</tr>"
 				);
 			}
@@ -83,5 +83,21 @@ $(document).on("click", ".delete", function()
 	{
 		type: "POST",
 		url: "/api/user/delete/"+id,
+	});
+});
+
+/* Confirmation dialogue for resetting a user's password. */
+$(document).on("click", ".edit-icon", function()
+{
+	let tr = $(this).parent().parent().parent();
+	let id = tr[0].id;
+	let text = tr.find(".user-contents").text();
+
+	if (!confirm("Are you sure you want to reset "+text+"'s password?"))  return;
+
+	$.ajax(
+	{
+		type: "POST",
+		url: "/api/user/reset/"+id,
 	});
 });
