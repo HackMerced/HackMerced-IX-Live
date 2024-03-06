@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Schedule" %}{% include "includes/header.html" %}
+
+<body class="no-graphic radial">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Schedule</h1>
+		</div>
+
+		<div class="article">
+
+			<div id="calendar">
+				<div class="day" id="day-friday">
+					<div class="header">Today</div>
+					<div class="number">9th</div>
+				</div>
+				<div class="day" id="day-saturday">
+					<div class="header">Saturday</div>
+					<div class="number">10th</div>
+				</div>
+				<div class="day" id="day-sunday">
+					<div class="header">Sunday</div>
+					<div class="number">11th</div>
+				</div>
+			</div>
+
+			<table id="schedule" class="schedule-table">
+				<tbody id="event-table"></tbody>
+			</table>
+
+		</div>
+
+	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/events/common.js"></script>
+	<script>
+		function refresh()
+		{
+			load_events();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Punch Card" %}{% include "includes/header.html" %}
+
+<body class="no-graphic">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Punch Card</h1>
+		</div>
+
+		<div class="article">
+			<div class="window">
+				<table id="punches" class="rounded-table no-color"></table>
+				<center>
+					<p>Your card is automatically punched when you scan at a punch station.</p>
+				</center>
+				<br>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/app/events.js"></script>
+	<script src="/static/js-user/app/refresh.js"></script>
+	<script>
+		function refresh()
+		{
+			update_user_info();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
+</body>
+
+</html>

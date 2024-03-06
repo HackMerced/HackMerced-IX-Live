@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
+
+<body class="no-graphic">
+
+	<div id="login-form" class="window absolute-center">
+		<div class="article">
+			<center>
+				<img src="{{ url_for('static', filename='png/hmix-bg-300.png') }}" alt="HackMerced IX" style="width: 70%;">
+				<h1>User Login</h1>
+				<form action="/login" method="POST">
+					<input type="text" id="uid" name="uid" placeholder="Badge Code" />
+					<br><br>
+					<input type="submit" value="Log In" />
+				</form>
+
+				{% if failed %}
+					<p style="color: pink">Something went wrong. Try again.</p>
+				{% endif %}
+
+				{% if passwordFailed %}
+					<p style="color: pink">Password failure. Try again.</p>
+				{% endif %}
+
+				{% if success%}
+					<p style="color: green">Success. Try logging in now.</p>
+				{% endif %}
+
+			</center>
+		</div>
+	</div>
+
+</body>
+
+</html>

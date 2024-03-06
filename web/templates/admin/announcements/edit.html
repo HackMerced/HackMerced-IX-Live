@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Edit Announcement" %}{% include "includes/header-admin.html" %}
+
+<body>
+
+	<a class="nodecor" href="/admin/announcements/manage">&#8592; Return to announcement management panel</a>
+	<h1>Edit Announcement</h1>
+
+	<div>
+		<form id="edit-form">
+			<label for="edit-content">Content:</label><br>
+			<textarea id="edit-content" name="edit-content" rows=4 style="width:100%">{{ contents }}</textarea>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div>
+		<p>Preview:</p>
+		<span id="preview-content">
+		</span>
+	</div>
+
+	<script>let e = {{ timestamp }}; let id = {{ id }};</script>
+	<script src="/static/js/jquery-3.6.0.min.js"></script>
+	<script src="/static/js/common.js"></script>
+	<script src="/static/js/announcements/edit.js"></script>
+
+</body>
+
+</html>

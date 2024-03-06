@@ -1,0 +1,139 @@
+:root {
+	--main-color:       #B29F7E;
+	--accent-color:     #F4A460;
+	--background-color: #F5F5DC;
+	--text-color:       #696969;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url("/static/ttf/Roboto-Regular.ttf");
+}
+
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	font-family: Roboto;
+	margin: 5% 15% 10% 15%;
+}
+
+h1, h2, h3 {
+	color: var(--main-color)
+}
+
+a {
+	color: var(--accent-color);
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.delete {
+	width: 1em;
+	color: red;
+	text-align: center;
+}
+.delete::after {
+	content: "✗";
+}
+.delete:hover {
+	cursor: pointer;
+}
+
+.confirm {
+	width: 1em;
+	color: green;
+	text-align: center;
+}
+.confirm::after {
+	content: "✔";
+}
+.confirm:hover {
+	cursor: pointer;
+}
+
+.invis-table, .invis-table tr th, .invis-table tr td {
+	border: 0px solid black;
+	border-collapse: collapse;
+}
+
+.table-header {
+	background-color: var(--accent-color);
+}
+
+.edit-icon {
+	content: url("/static/svg/edit.svg");
+	height: 1em;
+}
+.edit-icon:hover {
+	cursor: pointer;
+}
+
+.nobutton {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+.nodecor {
+	text-decoration: none;
+}
+
+.hovercursor:hover {
+	cursor: pointer;
+}
+
+.event-completed {
+	background-color: #CCC;
+}
+
+.event-completed a {
+	color: #666;
+}
+
+.event-happening {
+	background-color: #98BF64;
+}
+
+.event-happening a {
+	color: #99EDC3;
+}
+
+.mono {
+	font-family: monospace;
+}
+
+.located {
+	background-color: #98BF64;
+}
+
+#info-points {
+	font-size: 1.5em;
+}
+
+#announcements-expand-toggle:hover {
+	cursor: pointer;
+}
+
+#events-expand-toggle:hover {
+	cursor: pointer;
+}
+
+#event-page h1, #event-page h2, #event-page h3 {
+	display: inline;
+	padding-right: 0.5em;
+}
+
+#badge-expand-toggle:hover {
+	cursor: pointer;
+}

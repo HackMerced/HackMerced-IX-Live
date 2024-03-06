@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
+
+<body>
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+		
+		<div class="shooting-star" id="sht-str">
+			<div>★</div>
+			<div>✦</div>
+			<div>✶</div>
+			<div>✷</div>
+			<div>✴︎</div>
+			<div>✸</div>
+		</div>
+
+		<div class="banner">
+				<h1>HackMerced IX</h1>
+		</div>
+
+		<div class="row">
+
+			<div class="column left">
+
+				<div class="window">
+					<div class="titlebar plain">
+						<h2>Live Countdown</h2>
+					</div>
+					<div class="article">
+						<h1 id="countdown">00:00:00</h1>
+					</div>
+				</div>
+
+				<div class="window">
+					<div class="titlebar plain">
+						<h2>Countdown Until Hacking Ends!</h2>
+					</div>
+					<div class="article">
+						<p>HackMerced IX takes place for 36-hours at the (CLASSROOM NAME) located at the UC Merced campus from March 8-10, 2024. Our main tracks are (Track1, Track2, and Track3).</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="column">
+
+				<div class="window">
+					<div class="titlebar plain">
+						<h2>Event Announcements</h2>
+					</div>
+					<div id="announcements"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/announcements/common.js"></script>
+	<script>
+		function refresh()
+		{
+			load_announcementsl();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
+</body>
+
+</html>

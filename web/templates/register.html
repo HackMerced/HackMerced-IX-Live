@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
+
+<body>
+
+	<div id="registration-form" class="window absolute-center">
+
+		<div class="titlebar">
+			<h1>User Registration</h1>
+		</div>
+
+		<div class="article">
+			<form action="/register" method="POST">
+				<input type="text" id="uid" name="uid" value={{ uid }} hidden />
+				<br>
+				<input type="text"     id="name"     name="name"     placeholder="First Name" /><br><br>
+				<input type="text"     id="surname"  name="surname"  placeholder="Last Name" /><br><br>
+				<input type="email"    id="email"    name="email"    placeholder="Email Address" /><br><br>
+				<input type="text"     id="phone"    name="phone"    placeholder="Phone Number" /><br><br>
+				<input type="text"     id="school"   name="school"   placeholder="School" /><br><br>
+				<input type="text"     id="major"    name="major"    placeholder="Major" /><br><br>
+				<input type="password" id="password" name="password" placeholder="Password" /><br><br>
+				<input type="password" id="confirm"  name="confirm"  placeholder="Confirm Password" /><br><br>
+				<input type="submit" value="Register Account" />
+			</form>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
+

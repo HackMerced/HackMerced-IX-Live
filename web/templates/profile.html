@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Profile" %}{% include "includes/header.html" %}
+
+<body class="no-graphic">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Profile</h1>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Points</h1>
+			</div>
+			<div class="article">
+				<center>
+					<p><span id="profile-points"></span></p>
+				</center>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>User Information</h1>
+			</div>
+				<form id="profile-edit-form">
+					<br>
+					<div class="flexbox-container">
+						
+						<input class="flexbox-item" type="text" id="fname"  name="fname"  placeholder="First Name" value="{{ name }}" /><br><br>
+						<input class="flexbox-item" type="text" id="lname"  name="lname"  placeholder="Last Name" value="{{ surname }}" /><br><br>
+						<input class="flexbox-item" type="text" id="school" name="school" placeholder="School" value="{{ school }}" /><br><br>
+						<input class="flexbox-button" type="submit" id="profile-edit-submit" value="Update Profile" />
+						<input class="flexbox-item" type="email" id="email" name="email" placeholder="Email Address" value="{{ email }}" /><br><br>
+						<input class="flexbox-item" type="text"  id="phone" name="phone" placeholder="Phone Number" value="{{ phone }}" /><br><br>
+						<input class="flexbox-item" type="text"  id="major" name="major" placeholder="Major" value="{{ major }}"/><br><br>
+	
+					</div>
+					<br>
+				</form>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Change Password</h1>
+			</div>
+			<div class="article">
+				<form id="profile-password-form">
+					<br>
+					<div class="row">
+						<div class="column left">
+							<input type="password" id="oldPass" name="oldPass" placeholder="Old Password" /><br><br>
+							<input type="submit" id="profile-password-submit" value="Update Password" />
+						</div>
+						<div class="column">
+							<input type="password" id="password" name="password" placeholder="New Password" /><br><br>
+							<input type="password" id="confirm"  name="confirm"  placeholder="Confirm Password" /><br><br>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>Voucher Codes</h1>
+			</div>
+			<div class="article">
+				<form id="profile-code-form">
+					<br>
+					<div class="row">
+						<div class="column left">
+							<input type="text" id="code" name="code" placeholder="Code" /><br><br>
+						</div>
+						<div class="column">
+							<input type="submit" id="profile-code-submit" value="Submit" />
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<div class="window">
+			<div class="titlebar">
+				<h1>User Activity Logs</h1>
+			</div>
+			<div class="article">
+				<div id="logs"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/app/events.js"></script>
+	<script src="/static/js-user/app/refresh.js"></script>
+	<script>
+		function refresh()
+		{
+			update_user_info();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
+</body>
+
+</html>

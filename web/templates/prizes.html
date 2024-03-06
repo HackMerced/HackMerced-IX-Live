@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+{% set pageTitle = "Prizes" %}{% include "includes/header.html" %}
+
+<body class="no-graphic radial">
+
+	{% include "includes/navbar.html" %}
+
+	<div class="main">
+
+		<div class="banner">
+				<h1>Prizes</h1>
+		</div>
+
+		<div class="article">
+			<p id="balance">Your Points: <span id="points">999</span></p>
+			<table id="prizes" class="rounded-table">
+				<tbody id="prizes-content"></tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/app/events.js"></script>
+	<script src="/static/js-user/app/refresh.js"></script>
+	<script>
+		function refresh()
+		{
+			update_user_info();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
+</body>
+
+</html>
