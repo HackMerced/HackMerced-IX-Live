@@ -563,7 +563,7 @@ input[type="submit"] {
 		padding: var(--pad-tiny) var(--pad-small);
 		border-radius: var(--radius-slighter);
 		box-shadow: var(--shadow);
-	
+		
 		&:first-child {
 			margin-left: var(--pad-medium);
 		}
@@ -858,6 +858,269 @@ this is so hamburger menu does not show for safari*/
     .hamburger-menu{
         display: none;
     }
+	/* in body */
+	body.no-graphic {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
+	}
+	/* in main */
+	.banner {
+		width: 100%;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		margin-bottom: var(--pad-small);
+		box-shadow: var(--shadow);
+
+		padding: var(--pad-small) 0;
+
+		animation: roll-out 0.2s linear 1;
+	}
+	/* in main and calender */
+	.header {
+		margin-bottom: var(--pad-small);
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		& * {
+			padding: var(--pad-small) 0;
+		}
+	}
+	/* titlebar in windows */
+	.titlebar {
+		padding: var(--pad-tiny) 1em;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+	.titlebar.plain {
+		background: #0000;
+		box-shadow: none;
+	}
+	.titlebar * {
+		margin: 0;
+	}
+	.article {
+		padding: var(--pad-tiny) var(--pad-medium);
+	}
+	/* in two column setups part*/
+	.column.left {
+		margin-right: var(--pad-small);
+	}
+
+	/* Styling for the red "rounded-row" tables. */
+	.rounded-table, .schedule-table {
+		width: 100%;
+		color: var(--faded-white-glass);
+		background: var(--blood-glass);
+		border-spacing: 0;
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		
+	}
+	.rounded-table, .schedule-table.no-color {
+		background: #0000;
+		box-shadow: none;
+	}
+	.rounded-table, .schedule-table tbody:first-child th {
+		padding: var(--pad-weeny);
+		font-size: var(--font-slight);
+		background: var(--maroon);
+	}
+	.rounded-table, .schedule-table tbody tr th:first-child, td:first-child {
+		border-top-left-radius: var(--radius);
+		border-bottom-left-radius: var(--radius);
+	}
+	.rounded-table, .schedule-table tbody tr th:last-child, td:last-child {
+		border-top-right-radius: var(--radius);
+		border-bottom-right-radius: var(--radius);
+	}
+	.rounded-table, .schedule-table tbody tr td {
+		background: var(--blood);
+		font-size: var(--font-medium);
+		text-align: center;
+	}
+	.rounded-table, .schedule-table.table-spacer {
+		height: var(--pad-teeny);
+	}
+	/* announcements */
+	.announcement, .log {
+		margin: var(--pad-tiny);
+		padding: var(--pad-teeny) var(--pad-small);
+		background: var(--purple-glass);
+		border-radius: var(--radius);
+	}
+	/*#balance under prizes*/
+
+	#points {
+		padding: 0 2em;
+	}
+	/*prizes td under prizes*/
+
+	.claim {
+		padding: var(--pad-tiny) var(--pad-small);
+		margin: var(--pad-small) 0;
+		color: var(--faded-white-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+		background: var(--blue-purple);
+		border: none;
+		border-radius: var(--radius);
+	}
+	.claim:hover {
+		cursor: pointer;
+	}
+	.claim.claimed {
+		background: gray;
+		
+	}
+	.claim.claimed:hover {
+		cursor: default;
+	}
+	.claim.retrieved {
+		background: gray;
+		&:hover {
+			cursor: default;
+		}
+	}
+	.claim.claimed:hover {
+		cursor: default;
+	}
+	/*schedule */
+	#calendar {
+		margin-bottom: var(--pad-small);
+	}
+	.day {
+		width: 128px;
+		margin-right: var(--pad-small);
+		display: inline-block;
+		color: var(--faded-white-glass);
+		background: var(--blue-purple-alt);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		
+	}
+	.header {
+		padding: var(--pad-weeny) var(--pad-small) var(--pad-tiny) var(--pad-small);
+		font-size: var(--font-medium);
+		font-weight: var(--font-heavier);
+		background: var(--dark-purple);
+		border-radius: var(--radius);
+	}
+	.number {
+		padding-bottom: var(--pad-small);
+		text-align: center;
+		font-size: var(--font-big);
+		font-weight: var(--font-heavier);
+	}
+	.day.today {
+		background: var(--dark-peach);
+	}
+	.header {
+		background: var(--peach);
+		box-shadow: none;
+	}
+
+	/* #schedule  */
+	#schedule.map img {
+		padding: var(--pad-small) 0;
+		max-width: 200px;
+	}
+	#schedule.info, .description {
+		padding-top: var(--pad-small);
+		vertical-align: top;
+	}
+	#schedule.info, .description p {
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-left: var(--pad-small);
+		text-align: left;
+	}
+	#schedule.info, .description.time {
+		padding: var(--pad-tiny) var(--pad-small);
+		background: var(--maroon);
+		border-radius: var(--radius);
+	}
+
+	/*punches */
+	#punches {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: var(--pad-medium);
+		font-size: var(--font-huge);
+		border-spacing: 0px 10px;
+		
+	}
+	#punches tr {
+		margin: var(--pad-small);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+	#punches td {
+		padding: var(--pad-small);
+		background: var(--orange-glass-less);
+		&:not(:first-child):not(:last-child) {
+			width: 48px;
+		}
+	}
+	#punches .title {
+		padding-left: var(--pad-big);
+		text-align: left;
+		font-size: var(--font-big);
+		font-weight: var(--font-heavier);
+	}
+	#punches .punch {
+		height: 48px;
+		width: 48px;
+		border-radius: 50%;
+		
+	}
+	#punches .punch.true {
+		background: var(--purple);
+	}
+	#punches .punch.false {
+		background: var(--faded-white-glass);
+	}
+	#punches .spacer {
+		width: var(--pad-weeny);
+	}
+	/*navbar*/
+
+	.link {
+		font-size: 1rem;
+		background: var(--orange-glass);
+		padding: var(--pad-tiny) var(--pad-small);
+		border-radius: var(--radius-slighter);
+		box-shadow: var(--shadow);
+		
+	}
+	.link:first-child {
+		margin-left: var(--pad-medium);
+	}
+	.link a, a:visited {
+		color: var(--white);
+		text-decoration: none;
+		transition-duration: 0.4s;
+	}
+	.link a:hover{
+		color: var(--peach);
+		transition-duration: 0.4s;
+	}
+	
+
+	#profile {
+		margin-left: auto;
+		margin-right: var(--pad-medium);
+		img {
+			padding-top: var(--pad-weeny);
+			height: var(--pad-medium);
+		}
+	}
+
     @media screen and (min-width:300px) and (max-width:880px)  {
         
 		.link{
@@ -867,6 +1130,31 @@ this is so hamburger menu does not show for safari*/
             border-radius: 5px;
             box-shadow: 5px 5px 5px #241930;
         }
+
+		.row {
+			display: block;
+			
+		}
+		.row.left {
+			margin-right: 0;
+		}
+	
+		/* Navbar */
+	
+		#navbar {
+			gap:.7em;
+		}
+		#navbar .link {
+			font-size: smaller;
+			margin-left: 0;
+			padding: 0.5rem;
+			transform: rotate(30deg);
+			transition-duration: 0.4s;
+			box-shadow: 5px -5px 10px var(--peach);
+		}
+		#navbar .link:first-child{
+			margin-left: calc(var(--pad-tiny) + 20px);
+		}
     }
 }
 /*End Safari Filter*/
