@@ -105,7 +105,7 @@ def api_user_info():
 				"points": current_user.points,
 				"stamps": stamps,
 				"rewards": rewards,
-				"breakdown": breakdown,
+				"breakdown": breakdown[::-1],
 			}
 		}, 200
 	except:
