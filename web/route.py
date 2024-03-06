@@ -30,27 +30,31 @@ def application():
 	return render_template("app.html")
 
 @app.route("/prizes", methods=["GET"])
+@login_required
 def prizes():
 
 	return render_template("prizes.html")
 
 @app.route("/schedule", methods=["GET"])
+@login_required
 def schedule():
 
 	return render_template("schedule.html")
 
 @app.route("/punches", methods=["GET"])
+@login_required
 def punches():
 
 	return render_template("punches.html")
 
 @app.route("/profile", methods=["GET"])
+@login_required
 def profile():
 
 	return render_template("profile.html")
 
-@app.route("/asset-pack", methods=["GET"])
-def asset_pack():
-
-	return render_template("asset-pack.html")
-
+#@app.route("/asset-pack", methods=["GET"])
+#def asset_pack():
+#
+#	return render_template("asset-pack.html")
+#
