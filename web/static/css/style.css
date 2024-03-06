@@ -1176,9 +1176,7 @@ this is so hamburger menu does not show for safari*/
 			font-size: smaller;
 			margin-left: 0;
 			padding: 0.5rem;
-			transform: rotate(30deg);
 			transition-duration: 0.4s;
-			box-shadow: 5px -5px 10px var(--peach);
 		}
 		#navbar .link:first-child{
 			margin-left: calc(var(--pad-tiny) + 20px);
