@@ -34,9 +34,6 @@ function load_announcementsl()
 
 			$("#announcements").empty();
 
-//			if (a.length <= 3)  $("#announcements-expand-toggle").attr("hidden", true);
-//			else                $("#announcements-expand-toggle").attr("hidden", false);
-
 			for (let i = 0; i < 3; i++)
 			{
 				if (i == a.length)  break;
@@ -50,14 +47,6 @@ function load_announcementsl()
 					"</div>"
 				);
 			}
-
-//			for (let i = 3; i < a.length; i++)
-//			{
-//				let t = new Date(a[i].timestamp);
-//				let time = to_stamp(t);
-//				if (ahidden)  $("#announcements-list").append("<p class='aextra' hidden><b>"+time+"</b> "+a[i].contents+"</p>");
-//				else          $("#announcements-list").append("<p class='aextra'><b>"+time+"</b> "+a[i].contents+"</p>");
-//			}
 		}
 	});
 }

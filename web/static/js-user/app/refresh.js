@@ -66,14 +66,6 @@ function update_user_info()
 		{
 			lastUpdateInfo = dataStr;
 
-//			if (data.User.name == null) data.User.name = "Not set";
-//			if (data.User.email == null) data.User.email = "Not set";
-//
-//			$("#info-uid").text(data.User.uid);
-//			$("#info-name").text(data.User.name);
-//			$("#info-email").text(data.User.email);
-//			$("#info-points").text(data.User.points);
-
 			$("#points").text(data.User.points);
 			$("#profile-points").text(data.User.points);
 
