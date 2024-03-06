@@ -61,6 +61,22 @@
 
 	</div>
 
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/announcements/common.js"></script>
+	<script>
+		function refresh()
+		{
+			load_announcementsl();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
 </body>
 
 </html>
