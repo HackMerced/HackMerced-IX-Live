@@ -478,6 +478,7 @@ input[type="submit"] {
 #schedule {
 	.map img {
 		padding: var(--pad-small) 0;
+		margin-left: var(--pad-tiny);
 		max-width: 200px;
 	}
 	.info, .description {
@@ -491,8 +492,17 @@ input[type="submit"] {
 		}
 		.time {
 			padding: var(--pad-tiny) var(--pad-small);
+			margin-right: var(--pad-tiny);
 			background: var(--maroon);
 			border-radius: var(--radius);
+		}
+	}
+	.event-current {
+		td {
+			background-color: var(--dark-peach);
+		}
+		.time {
+			background-color: var(--peach);
 		}
 	}
 }
@@ -511,6 +521,12 @@ input[type="submit"] {
 		margin: var(--pad-small);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
+		&>:first-child {
+			border-radius: var(--radius) 0 0 var(--radius);
+		}
+		&>:last-child {
+			border-radius: 0 var(--radius) var(--radius) 0;
+		}
 	}
 	td {
 		padding: var(--pad-small);

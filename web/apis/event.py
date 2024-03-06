@@ -70,13 +70,25 @@ def api_event_list():
 			else:
 				status = 0  # Not happened yet
 
+			dDay = datetime.fromtimestamp(e.start).strftime("%A")[:3]
+			dTime = datetime.fromtimestamp(e.start).strftime("%-I%p").lower()
+			dDuration = f"{e.duration//60}m"
+
 			events.append({
 				"id": e.id,
 				"start": e.start,
+				"duration": e.duration,
 				"length": length,
 				"location": e.room,
 				"title": e.title,
-				"status": status
+				"status": status,
+				"weblink": e.weblink,
+				"description": e.description,
+				"points": e.points,
+				"author": e.author,
+				"dDay": dDay,
+				"dTime": dTime,
+				"dDuration": dDuration,
 			})
 
 		# Guarantee time order so that the earliest event is index 0.
