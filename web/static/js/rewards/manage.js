@@ -14,7 +14,8 @@ function update()
 			$("#rewards-table").empty();
 			$("#rewards-table").append(
 				"<tr class='table-header'>"+
-					"<th>Reward</th>"+
+					"<th style='width: 16em'>Reward</th>"+
+					"<th>Text</th>"+
 					"<th style='width: 3em'>Value</th>"+
 					"<th style='width: 3em'>Stock</th>"+
 					"<th style='width: 3em'>Claims</th>"+
@@ -27,6 +28,7 @@ function update()
 				$("#rewards-table").append(
 					"<tr id='"+data.Rewards[i].id+"'>"+
 						"<td class='reward-contents'>"+data.Rewards[i].reward+"</td>"+
+						"<td>"+data.Rewards[i].text+"</td>"+
 						"<td>"+data.Rewards[i].value+"</td>"+
 						"<td>"+data.Rewards[i].stock+"</td>"+
 						"<td>"+data.Rewards[i].claims+"</td>"+
@@ -48,11 +50,12 @@ $("#create-form").submit(function()
 	$.ajax({
 		type: "POST",
 		url: "/api/reward/create",
-		data: {"reward": $("#reward").val(), "value": $("#value").val(), "stock": $("#stock").val()},
+		data: {"reward": $("#reward").val(), "text": $("#text").val(), "value": $("#value").val(), "stock": $("#stock").val()},
 		success: function()
 		{
 			$("#form-response").html("<span style='color: green;'>Reward "+$("#reward").val()+" created.</span>")
 			$("#reward").val("");
+			$("#text").val("");
 			$("#value").val("");
 			$("#stock").val("");
 		},

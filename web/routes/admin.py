@@ -188,7 +188,7 @@ def admin_rewards_edit(id):
 	r = Reward.query.filter_by(id=int(id)).first()
 
 	return render_template("admin/rewards/edit.html",
-		id=r.id, reward=r.reward, value=r.value, stock=r.stock)
+		id=r.id, reward=r.reward, text=r.text, value=r.value, stock=r.stock)
 
 @app.route("/admin/rewards/station", methods=["GET"])
 @login_required

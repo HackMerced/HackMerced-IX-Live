@@ -11,7 +11,7 @@ def api_reward_create():
 	try:
 		value = int(request.form["value"])
 		stock = int(request.form["stock"])
-		r = Reward(request.form["reward"], value, stock)
+		r = Reward(request.form["reward"], request.form["text"], value, stock)
 		db.session.add(r)
 		db.session.commit()
 		return {"Response": "200 OK"}, 200
@@ -28,7 +28,7 @@ def api_reward_list():
 
 	try:
 		rewards = Reward.query.all()
-		response = [{"id": r.id, "reward": r.reward, "value": r.value,
+		response = [{"id": r.id, "reward": r.reward, "text": r.text, "value": r.value,
 			"stock": r.stock, "claims": r.claimed()} for r in rewards]
 		return {"Response": "200 OK", "Rewards": response}, 200
 	except:
@@ -62,6 +62,7 @@ def api_reward_edit(id):
 		stock = int(request.form["stock"])
 		reward = Reward.query.filter_by(id=int(id)).first()
 		reward.reward = request.form["reward"]
+		reward.text = request.form["text"]
 		reward.value = value
 		reward.stock = stock
 		db.session.commit()

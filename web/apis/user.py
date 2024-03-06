@@ -79,8 +79,8 @@ def api_user_info():
 		current_user.update_points()
 		stamps = [{"name": s.name, "slots": s.slots, "punches": s.punches(current_user.id)}
 			for s in Stamp.query.all()]
-		rewards = [{"id": r.id, "reward": r.reward, "value": r.value, "stock": r.remaining(),
-			"status": r.status(current_user.id)} for r in Reward.query.all()]
+		rewards = [{"id": r.id, "reward": r.reward, "text": r.text, "value": r.value, "stock": r.remaining(),
+			"total": r.stock, "status": r.status(current_user.id)} for r in Reward.query.all()]
 
 		breakdown = []
 

@@ -135,7 +135,7 @@ $("#badge-expand-toggle").click(function()
 /* Reward confirmation. */
 $(document).on("click", ".claim", function()
 {
-	let tr = $(this).parent();
+	let tr = $(this).parent().parent();
 	let id = tr[0].id;
 	let prize = tr.find(".reward-contents").text();
 	let value = tr.find(".reward-value").text();

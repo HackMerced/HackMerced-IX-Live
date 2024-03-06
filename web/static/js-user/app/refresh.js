@@ -2,14 +2,14 @@ let lastUpdateInfo = null;
 
 function update_rewards(rewards)
 {
-	$("#rewards").empty();
-	$("#rewards").append(
-		"<tr class='table-header'>"+
-			"<th>Item</th>"+
-			"<th style='width: 3em'>Points</th>"+
-			"<th style='width: 3em'>Stock</th>"+
-			"<th style='width: 3em'>Status</th>"+
-			"<th style='width: 3em'>Redeem</th>"+
+	$("#prizes-content").empty();
+	$("#prizes-content").append(
+		"<tr>"+
+			"<th>Prize</th>"+
+			"<th>Description</th>"+
+			"<th>Cost</th>"+
+			"<th>Qty</th>"+
+			"<th></th>"+
 		"</tr>"
 	);
 
@@ -17,20 +17,21 @@ function update_rewards(rewards)
 	{
 		let str = "<tr id='"+rewards[i].id+"'>"+
 			"<td class='reward-contents'>"+rewards[i].reward+"</td>"+
+			"<td>"+rewards[i].text+"</td>"+
 			"<td class='reward-value'>"+rewards[i].value+"</td>"+
-			"<td>"+rewards[i].stock+"</td>";
+			"<td>"+rewards[i].stock+"/"+rewards[i].total+"</td>";
 
-		if (rewards[i].status == 2)
-			str += "<td>✔✔</td>";
-		else if (rewards[i].status == 1)
-			str += "<td>✔</td>";
-		else
-			str += "<td></td>";
+//		if (rewards[i].status == 2)
+//			str += "<td>✔✔</td>";
+//		else if (rewards[i].status == 1)
+//			str += "<td>✔</td>";
+//		else
+//			str += "<td></td>";
 
-		str += "<td class='claim hovercursor'><center><h3 style='color: #F4A460'>&gt;&gt;</center></h3></td>";
+		str += "<td><button class='claim'>Claim</button></td>";
 		str += "</tr>";
 
-		$("#rewards").append(str);
+		$("#prizes-content").append(str);
 	}
 }
 

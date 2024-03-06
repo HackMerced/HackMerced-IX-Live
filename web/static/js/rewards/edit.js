@@ -6,7 +6,7 @@ $("#edit-form").submit(function()
 	$.ajax({
 		type: "POST",
 		url: "/api/reward/edit/"+id,
-		data: {"reward": $("#reward").val(), "value": $("#value").val(), "stock": $("#stock").val()},
+		data: {"reward": $("#reward").val(), "text": $("#text").val(), "value": $("#value").val(), "stock": $("#stock").val()},
 		success: function()
 		{
 			location.href="/admin/rewards/manage";

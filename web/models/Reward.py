@@ -9,13 +9,15 @@ class Reward(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 
 	reward = db.Column(db.String(256), unique=False, nullable=False)
+	text   = db.Column(db.Text       , unique=False, nullable=False)
 	value  = db.Column(db.Integer    , unique=False, nullable=False)
 	stock  = db.Column(db.Integer    , unique=False, nullable=False)
 
-	def __init__(self, reward="", value=0, stock=0):
+	def __init__(self, reward="", text="", value=0, stock=0):
 		self.reward = reward
-		self.value = value
-		self.stock = stock
+		self.text   = text
+		self.value  = value
+		self.stock  = stock
 
 	def can_afford(self, user) -> bool:
 		user.update_points()

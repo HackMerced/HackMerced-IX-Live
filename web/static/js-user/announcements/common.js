@@ -44,9 +44,10 @@ function load_announcementsl()
 				let t = new Date(a[i].timestamp);
 				let time = to_stamp(t);
 				$("#announcements").append(
-					"<div class='announcement'>"
-					+"<p>"+a[i].contents+"</p>"
-					+"<p><i>"+time+"</i></p>"
+					"<div class='announcement'>" +
+						"<p>"+a[i].contents+"</p>" +
+						"<p><i>"+time+"</i></p>"+
+					"</div>"
 				);
 			}
 
