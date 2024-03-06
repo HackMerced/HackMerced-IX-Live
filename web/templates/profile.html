@@ -19,7 +19,7 @@
 			</div>
 			<div class="article">
 				<center>
-					<p><span id="profile-points">100</span></p>
+					<p><span id="profile-points"></span></p>
 				</center>
 			</div>
 		</div>
@@ -99,6 +99,24 @@
 		</div>
 
 	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/app/events.js"></script>
+	<script src="/static/js-user/app/refresh.js"></script>
+	<script>
+		function refresh()
+		{
+			update_user_info();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
+
 <!--
 		<div class="main-container">
 			<div class="main-banner">

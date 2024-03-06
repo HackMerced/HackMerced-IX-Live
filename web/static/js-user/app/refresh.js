@@ -75,6 +75,7 @@ function update_user_info()
 //			$("#info-points").text(data.User.points);
 
 			$("#points").text(data.User.points);
+			$("#profile-points").text(data.User.points);
 
 			update_stamps(data.User.stamps);
 			update_rewards(data.User.rewards);
