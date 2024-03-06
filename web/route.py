@@ -51,7 +51,14 @@ def punches():
 @login_required
 def profile():
 
-	return render_template("profile.html")
+	return render_template("profile.html",
+		name=current_user.name,
+		surname=current_user.surname,
+		school=current_user.school,
+		email=current_user.email,
+		phone=current_user.phone,
+		major=current_user.major,
+	)
 
 #@app.route("/asset-pack", methods=["GET"])
 #def asset_pack():
