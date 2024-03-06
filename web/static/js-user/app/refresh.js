@@ -15,11 +15,13 @@ function update_rewards(rewards)
 
 	for (let i = 0; i < rewards.length; i++)
 	{
-		let str = "<tr id='"+rewards[i].id+"'>"+
-			"<td class='reward-contents'>"+rewards[i].reward+"</td>"+
-			"<td>"+rewards[i].text+"</td>"+
-			"<td class='reward-value'>"+rewards[i].value+"</td>"+
-			"<td>"+rewards[i].stock+"/"+rewards[i].total+"</td>";
+		let str =
+			"<tr class='table-spacer'></tr>"+
+			"<tr id='"+rewards[i].id+"'>"+
+				"<td class='reward-contents'>"+rewards[i].reward+"</td>"+
+				"<td>"+rewards[i].text+"</td>"+
+				"<td class='reward-value'>"+rewards[i].value+"</td>"+
+				"<td>"+rewards[i].stock+"/"+rewards[i].total+"</td>";
 
 		if (rewards[i].status == 2)
 			str += "<td><button class='claim retrieved'>Retrieved</button></td>";
