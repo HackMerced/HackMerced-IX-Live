@@ -29,6 +29,11 @@ def application():
 
 	return render_template("app.html")
 
+@app.route("/live", methods=["GET"])
+def live():
+
+	return render_template("live.html")
+
 @app.route("/prizes", methods=["GET"])
 @login_required
 def prizes():
