@@ -1,5 +1,7 @@
 from app import *
 
+import bcrypt
+
 @app.route("/api/user/create", methods=["POST"])
 @login_required
 def api_user_create():
@@ -70,6 +72,19 @@ def api_user_edit_profile():
 		current_user.phone    = request.form["phone"]
 		current_user.school   = request.form["school"]
 		current_user.major    = request.form["major"]
+		db.session.commit()
+		return {"Response": "200 OK"}, 200
+	except:
+		return {"Response": "500 Internal Server Error"}, 500
+
+@app.route("/api/user/edit/password", methods=["POST"])
+@login_required
+def api_user_edit_password():
+
+	try:
+		assert bcrypt.checkpw(request.form["oldPass"].encode(), current_user.password)
+		assert request.form["password"] == request.form["confirm"]
+		current_user.password = bcrypt.hashpw(request.form["password"].encode(), bcrypt.gensalt(4))
 		db.session.commit()
 		return {"Response": "200 OK"}, 200
 	except:

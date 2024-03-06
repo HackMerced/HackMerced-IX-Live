@@ -26,6 +26,7 @@ $(document).on("click", ".claim", function()
 	return false;
 });
 
+/* Edit user info. */
 $("#profile-edit-form").submit(function()
 {
 	$.ajax(
@@ -62,7 +63,44 @@ function reset_profile_edit_button()
 	$("#profile-edit-submit").val("Update Profile");
 }
 
-/* Code submission dialogue. */
+/* Change your password. */
+$("#profile-password-form").submit(function()
+{
+	$.ajax(
+	{
+		type: "POST",
+		url: "/api/user/edit/password",
+		data: {
+			"oldPass" : $("#oldPass").val(),
+			"password": $("#password").val(),
+			"confirm" : $("#confirm").val(),
+		},
+		success: function()
+		{
+			refresh();
+			$("#oldPass").val("");
+			$("#password").val("");
+			$("#confirm").val("");
+			$("#profile-password-submit").val("Updated!");
+			setTimeout(reset_profile_password_button, 5000);
+		},
+		error: function()
+		{
+			refresh();
+			$("#profile-password-submit").val("Error. Try again.");
+			setTimeout(reset_profile_password_button, 5000);
+		}
+	});
+
+	return false;
+});
+
+function reset_profile_password_button()
+{
+	$("#profile-password-submit").val("Update Password");
+}
+
+/* Voucher code form. */
 $("#profile-code-form").submit(function()
 {
 	$.ajax(
@@ -91,4 +129,3 @@ function reset_profile_code_button()
 {
 	$("#profile-code-submit").val("Submit");
 }
-
