@@ -17,6 +17,9 @@ function update()
 					"<th style='width: 5em'>UID</th>"+
 					"<th>Name</th>"+
 					"<th>Email</th>"+
+					"<th>Phone</th>"+
+					"<th>School</th>"+
+					"<th>Major</th>"+
 					"<th style='width: 3em'>Points</th>"+
 					"<th style='width: 3em'>Actions</th>"+
 				"</tr>"
@@ -29,6 +32,9 @@ function update()
 						"<td class='user-contents mono'>"+data.Users[i].uid+"</td>"+
 						"<td>"+data.Users[i].name+"</td>"+
 						"<td>"+data.Users[i].email+"</td>"+
+						"<td>"+data.Users[i].phone+"</td>"+
+						"<td>"+data.Users[i].school+"</td>"+
+						"<td>"+data.Users[i].major+"</td>"+
 						"<td>"+data.Users[i].points+"</td>"+
 						"<td><center><span class='delete'></span></center></td>"+
 					"</tr>"
