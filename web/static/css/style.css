@@ -52,9 +52,6 @@ input::placeholder{
 	color: var(--white);
 }
 
-/* #uid::placeholder{
-	color: var(--white);
-} */
 
 body {
 	margin: 0;
@@ -94,7 +91,7 @@ body::before {
     left: 0;
 	height: 100vh;
     background:
-        linear-gradient(to bottom, var(--bg-gradient-A) 100%, var(--bg-gradient-B) 0%) fixed no-repeat;
+        linear-gradient(to bottom, var(--bg-gradient-A), var(--blue-purple)) fixed no-repeat;
     z-index: -1;
     transition: opacity 2s ease-in-out; /* Adjust timing as needed */
     opacity: 0;
@@ -105,97 +102,6 @@ body.sunrise-effect::before {
 }
 /* END Sunrise*/
 
-/*shootimg stars */
-.shooting-star{
-	position: absolute;
-	opacity: 50%;
-	top: -15rem;
-	left: -15rem;
-	padding: 10rem;
-	
-}
-.shooting-star div{
-	font-size: 1.8em;
-}
-.shooting-star div:nth-child(1){
-	/* border: red solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation1 2s ease-in-out 0.8s 1 backwards;
-}
-.shooting-star div:nth-child(2){
-	/* border: green solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation2 2s ease-in-out 1s 1 backwards;
-}
-.shooting-star div:nth-child(3){
-	/* border: blue solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation3 2s ease-in-out 1.2s 1 backwards;
-}
-.shooting-star div:nth-child(4){
-	/* border: blue solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation2 2s ease-in-out 1.3s 1 backwards;
-}
-
-.shooting-star div:nth-child(5){
-	/* border: blue solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation3 2s ease-in-out 1.7s 1 backwards;
-}
-
-.shooting-star div:nth-child(6){
-	/* border: blue solid 3px; */
-	position: relative;
-	opacity: 0%;
-	animation: star-animation1 2s ease-in-out 2s 1 backwards;
-}
-
-
-@keyframes star-animation1 {
-  0% {
-    opacity: 50%;
-    top: 3rem;
-	left: -1rem;
-  } 
-  100% {
-    opacity: 100%;
-    top: 100vh;
-	left: 140vw;
-  }
-}
-@keyframes star-animation2 {
-	0% {
-	  opacity: 50%;
-	  top: 0rem;
-	  left: -2rem;
-	}
-  
-	100% {
-	  opacity: 100%;
-	  top: 100vh;
-	  left: 140vw;
-	}
-  }
-  @keyframes star-animation3 {
-	0% {
-	  opacity: 50%;
-	  top: -5rem;
-	  left: -1.5rem;
-	}
-  
-	100% {
-	  opacity: 100%;
-	  top: 100vh;
-	  left: 140vw;
-	}
-  }
-/*END shooting stars*/
 
 .main {
 	margin: var(--pad-big) auto;
@@ -213,16 +119,7 @@ body.sunrise-effect::before {
 	}
 }
 
-@keyframes roll-out {
-	0%{
-		width: 0%;
-		color: var(--purple);
-	}
-	100%{
-		width: 100%;
-		color: var(--faded-white-glass);
-	}
-}
+
 
 .main {
 	margin: var(--pad-big) auto;
@@ -238,7 +135,6 @@ body.sunrise-effect::before {
 		* {
 			padding: var(--pad-small) 0;
 		}
-		animation: roll-out 0.2s linear 1;
 	}
 }
 
@@ -267,21 +163,6 @@ body.sunrise-effect::before {
 	}
 }
 
-@keyframes roll-down {
-	0%{
-		height: 0%;
-	}
-	
-	100%{
-		height:50%;
-	}
-}
-.window{
-	animation: roll-down 0.2s linear 1;
-}
-.announcement{
-	animation: roll-out 0.3s linear 1;
-}
 
 input {
 	padding: var(--pad-tiny) 1em;
@@ -433,9 +314,7 @@ input[type="submit"] {
 		}
 	}
 }
-.article{
-	animation: roll-out 0.2s linear 1;
-}
+
 
 
 /* End Prizes */
@@ -628,47 +507,8 @@ input[type="submit"] {
 	}
 }
 
-@keyframes drop-in {
-	0%{
-		transform: translateY(-5rem);
-	}
-	100%{
-		transform: translateY(0rem);
-	}
-}
-.link:first-child {
-	margin-left: var(--pad-medium);
-	
-	animation: drop-in 0.1s linear 1;
-}
-.link:nth-child(2) {
-	animation: drop-in 0.2s linear 1;
-}
-.link:nth-child(3) {
-	animation: drop-in 0.3s linear 1;
-}
-.link:nth-child(4) {
-	animation: drop-in 0.4s linear 1;
-}
-.link:nth-child(5) {
-	animation: drop-in 0.5s linear 1;
-}
-
-@keyframes slide-in {
-	0%{
-		transform: translateX(-60rem);
-		filter: blur(10px);
-	}
-	100%{
-		transform: translateX(0rem);
-		filter: blur(0px);
-	}
-}
-#profile{
-	animation: slide-in 0.2s linear 1;
-}
-
 /* End Navbar */
+
 /* Hamburger Menu */
 
 .sidebar{
