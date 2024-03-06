@@ -98,3 +98,22 @@ def api_stamp_punch_list():
 	except:
 		return {"Response": "500 Internal Server Error"}, 500
 
+@app.route("/api/stamp/punch/delete/<id>", methods=["POST"])
+@login_required
+def api_stamp_punch_delete(id: int):
+
+	# Admin only.
+	if current_user.type != 1:
+		return {"Response": "401 Unauthorized"}, 401
+
+	try:
+		p = Punch.query.get(id)
+		if not p:
+			return {"Response": "404 Not Found"}, 404
+		db.session.delete(p)
+		db.session.commit()
+		return {"Response": "200 OK"}, 200
+
+	except:
+		return {"Response": "500 Internal Server Error"}, 500
+
