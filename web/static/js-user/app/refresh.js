@@ -9,7 +9,7 @@ function update_rewards(rewards)
 			"<th>Description</th>"+
 			"<th>Cost</th>"+
 			"<th>Qty</th>"+
-			"<th></th>"+
+			"<th style='min-width: 10em'></th>"+
 		"</tr>"
 	);
 
@@ -21,14 +21,13 @@ function update_rewards(rewards)
 			"<td class='reward-value'>"+rewards[i].value+"</td>"+
 			"<td>"+rewards[i].stock+"/"+rewards[i].total+"</td>";
 
-//		if (rewards[i].status == 2)
-//			str += "<td>✔✔</td>";
-//		else if (rewards[i].status == 1)
-//			str += "<td>✔</td>";
-//		else
-//			str += "<td></td>";
+		if (rewards[i].status == 2)
+			str += "<td><button class='claim retrieved'>Retrieved</button></td>";
+		else if (rewards[i].status == 1)
+			str += "<td><button class='claim claimed'>Claimed</button></td>";
+		else
+			str += "<td><button class='claim'>Claim</button></td>";
 
-		str += "<td><button class='claim'>Claim</button></td>";
 		str += "</tr>";
 
 		$("#prizes-content").append(str);

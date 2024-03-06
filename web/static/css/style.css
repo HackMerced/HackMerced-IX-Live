@@ -267,6 +267,18 @@ input[type="submit"] {
 		&:hover {
 			cursor: pointer;
 		}
+		&.claimed {
+			background: gray;
+			&:hover {
+				cursor: default;
+			}
+		}
+		&.retrieved {
+			background: gray;
+			&:hover {
+				cursor: default;
+			}
+		}
 	}
 }
 
