@@ -31,44 +31,28 @@
 			</div>
 
 			<table id="schedule" class="schedule-table">
-				<tbody>
-					<tr>
-						<th colspan=3>Event Showings</th>
-					</tr>
-					<tr class="table-spacer"></tr>
-					<tr class="table-content">
-						<td class="map">
-							<img src="/static/png/map-default.png" /></td>
-						<td class="info">
-							<p>Event Name</p>
-							<p>Event Room</p>
-						</td>
-						<td class="description">
-							<p>Lorem ipsum dolor sit amet.</p>
-							<br>
-							<p><span class="time">9 pm</span></p>
-						</td>
-					</tr>
-					<tr class="table-spacer"></tr>
-					<tr class="table-content">
-						<td class="map">
-							<img src="/static/png/map-default.png" /></td>
-						<td class="info">
-							<p>Event Name</p>
-							<p>Event Room</p>
-						</td>
-						<td class="description">
-							<p>Lorem ipsum dolor sit amet.</p>
-							<br>
-							<p><span class="time">9 pm</span></p>
-						</td>
-					</tr>
-				</tbody>
+				<tbody id="event-table"></tbody>
 			</table>
 
 		</div>
 
 	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/events/common.js"></script>
+	<script>
+		function refresh()
+		{
+			load_events();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
 
 </body>
 

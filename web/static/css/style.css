@@ -442,6 +442,7 @@ input[type="submit"] {
 #schedule {
 	.map img {
 		padding: var(--pad-small) 0;
+		margin-left: var(--pad-tiny);
 		max-width: 200px;
 	}
 	.info, .description {
@@ -455,6 +456,7 @@ input[type="submit"] {
 		}
 		.time {
 			padding: var(--pad-tiny) var(--pad-small);
+			margin-right: var(--pad-tiny);
 			background: var(--maroon);
 			border-radius: var(--radius);
 		}
