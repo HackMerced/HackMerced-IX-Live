@@ -461,6 +461,14 @@ input[type="submit"] {
 			border-radius: var(--radius);
 		}
 	}
+	.event-current {
+		td {
+			background-color: var(--dark-peach);
+		}
+		.time {
+			background-color: var(--peach);
+		}
+	}
 }
 
 /* End Schedule */
