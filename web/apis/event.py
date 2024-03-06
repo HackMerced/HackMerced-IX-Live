@@ -167,7 +167,7 @@ def api_event_attendance_list():
 		for a in Attendance.query.all():
 			u = Account.query.filter_by(id=a.user).first()
 			e = Event.query.filter_by(id=a.event).first()
-			attendances.append({"id": a.id, "uid": u.uid, "name": u.name, "event": e.title})
+			attendances.append({"id": a.id, "uid": u.uid, "name": f"{u.name} {u.surname}", "event": e.title})
 
 		return {"Response": "200 OK", "Attendances": attendances}, 200
 

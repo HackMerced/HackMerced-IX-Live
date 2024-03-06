@@ -105,7 +105,7 @@ def api_reward_redemption_list():
 			u = Account.query.filter_by(id=r.user).first()
 			rw = Reward.query.filter_by(id=r.reward).first()
 
-			entry = {"id": r.id, "uid": f"{u.uid: 08X}", "name": u.name, "reward": rw.reward}
+			entry = {"id": r.id, "uid": f"{u.uid: 08X}", "name": f"{u.name} {u.surname}", "reward": rw.reward}
 			redemptions.append(entry)
 
 			if not r.claimed:
@@ -114,7 +114,7 @@ def api_reward_redemption_list():
 		for r in Redemption.query.filter_by(claiming=True).all():
 			u = Account.query.filter_by(id=r.user).first()
 			rw = Reward.query.filter_by(id=r.reward).first()
-			claimings.append({"id": r.id, "uid": f"{u.uid: 08X}", "name": u.name, "reward": rw.reward})
+			claimings.append({"id": r.id, "uid": f"{u.uid: 08X}", "name": f"{u.name} {u.surname}", "reward": rw.reward})
 
 		return {
 			"Response": "200 OK",
