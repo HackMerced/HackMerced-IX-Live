@@ -61,3 +61,34 @@ function reset_profile_edit_button()
 {
 	$("#profile-edit-submit").val("Update Profile");
 }
+
+/* Code submission dialogue. */
+$("#profile-code-form").submit(function()
+{
+	$.ajax(
+	{
+		type: "POST",
+		url: "/api/code/submit/"+$("#code").val(),
+		success: function()
+		{
+			refresh();
+			$("#code").val("");
+			$("#profile-code-submit").val("Redeemed!");
+			setTimeout(reset_profile_code_button, 5000);
+		},
+		error: function()
+		{
+			refresh();
+			$("#profile-code-submit").val("Error. Try again.");
+			setTimeout(reset_profile_code_button, 5000);
+		}
+	});
+
+	return false;
+});
+
+function reset_profile_code_button()
+{
+	$("#profile-code-submit").val("Submit");
+}
+
