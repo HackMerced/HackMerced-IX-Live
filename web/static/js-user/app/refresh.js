@@ -37,23 +37,23 @@ function update_rewards(rewards)
 
 function update_stamps(stamps)
 {
-	$("#stamps").empty();
+	$("#punches").empty();
 
 	for (let i = 0; i < stamps.length; i++)
 	{
-		let str = "<tr><td>"+stamps[i].name+"</td><td>";
+		let str = "<tr><td>"+stamps[i].name+"</td>";
 
 		for (let j = 0; j < stamps[i].slots; j++)
 		{
 			if (j < stamps[i].punches)
-				str += "★";
+				str += "<td><div class='punch true'></div></td>";
 			else
-				str += "☆";
+				str += "<td><div class='punch false'></div></td>";
 		}
 
-		str += "</td></tr>";
+		str += "</tr>";
 
-		$("#stamps").append(str);
+		$("#punches").append(str);
 	}
 }
 

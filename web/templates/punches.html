@@ -18,23 +18,23 @@
 				<table id="punches" class="rounded-table no-color">
 					<tr>
 						<td class="title">Breakfast</td>
-						<td><div class="punch true"></div></td>
-						<td><div class="punch false"></td>
-						<td><div class="punch false"></td>
+						<td><div class="punch"></div></td>
+						<td><div class="punch"></td>
+						<td><div class="punch"></td>
 						<td class="spacer"></td>
 					</tr>
 					<tr>
 						<td class="title">Lunch</td>
-						<td><div class="punch true"></div></td>
-						<td><div class="punch true"></div></td>
-						<td><div class="punch false"></td>
+						<td><div class="punch"></div></td>
+						<td><div class="punch"></div></td>
+						<td><div class="punch"></td>
 						<td class="spacer"></td>
 					</tr>
 					<tr>
 						<td class="title">Dinner</td>
-						<td><div class="punch true"></div></td>
-						<td><div class="punch true"></div></td>
-						<td><div class="punch false"></td>
+						<td><div class="punch"></div></td>
+						<td><div class="punch"></div></td>
+						<td><div class="punch"></td>
 						<td class="spacer"></td>
 					</tr>
 				</table>
@@ -46,6 +46,23 @@
 		</div>
 
 	</div>
+
+	<script src="/static/js-user/jquery-3.6.0.min.js"></script>
+	<script src="/static/js-user/common.js"></script>
+	<script src="/static/js-user/app/events.js"></script>
+	<script src="/static/js-user/app/refresh.js"></script>
+	<script>
+		function refresh()
+		{
+			update_user_info();
+		}
+		function refresh_loop()
+		{
+			refresh();
+			setTimeout(refresh_loop, 5000);
+		}
+		refresh_loop();
+	</script>
 
 </body>
 
