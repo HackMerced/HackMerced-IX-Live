@@ -55,4 +55,3 @@ def profile():
 def asset_pack():
 
 	return render_template("asset-pack.html")
-

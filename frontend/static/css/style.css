@@ -49,43 +49,117 @@
 }
 
 body {
-  margin: 0;
-  height: 100%;
+	margin: 0;
+	height: 100%;
 
-  /* Defaults. */
-  font-family: var(--font-main);
-  color: var(--white);
+	/* Defaults. */
+	font-family: var(--font-main);
+	color: var(--white);
 
-  /* Fallback, gradient only. */
-  background: linear-gradient(
-      to bottom,
-      var(--bg-gradient-A) 0%,
-      var(--bg-gradient-B) 100%
-    )
-    fixed no-repeat;
+	/* Fallback, gradient only. */
+	background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
 
-  /* Graphic + gradient. */
-  background: url("/static/png/hmix-bg-300.png") fixed right bottom no-repeat,
-    linear-gradient(
-        to bottom,
-        var(--bg-gradient-A) 0%,
-        var(--bg-gradient-B) 100%
-      )
-      fixed no-repeat;
+	/* Graphic + gradient. */
+	background:
+		url("/static/png/hmix-bg-300.png") fixed right bottom no-repeat,
+		linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
 
-  &.no-graphic {
-    background: linear-gradient(
-        to bottom,
-        var(--bg-gradient-A) 0%,
-        var(--bg-gradient-B) 100%
-      )
-      fixed no-repeat;
-  }
+	&.no-graphic {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
+	}
 
-  &.radial {
-    /* @Alisson, this is where you'd put the code for the radial gradient. -Shawn */
+	&.radial {
+		/* @Alisson, this is where you'd put the code for the radial gradient. -Shawn */
+	}
+}
+
+.shooting-star{
+	position: absolute;
+	opacity: 50%;
+	top: 0rem;
+	left: -1rem;
+}
+.shooting-star div{
+	font-size: 1.8em;
+}
+.shooting-star div:nth-child(1){
+	/* border: red solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation1 2s ease-in-out 0.8s 1 backwards;
+}
+.shooting-star div:nth-child(2){
+	/* border: green solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation2 2s ease-in-out 1s 1 backwards;
+}
+.shooting-star div:nth-child(3){
+	/* border: blue solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation3 2s ease-in-out 1.2s 1 backwards;
+}
+.shooting-star div:nth-child(4){
+	/* border: blue solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation2 2s ease-in-out 1.3s 1 backwards;
+}
+
+.shooting-star div:nth-child(5){
+	/* border: blue solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation3 2s ease-in-out 1.7s 1 backwards;
+}
+
+.shooting-star div:nth-child(6){
+	/* border: blue solid 3px; */
+	position: relative;
+	opacity: 0%;
+	animation: star-animation1 2s ease-in-out 2s 1 backwards;
+}
+
+
+@keyframes star-animation1 {
+  0% {
+    opacity: 50%;
+    top: 3rem;
+	left: -1rem;
+  } 
+  100% {
+    opacity: 100%;
+    top: 100vh;
+	left: 140vw;
   }
 }
+@keyframes star-animation2 {
+	0% {
+	  opacity: 50%;
+	  top: 0rem;
+	  left: -2rem;
+	}
+  
+	100% {
+	  opacity: 100%;
+	  top: 100vh;
+	  left: 140vw;
+	}
+  }
+  @keyframes star-animation3 {
+	0% {
+	  opacity: 50%;
+	  top: -5rem;
+	  left: -1.5rem;
+	}
+  
+	100% {
+	  opacity: 100%;
+	  top: 100vh;
+	  left: 140vw;
+	}
+  }
 
 .main {
   margin: var(--pad-big) auto;
@@ -103,21 +177,31 @@ body {
   }
 }
 
-.main {
-  margin: var(--pad-big) auto;
-  width: 75%;
-  .banner {
-    width: 100%;
-    color: var(--faded-white-glass);
-    text-align: center;
-    background: var(--purple);
-    border-radius: var(--radius);
-    margin-bottom: var(--pad-small);
-    box-shadow: var(--shadow);
-    * {
-      padding: var(--pad-small) 0;
-    }
-  }
+@keyframes roll-out {
+	0%{
+		width: 0%;
+		color: var(--purple);
+	}
+	100%{
+		width: 100%;
+		color: var(--faded-white-glass);
+	}
+}
+.main {	margin: var(--pad-big) auto;
+	width: 75%;
+	.banner {
+		width: 100%;
+		color: var(--faded-white-glass);
+		text-align: center;
+		background: var(--purple);
+		border-radius: var(--radius);
+		margin-bottom: var(--pad-small);
+		box-shadow: var(--shadow);
+		* {
+			padding: var(--pad-small) 0;
+		}
+		animation: roll-out 0.2s linear 1;
+	}
 }
 
 .window {
@@ -143,6 +227,22 @@ body {
   .article {
     padding: var(--pad-tiny) var(--pad-medium);
   }
+}
+
+@keyframes roll-down {
+	0%{
+		height: 0%;
+	}
+	
+	100%{
+		height:50%;
+	}
+}
+.window{
+	animation: roll-down 0.2s linear 1;
+}
+.announcement{
+	animation: roll-out 0.3s linear 1;
 }
 
 input {
@@ -273,20 +373,25 @@ input[type="submit"] {
 }
 
 #prizes td {
-  padding: var(--pad-tiny) 0;
-  .claim {
-    padding: var(--pad-tiny) var(--pad-small);
-    margin: var(--pad-small) 0;
-    color: var(--faded-white-glass);
-    font-size: var(--font-medium);
-    text-align: center;
-    background: var(--blue-purple);
-    border: none;
-    border-radius: var(--radius);
-    &:hover {
-      cursor: pointer;
-    }
-  }
+	padding: var(--pad-tiny) 0;
+	
+	.claim {
+		padding: var(--pad-tiny) var(--pad-small);
+		margin: var(--pad-small) 0;
+		color: var(--faded-white-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+		background: var(--blue-purple);
+		border: none;
+		border-radius: var(--radius);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.article{
+	animation: roll-out 0.2s linear 1;
 }
 
 /* End Prizes */
@@ -399,8 +504,19 @@ input[type="submit"] {
 /* Profile */
 
 #profile-points {
-  font-size: var(--font-huge);
-  font-weight: var(--font-heavier);
+	font-size: var(--font-huge);
+	font-weight: var(--font-heavier);
+	color: var(--peach);
+	animation: colorspin 3s linear infinite;
+}
+
+@keyframes colorspin {
+	0%{
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	100%{
+		filter: hue-rotate(360deg) saturate(200%);
+	}
 }
 
 /* End Profile */
@@ -408,77 +524,268 @@ input[type="submit"] {
 /* Navbar */
 
 #navbar {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1em;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background: var(--purple);
-  box-shadow: var(--shadow);
-  .link {
-    font-size: 1rem;
-    background: var(--orange-glass);
-    padding: var(--pad-tiny) var(--pad-small);
-    border-radius: var(--radius-slighter);
-    box-shadow: var(--shadow);
-    &:first-child {
-      margin-left: var(--pad-medium);
-    }
-    a,
-    a:visited {
-      color: var(--white);
-      text-decoration: none;
-    }
-  }
-  #profile {
-    margin-left: auto;
-    margin-right: var(--pad-medium);
-    img {
-      padding-top: var(--pad-weeny);
-      height: var(--pad-medium);
-    }
-  }
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1em;
+	align-items: center;
+	width: 100%;
+	height: 5.5rem;
+	box-shadow: 5px 5px 5px #241930;
+	gap: 1em;
+	flex-wrap:nowrap;
+}
+
+.link {
+	font-size: 1rem;
+	background-color: #D77B2633;
+	padding: 12px 16px 12px 16px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #241930;
+	transition-duration: 0.4s;
+	text-align: center;
+	justify-content: center;
+	margin-right: 1rem;
+	width: 7rem;
+}
+@keyframes drop-in {
+	0%{
+		transform: translateY(-5rem);
+	}
+	100%{
+		transform: translateY(0rem);
+	}
+}
+.link:first-child {
+	margin-left: var(--pad-medium);
+	animation: drop-in 0.1s linear 1;
+}
+.link:nth-child(2) {
+	animation: drop-in 0.2s linear 1;
+}
+.link:nth-child(3) {
+	animation: drop-in 0.3s linear 1;
+}
+.link:nth-child(4) {
+	animation: drop-in 0.4s linear 1;
+}
+.link:nth-child(5) {
+	animation: drop-in 0.5s linear 1;
+}
+
+
+
+.link a, .link a:visited {
+	color: white;
+	text-decoration: none;
+}
+.link a:hover {
+	color: #D77B26;
+	transition-duration: 0.4s;
+}
+#profile {
+	margin-left: auto;
+	margin-right: 32px;
+	
+}
+
+#profile a img {
+	padding-top: 4px;
+	height: 32px;
+	
+	background: var(--purple);
+	box-shadow: var(--shadow);
+	.link {
+		font-size: 1rem;
+		background: var(--orange-glass);
+		padding: var(--pad-tiny) var(--pad-small);
+		border-radius: var(--radius-slighter);
+		box-shadow: var(--shadow);
+		&:first-child {
+			margin-left: var(--pad-medium);
+		}
+		a, a:visited {
+			color: var(--white);
+			text-decoration: none;
+		}
+	}
+	#profile {
+		margin-left: auto;
+		margin-right: var(--pad-medium);
+		img {
+			padding-top: var(--pad-weeny);
+			height: var(--pad-medium);
+		}
+	}
 }
 
 /* End Navbar */
 
+
+
+/* Hamburger Menu */
+
+.sidebar{
+	display: none;
+	-webkit-appearance: none;
+}
+
+.hamburger-menu{
+	display: none;
+}
+   
+/*END Hamburger Menu*/
+
 /* Viewports */
 
 @media screen and (min-width: 300px) and (max-width: 880px) {
-  body {
-    background: linear-gradient(
-        to bottom,
-        var(--bg-gradient-A) 0%,
-        var(--bg-gradient-B) 100%
-      )
-      fixed no-repeat;
-    overflow-x: hidden;
-  }
 
-  .main {
-    width: 90%;
-  }
+	body {
+		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
+		overflow-x: hidden;
+	}
 
-  .row {
-    display: block;
-    .left {
-      margin-right: 0;
+	.main {
+		width: 90%;
+	}
+
+	.row {
+		display: block;
+		.left {
+			margin-right: 0;
+		}
+	}
+
+	/* Navbar */
+
+	#navbar {
+		gap:.7em;
+		.link {
+			/* font-size: smaller;
+			margin-left: 0;
+			padding: .7em; */
+			display: none;
+		}
+	}
+
+	/* End Navbar */
+
+    /* Hamburger Menu */
+    
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        width: max-content;
+        z-index: 2;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
     }
-  }
 
-  /* Navbar */
-
-  #navbar {
-    gap: 0.7em;
-    .link {
-      font-size: smaller;
-      margin-left: 0;
-      padding: 0.7em;
+    .hamburger-menu::before,
+    .hamburger-menu::after,
+    .hamburger-menu input{
+        content: "";
+        width: 3rem;
+        height: 0.5rem;
+        background-color: white;
+        border-radius: 10000rem;
+        transition-duration: 0.4s;
+        cursor: pointer;
     }
-  }
 
-  /* End Navbar */
+    .hamburger-menu input {
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+    .sidebar{
+        
+        appearance: none;
+        position: absolute;
+        top: -30rem;
+        left: 0rem;
+    }
+    .hamburger-menu input:checked {
+        opacity: 0;
+        width: 0;
+    }
+    .hamburger-menu input:checked + .sidebar{
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+        transform: rotate(-45deg) translate(-1rem, 0.25rem);
+        width: 4rem;
+        transition-duration: 0.4s;
+    }
+    
+   
+    .hamburger-menu:has(input:checked)::after {
+        -webkit-transform: rotate(45deg) translate(-1rem, -0.25rem);
+        transform: rotate(45deg) translate(-1rem, -0.25rem);
+        width: 4rem;
+        transition-duration: 0.4s;
+    }
+    .hamburger-menu input:checked + .sidebar {
+        display: block;
+    }
+    
+    .hamburger-menu:has(input:checked) + .sidebar{
+        background-color: #342153;
+        display: block;
+        position: absolute;
+        top: 5rem;
+        left: 0rem;
+        height: max-content;
+        width: max-content;
+        transition-duration: 0.4s;
+    }
+
+    
+    .hidden-link a, .hidden-link a:visited{
+        display: flex;
+        flex-direction:column;
+        color: white;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        padding:1rem;
+    }
+    .hidden-link a:hover{
+        color: #D77B26;
+        background: #D77B2633;
+        transition-duration: 0.4s;
+    }
+    
+    
+
+   /*END Hamburger Menu*/
 }
+/*End Viewports*/
 
-/* End Viewports */
+/*Safari Filter*/
+/*Safari does not like my hamburger menu, 
+this is so hamburger menu does not show for safari*/
+/*when safari browser is small make the buttons small*/ 
+@supports not (backdrop-filter: blur()){
+    .hamburger-menu{
+        display: none;
+    }
+    @media screen and (min-width:300px) and (max-width:880px)  {
+        
+		.link{
+            display: block;
+            background-color: #D77B2633;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px #241930;
+        }
+    }
+}
+/*End Safari Filter*/
