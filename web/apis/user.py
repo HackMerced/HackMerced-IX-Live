@@ -59,23 +59,17 @@ def api_user_delete(id):
 	except:
 		return {"Response": "500 Internal Server Error"}, 500
 
-@app.route("/api/user/edit/name", methods=["POST"])
+@app.route("/api/user/edit/profile", methods=["POST"])
 @login_required
-def api_user_edit_name():
+def api_user_edit_profile():
 
 	try:
-		current_user.name = request.form["name"]
-		db.session.commit()
-		return {"Response": "200 OK"}, 200
-	except:
-		return {"Response": "500 Internal Server Error"}, 500
-
-@app.route("/api/user/edit/email", methods=["POST"])
-@login_required
-def api_user_edit_email():
-
-	try:
-		current_user.email = request.form["email"]
+		current_user.name     = request.form["name"]
+		current_user.surname  = request.form["surname"]
+		current_user.email    = request.form["email"]
+		current_user.phone    = request.form["phone"]
+		current_user.school   = request.form["school"]
+		current_user.major    = request.form["major"]
 		db.session.commit()
 		return {"Response": "200 OK"}, 200
 	except:
