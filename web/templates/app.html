@@ -3,12 +3,12 @@
 
 {% set pageTitle = "HackMerced IX" %}{% include "includes/header.html" %}
 
-<body>
+<body class="sunrise-effect">
 
 	{% include "includes/navbar.html" %}
 
 	<div class="main">
-		
+
 		<div class="shooting-star" id="sht-str">
 			<div>★</div>
 			<div>✦</div>
@@ -65,6 +65,12 @@
 	<script src="/static/js-user/common.js"></script>
 	<script src="/static/js-user/announcements/common.js"></script>
 	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.body.classList.remove("sunrise-effect"); 
+            }, 0);
+        }); 
+
 		function refresh()
 		{
 			load_announcementsl();
