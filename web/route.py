@@ -1,4 +1,5 @@
 from app import *
+from routes.admin import *
 
 #from flask_login import current_user, login_required
 
@@ -13,12 +14,14 @@ def index():
 @app.route("/register", methods=["GET"])
 def register():
 
-	return render_template("register.html")
+	uid = request.args["uid"]
+	return render_template("register.html", uid=uid)
 
 @app.route("/password", methods=["GET"])
-def login2():
+def unlock():
 
-	return render_template("password.html")
+	uid = request.args["uid"]
+	return render_template("password.html", uid=uid)
 
 @app.route("/app", methods=["GET"])
 #@login_required

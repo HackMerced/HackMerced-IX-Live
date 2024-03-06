@@ -18,20 +18,47 @@ class Account(UserMixin, db.Model):
 	password  = db.Column(db.String(256), unique=False, nullable=True )
 	uid       = db.Column(db.Integer    , unique=True , nullable=True )
 	name      = db.Column(db.String(256), unique=False, nullable=True )
+	surname   = db.Column(db.String(256), unique=False, nullable=True )
 	email     = db.Column(db.String(256), unique=False, nullable=True )
+	phone     = db.Column(db.String(256), unique=False, nullable=True )
+	school    = db.Column(db.String(256), unique=False, nullable=True )
+	major     = db.Column(db.String(256), unique=False, nullable=True )
 	points    = db.Column(db.Integer    , unique=False, nullable=True )
 
-	def __init__(self, type=0, password=None, uid=0, name=None, email=None, points=0):
+	def __init__(self, type=0, password=None, uid=0, name=None, surname=None,
+		email=None, phone=None, school=None, major=None, points=0
+	):
 
 		self.type      = type
 		self.password  = password
 		self.uid       = uid
 		self.name      = name
+		self.surname   = surname
 		self.email     = email
+		self.phone     = phone
+		self.school    = school
+		self.major     = major
 		self.points    = points
 
+		# type 0's info should be set up later when they claim an account.
 		if type == 1:
 			self.password = bcrypt.hashpw(password.encode(), bcrypt.gensalt(4))
+
+	def claim(self, password, name, surname, email, phone, school, major):
+
+		try:
+			self.password = bcrypt.hashpw(password.encode(), bcrypt.gensalt(4))
+			self.name = name
+			self.surname = surname
+			self.email = email
+			self.phone = phone
+			self.school = school
+			self.major = major
+			db.session.commit()
+		except:
+			return False
+
+		return True
 
 	def get_user(uid: str) -> Union[Account, bool]:
 		"""
@@ -51,6 +78,18 @@ class Account(UserMixin, db.Model):
 
 		try:
 			assert (user:=Account.query.filter_by(name=username).first()) != None
+			assert bcrypt.checkpw(password.encode(), user.password)
+			return user
+		except:
+			return False
+
+	def login_by_uid(uid: str, password: str) -> Union[Account, bool]:
+		"""
+		Log into a non-admin account.
+		"""
+
+		try:
+			assert (user:=Account.query.filter_by(uid=int(uid, 16)).first()) != None
 			assert bcrypt.checkpw(password.encode(), user.password)
 			return user
 		except:

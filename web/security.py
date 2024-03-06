@@ -16,8 +16,52 @@ def load_user(id: int):
 @app.route("/login", methods=["POST"])
 def login():
 
-	# Passwordless UID based login.
 	user = Account.get_user(request.form["uid"])
+
+	if user == False:
+		time.sleep(1)  # Prevent brute.
+		return render_template("index.html", failed=True)
+
+	if user.password == None:
+		return redirect(url_for(f"register", uid=request.form["uid"]))
+	else:
+		return redirect(url_for(f"unlock", uid=request.form["uid"]))
+
+@app.route("/register", methods=["POST"])
+def register_account():
+
+	user = Account.get_user(request.form["uid"])
+
+	if user == False:
+		time.sleep(1)  # Prevent brute.
+		return render_template("index.html", failed=True)
+
+	# Prevent claiming an already claimed account.
+	if user.password != None:
+		return render_template("index.html", failed=True)
+
+	# Make sure their password matched.
+	if request.form["password"] != request.form["confirm"]:
+		return render_template("index.html", passwordFailed=True)
+
+	# Claim the account.
+	if not user.claim(
+		request.form["password"],
+		request.form["name"],
+		request.form["surname"],
+		request.form["email"],
+		request.form["phone"],
+		request.form["school"],
+		request.form["major"]
+	):
+		return render_template("index.html", failed=True)
+
+	return render_template("index.html", success=True)
+
+@app.route("/unlock", methods=["POST"])
+def unlock_account():
+
+	user = Account.login_by_uid(request.form["uid"], request.form["password"])
 
 	if user == False:
 		time.sleep(1)  # Prevent brute.
