@@ -48,6 +48,14 @@
 	--bg-gradient-B: #D77B26;
 }
 
+input::placeholder{
+	color: var(--white);
+}
+
+/* #uid::placeholder{
+	color: var(--white);
+} */
+
 body {
 	margin: 0;
 	height: 100%;
