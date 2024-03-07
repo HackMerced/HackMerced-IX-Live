@@ -4,6 +4,7 @@ from app import *
 def api_badger_identify():
 
 	try:
+		assert request.args.get("auth") == BADGER_AUTHORIZATION_TOKEN
 		assert Badger.auth_request(int(request.args.get("identity")))
 	except:
 		return {"Response": "401 Unauthorized"}, 401
@@ -61,6 +62,7 @@ def api_badger_delete(id):
 def api_badger_scan():
 
 	try:
+		assert request.args.get("auth") == BADGER_AUTHORIZATION_TOKEN
 		assert Badger.auth_request(int(request.args.get("identity")))
 	except:
 		return {"Response": "401 Unauthorized", "rcode": 3}, 401

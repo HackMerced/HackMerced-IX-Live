@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "YOUR_KEY_HERE"  # RNG str >16 B should suffice.
+BADGER_AUTHORIZATION_TOKEN = "ANOTHER_SECRET_KEY_HERE"
 
 # Load the database.
 db = SQLAlchemy(app)
