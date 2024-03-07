@@ -102,25 +102,6 @@ body.sunrise-effect::before {
 }
 /* END Sunrise*/
 
-
-.main {
-	margin: var(--pad-big) auto;
-	width: 75%;
-	.header {
-		margin-bottom: var(--pad-small);
-		color: var(--faded-white-glass);
-		text-align: center;
-		background: var(--purple);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		& * {
-			padding: var(--pad-small) 0;
-		}
-	}
-}
-
-
-
 .main {
 	margin: var(--pad-big) auto;
 	width: 75%;
@@ -444,23 +425,30 @@ input[type="submit"] {
 	font-size: var(--font-huge);
 	font-weight: var(--font-heavier);
 }
-
+#profile-edit-form{
+	width: 100%;
+  	display: flex;
+	justify-content: center;
+}
 .flexbox-container{
 	display: inline-flex;
 	flex-wrap: wrap;
-	flex-direction: column;
-	align-content: stretch;
-	padding: 1em;
-	height: 25vh;
-	column-gap: 5%;
-	width: 100%;
-	overflow-x: hidden;
+	flex-direction: row;
+	padding: .5em;
+	width: 80%;
+	overflow: hidden;
+	gap:1em;
+	align-content: center;
 }
 .flexbox-container>*{
-	display: flex;
-	flex-basis: 0px;
 	width: 40%;
 	margin: 2px;
+}
+.flexbox-container-child{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: .3em;
 }
 /* End Profile */
 
@@ -528,7 +516,8 @@ input[type="submit"] {
 
 	body {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
-		overflow-x: hidden;
+		flex-direction: column;
+		height: 100vh;
 	}
 
 	.main {
@@ -541,7 +530,38 @@ input[type="submit"] {
 			margin-right: 0;
 		}
 	}
-
+	/*LOGIN and Registration*/
+	.article{
+		padding: var(--pad-tiny) var(--pad-tiny) !important;
+	}
+	.flex-container-login {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#login-form .absolute-center,
+	#registration-form, .absolute-center{
+		transform: unset;
+		top:unset;
+		left: unset;
+		position: unset;
+	}
+	#uid, #password, #confirm, #main, #name, #surname, #email, #phone, #school, #major{
+		font-size: var(--font-slight);
+	}
+	.mobile-h1{
+		font-size: x-large;
+	}
+	.register-container{
+		padding: var(--pad-tiny) var(--pad-medium) !important;
+	}
+	.register-container form{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap:.5em;
+	}
 	/* Navbar */
 
 	#navbar {
@@ -703,6 +723,7 @@ input[type="submit"] {
 		width: unset;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
+		gap: 0;
 	}
 	.flexbox-container > *{
 		max-width: unset;
@@ -713,10 +734,6 @@ input[type="submit"] {
 		margin-top: 1em;
 		font-size: medium;
 		flex-grow: 1;
-	}
-	.flexbox-container :nth-child(10){
-		order: 7;
-		
 	}
 	.flexbox-item input , .flexbox-button{
 		font-size: medium;
@@ -990,7 +1007,7 @@ this is so hamburger menu does not show for safari*/
 		transition-duration: 0.4s;
 	}
 	
-
+	/*profile*/
 	#profile {
 		margin-left: auto;
 		margin-right: var(--pad-medium);
