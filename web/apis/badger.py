@@ -1,5 +1,8 @@
 from app import *
 
+import json
+import requests
+
 @app.route("/api/badger/identify", methods=["POST"])
 def api_badger_identify():
 
@@ -188,6 +191,43 @@ def api_badger_scan():
 
 		# RGB red.
 		return {"Response": "200 OK", "rcode": 0}, 200
+
+@app.route("/api/badger/scan/batch", methods=["POST"])
+def api_badger_scan_batch():
+
+	try:
+		assert request.args.get("auth") == BADGER_AUTHORIZATION_TOKEN
+		assert Badger.auth_request(int(request.args.get("identity")))
+	except:
+		return {"Response": "401 Unauthorized", "rcode": 3}, 401
+
+	success = 0
+	failure = 0
+
+	try:
+		batch = request.json["idbatch"]
+		auth = request.args.get("auth")
+		identity = int(request.args.get("identity"))
+	except:
+		return {"Response": "500 Internal Server Error"}, 500
+
+	for uid in batch:
+		try:
+			r = requests.post(
+				f"http://localhost:8080/api/badger/scan?identity={identity}&auth={auth}",
+				json={
+					"id": uid
+				}
+			)
+			if r.status_code == 200 and json.loads(r.content)["rcode"] == 1:
+				success += 1
+			else:
+				failure += 1
+		except:
+			failure += 1
+			pass
+
+	return {"Response": "200 OK", "Success": success, "Failure": failure}, 200
 
 @app.route("/api/badger/configurations", methods=["GET"])
 @login_required
