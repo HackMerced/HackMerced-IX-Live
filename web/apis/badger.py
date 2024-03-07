@@ -9,7 +9,28 @@ def api_badger_identify():
 	except:
 		return {"Response": "401 Unauthorized"}, 401
 
-	return {"Response": "200 OK"}, 200
+	try:
+		b = Badger.query.filter_by(identity=int(request.args.get("identity"))).first()
+		assert b
+
+		text = "null"
+		mode = b.mode()
+
+		if mode == "Idle":
+			text = "Idle"
+		elif mode == "Attendance":
+			text = b.event()
+		elif mode == "Rewards":
+			text = "Rewards Station"
+		elif mode == "Stamps":
+			text = b.event()
+		elif mode == "Provisionment":
+			text = "Provisionment"
+
+		return {"Response": "200 OK", "Text": text}, 200
+
+	except:
+		return {"Response": "500 Internal Server Error"}, 500
 
 @app.route("/api/badger/list", methods=["GET"])
 @login_required
