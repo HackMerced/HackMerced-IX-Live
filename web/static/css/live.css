@@ -243,3 +243,21 @@
   width: 25%;
   height: 100%;
 }
+
+@media screen and (min-width: 300px) and (max-width: 880px) {
+  .stream-and-chat-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .stream, .chat{
+    width: unset;
+  }
+  .carousel-control-next {
+    right: -1rem !important;
+  }
+  .carousel-control-prev{
+    left: -1rem !important;
+  }
+}
