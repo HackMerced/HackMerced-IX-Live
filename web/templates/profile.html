@@ -55,15 +55,16 @@
 			<div class="article">
 				<form id="profile-password-form">
 					<br>
-					<div class="row">
-						<div class="column left">
-							<input type="password" id="oldPass" name="oldPass" placeholder="Old Password" />
-							<input type="submit" id="profile-password-submit" value="Update Password" />
+					<div class="flexbox-container order-rows">
+						<div class="flexbox-container-child">
+								<input class="flexbox-item" type="password" id="oldPass" name="oldPass" placeholder="Old Password" />
+								<input class="flexbox-item" type="submit" id="profile-password-submit" value="Update Password" />
 						</div>
-						<div class="column">
-							<input type="password" id="password" name="password" placeholder="New Password" /><br><br>
-							<input type="password" id="confirm"  name="confirm"  placeholder="Confirm Password" /><br><br>
+						<div class="flexbox-container-child">
+							<input class="flexbox-item" type="password" id="password" name="password" placeholder="New Password" />
+							<input class="flexbox-item" type="password" id="confirm"  name="confirm"  placeholder="Confirm Password" />
 						</div>
+						
 					</div>
 				</form>
 			</div>
@@ -76,11 +77,11 @@
 			<div class="article">
 				<form id="profile-code-form">
 					<br>
-					<div class="row">
-						<div class="column left">
-							<input type="text" id="code" name="code" placeholder="Code" /><br><br>
+					<div class="flexbox-container">
+						<div class="flexbox-container-child">
+							<input type="text" id="code" name="code" placeholder="Code" />
 						</div>
-						<div class="column">
+						<div class="flexbox-container-child">
 							<input type="submit" id="profile-code-submit" value="Submit" />
 						</div>
 					</div>

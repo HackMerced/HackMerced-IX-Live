@@ -425,7 +425,7 @@ input[type="submit"] {
 	font-size: var(--font-huge);
 	font-weight: var(--font-heavier);
 }
-#profile-edit-form{
+#profile-edit-form, #profile-password-form, #profile-code-form{
 	width: 100%;
   	display: flex;
 	justify-content: center;
@@ -754,7 +754,13 @@ input[type="submit"] {
 		font-size: medium;
 	}
 	/*End Profile*/
-
+	.order-rows :nth-child(1) { 
+		order: 3; 
+		flex-direction: column-reverse;
+	}
+	.order-rows :nth-child(2) { 
+		flex-direction: column-reverse;
+	}
 
 }
 
