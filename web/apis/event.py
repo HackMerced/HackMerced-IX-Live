@@ -71,7 +71,7 @@ def api_event_list():
 				status = 0  # Not happened yet
 
 			dDay = datetime.fromtimestamp(e.start).strftime("%A")[:3]
-			dTime = datetime.fromtimestamp(e.start).strftime("%-I%p").lower()
+			dTime = datetime.fromtimestamp(e.start).strftime("%-I:%M%p").lower()
 			dDuration = f"{e.duration//60}m"
 
 			events.append({
@@ -96,7 +96,7 @@ def api_event_list():
 
 		for e in events:
 			for i in range(len(sortedEvents)-1):
-				if e["start"] > sortedEvents[i]["start"] and e["start"] < sortedEvents[i+1]["start"]:
+				if e["start"] >= sortedEvents[i]["start"] and e["start"] < sortedEvents[i+1]["start"]:
 					sortedEvents.insert(i+1, e)
 					break
 
