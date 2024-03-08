@@ -740,7 +740,10 @@ input[type="submit"] {
 	.schedule-table > tbody > tr > td:last-child {
 		border-top-right-radius: unset;
 		border-bottom-right-radius: unset;
-	}	
+	}
+	.table-spacer{
+		height: 1em !important;
+	}
 
 	/*End Schedule*/
 	/*Prizes*/
