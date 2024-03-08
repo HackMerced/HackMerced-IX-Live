@@ -814,9 +814,6 @@ input[type="submit"] {
 this is so hamburger menu does not show for safari*/
 /*when safari browser is small make the buttons small*/ 
 @supports not (backdrop-filter: blur()){
-    .hamburger-menu{
-        display: none;
-    }
 	/* in body */
 	body.no-graphic {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
