@@ -96,7 +96,7 @@ def api_event_list():
 
 		for e in events:
 			for i in range(len(sortedEvents)-1):
-				if e["start"] > sortedEvents[i]["start"] and e["start"] < sortedEvents[i+1]["start"]:
+				if e["start"] >= sortedEvents[i]["start"] and e["start"] < sortedEvents[i+1]["start"]:
 					sortedEvents.insert(i+1, e)
 					break
 
