@@ -295,7 +295,9 @@ input[type="submit"] {
 		}
 	}
 }
-
+.claim-button{
+	min-width: 10em
+}
 
 
 /* End Prizes */
@@ -741,6 +743,33 @@ input[type="submit"] {
 	}	
 
 	/*End Schedule*/
+	/*Prizes*/
+	.prizes-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.claim{
+		font-size: small;
+		padding: 1em;
+	}
+	.claim-button{
+		min-width: 3em;
+		font-size:small;
+		margin: 1em;
+	}
+	#prizes tr{
+		align-self: center;
+	}
+	#prizes td{
+		font-size: small;
+		margin: var(--pad-tiny) 0;
+	}
+	.claimed, .retrieved {
+		margin: 10px !important;
+	}
+	/*End prizes*/
 	/*Profile*/
 	.flexbox-container{
 		display: flex;
