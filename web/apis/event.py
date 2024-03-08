@@ -71,7 +71,7 @@ def api_event_list():
 				status = 0  # Not happened yet
 
 			dDay = datetime.fromtimestamp(e.start).strftime("%A")[:3]
-			dTime = datetime.fromtimestamp(e.start).strftime("%-I%p").lower()
+			dTime = datetime.fromtimestamp(e.start).strftime("%-I:%M%p").lower()
 			dDuration = f"{e.duration//60}m"
 
 			events.append({
