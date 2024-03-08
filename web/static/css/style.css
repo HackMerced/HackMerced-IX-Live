@@ -437,7 +437,7 @@ input[type="submit"] {
 	padding: .5em;
 	width: 80%;
 	overflow: hidden;
-	gap:1em;
+	justify-content: space-between;
 	align-content: center;
 }
 .flexbox-container>*{
@@ -509,7 +509,11 @@ input[type="submit"] {
 }
    
 /*END Hamburger Menu*/
-
+/*REGISTER*/
+#register-button{
+	width: 100%;
+}
+/*end register*/
 /* Viewports */
 
 @media screen and (min-width: 300px) and (max-width: 880px) {
@@ -555,12 +559,10 @@ input[type="submit"] {
 	.register-container{
 		padding: var(--pad-tiny) var(--pad-medium) !important;
 	}
-	.register-container form{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap:.5em;
+	@-moz-document url-prefix(){ 
+		.register-container form{
+			gap: .5em;
+		}
 	}
 	/* Navbar */
 
