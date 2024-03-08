@@ -439,16 +439,30 @@ input[type="submit"] {
 	overflow: hidden;
 	justify-content: space-between;
 	align-content: center;
+	gap:1em;
 }
 .flexbox-container>*{
 	width: 40%;
 	margin: 2px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 .flexbox-container-child{
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	gap: .3em;
+	gap:1em;
+}
+
+@-moz-document url-prefix(){
+	.flexbox-container-child{
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		gap: .4em;
+		
+	}
 }
 /* End Profile */
 
@@ -722,14 +736,13 @@ input[type="submit"] {
 		display: flex;
 		flex-direction: column;
 		height: unset;
-		width: unset;
+		width: 90%;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
-		gap: 0;
+		gap: .5em;
 	}
 	.flexbox-container > *{
 		max-width: unset;
-		width: auto;
 	}
 	.flexbox-item{
 		
