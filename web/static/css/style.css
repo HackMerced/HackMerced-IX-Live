@@ -93,6 +93,9 @@ input::placeholder{
 *:focus {
 	outline: none;
 }
+.handwriting-reminders:hover{
+	cursor: pointer;
+}
 .handwriting-reminders:focus .tipslist{
 	cursor: pointer;
 	display: block;
