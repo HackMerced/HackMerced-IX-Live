@@ -9,6 +9,9 @@ COLOR_G  = 1
 COLOR_Y  = 2
 COLOR_WY = 3
 
+SCAN_MODE_NORMAL = 0
+SCAN_MODE_BATCH  = 1
+
 @app.route("/api/badger/identify", methods=["POST"])
 def api_badger_identify():
 
@@ -25,20 +28,30 @@ def api_badger_identify():
 		assert b
 
 		text = "null"
+		scanMode = SCAN_MODE_NORMAL
 		mode = b.mode()
 
 		if mode == "Idle":
 			text = "Idle"
-		elif mode == "Attendance":
-			text = b.event()
+			scanMode = SCAN_MODE_NORMAL
+
 		elif mode == "Rewards":
 			text = "Rewards Station"
-		elif mode == "Stamps":
-			text = b.event()
+			scanMode = SCAN_MODE_NORMAL
+
 		elif mode == "Provisionment":
 			text = "Provisionment"
+			scanMode = SCAN_MODE_NORMAL
 
-		return {"Response": "200 OK", "Text": text}, 200
+		elif mode == "Attendance":
+			text = b.event()
+			scanMode = SCAN_MODE_BATCH
+
+		elif mode == "Stamps":
+			text = b.event()
+			scanMode = SCAN_MODE_BATCH
+
+		return {"Response": "200 OK", "Text": text, "scanMode": scanMode}, 200
 
 	except:
 		return {"Response": "500 Internal Server Error"}, 500
