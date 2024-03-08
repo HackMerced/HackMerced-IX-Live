@@ -464,6 +464,16 @@ input[type="submit"] {
 		
 	}
 }
+.logout-container{
+	display: flex;
+	justify-content: center;
+	text-decoration: none !important;
+}
+#profile-logout{
+	align-self: center;
+	width: 80%;
+	background-color: #77232A;
+}
 /* End Profile */
 
 /* Navbar */
