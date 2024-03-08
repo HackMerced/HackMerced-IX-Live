@@ -642,6 +642,7 @@ input[type="submit"] {
         position: absolute;
         top: -30rem;
         left: 0rem;
+		z-index: 3;
     }
     .hamburger-menu input:checked {
         opacity: 0;
