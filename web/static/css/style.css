@@ -876,7 +876,7 @@ this is so hamburger menu does not show for safari*/
 		color: var(--faded-white-glass);
 		background: var(--blood-glass);
 		border-spacing: 0;
-		border-radius: var(--radius);
+		/* border-radius: 100%; */
 		box-shadow: var(--shadow);
 		
 	}
@@ -902,7 +902,7 @@ this is so hamburger menu does not show for safari*/
 		font-size: var(--font-medium);
 		text-align: center;
 	}
-	.rounded-table, .schedule-table.table-spacer {
+	.rounded-table, .schedule-table .table-spacer {
 		height: var(--pad-teeny);
 	}
 	/* announcements */
@@ -985,24 +985,37 @@ this is so hamburger menu does not show for safari*/
 
 	/* #schedule  */
 	#schedule .map img {
+		margin: 0px 0px 0px var(--pad-tiny);
 		padding: var(--pad-small) 0;
 		max-width: 200px;
 	}
-	#schedule.info, .description {
+	#schedule .info, .description {
 		padding-top: var(--pad-small);
 		vertical-align: top;
 	}
-	#schedule.info, .description p {
+	#schedule .info, .description p {
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-left: var(--pad-small);
 		text-align: left;
 	}
-	#schedule.info, .description.time {
+	#schedule .info, .description .time {
+		/* margin: 0px var(--pad-tiny) 0px 0px; */
 		padding: var(--pad-tiny) var(--pad-small);
 		background: var(--maroon);
 		border-radius: var(--radius);
 	}
+	#schedule td.info{
+		background: var(--blood);
+		border-radius: 0%;
+	}
+	#schedule .event-current td {
+		background-color: var(--dark-peach);
+	}
+	#schedule .event-current .time {
+		background-color: var(--peach);
+	}
+	
 
 	/*punches */
 	#punches {
@@ -1110,6 +1123,17 @@ this is so hamburger menu does not show for safari*/
 		}
 		#navbar .link:first-child{
 			margin-left: calc(var(--pad-tiny) + 20px);
+		}
+
+		/* schedule in media in supports */
+		#schedule td.info{
+			background: var(--blood);
+			border-radius: 0%;
+			margin: 0px;
+		}
+		#schedule .event-current td.info {
+			background-color: var(--dark-peach);
+			margin: 0px;
 		}
     }
 }
