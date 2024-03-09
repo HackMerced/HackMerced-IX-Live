@@ -984,7 +984,7 @@ this is so hamburger menu does not show for safari*/
 	}
 
 	/* #schedule  */
-	#schedule.map img {
+	#schedule .map img {
 		padding: var(--pad-small) 0;
 		max-width: 200px;
 	}
