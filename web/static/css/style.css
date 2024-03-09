@@ -209,17 +209,17 @@ input[type="submit"] {
 		}
 		tr { 
 			th:first-child, td:first-child { /*left side (prize)*/
-				border: red solid 3px;
+				
 				border-top-left-radius: var(--radius);
 				border-bottom-left-radius: var(--radius);
 			}
 			th:last-child, td:last-child { /*green stuff on right*/
-				border: green solid 3px;
+			
 				border-top-right-radius: var(--radius);
 				border-bottom-right-radius: var(--radius);
 			}
 			td {  /*middle stuff*/
-				border: blue solid 3px;
+
 				background: var(--blood);
 				font-size: var(--font-medium);
 				text-align: center;
