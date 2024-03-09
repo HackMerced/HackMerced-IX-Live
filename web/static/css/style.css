@@ -190,7 +190,7 @@ input[type="submit"] {
 }
 
 /* Styling for the red "rounded-row" tables. */
-.rounded-table, .schedule-table {
+.rounded-table, .schedule-table { /*whole table*/
 	width: 100%;
 	color: var(--faded-white-glass);
 	background: var(--blood-glass);
@@ -202,21 +202,24 @@ input[type="submit"] {
 		box-shadow: none;
 	}
 	tbody {
-		&:first-child th {
+		&:first-child th { /*top dark bar*/
 			padding: var(--pad-weeny);
 			font-size: var(--font-slight);
 			background: var(--maroon);
 		}
-		tr {
-			th:first-child, td:first-child {
+		tr { 
+			th:first-child, td:first-child { /*left side (prize)*/
+				
 				border-top-left-radius: var(--radius);
 				border-bottom-left-radius: var(--radius);
 			}
-			th:last-child, td:last-child {
+			th:last-child, td:last-child { /*green stuff on right*/
+			
 				border-top-right-radius: var(--radius);
 				border-bottom-right-radius: var(--radius);
 			}
-			td {
+			td {  /*middle stuff*/
+
 				background: var(--blood);
 				font-size: var(--font-medium);
 				text-align: center;
@@ -296,7 +299,7 @@ input[type="submit"] {
 	}
 }
 .claim-button{
-	min-width: 10em
+	min-width: 10em;
 }
 
 
@@ -878,7 +881,14 @@ this is so hamburger menu does not show for safari*/
 		border-spacing: 0;
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
-		
+	}
+	#prizes-content{
+		width: 100%;
+		color: var(--faded-white-glass);
+		background: var(--blood);
+		border-spacing: 0;
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
 	}
 	.rounded-table, .schedule-table.no-color {
 		background: #0000;
@@ -889,6 +899,12 @@ this is so hamburger menu does not show for safari*/
 		font-size: var(--font-slight);
 		background: var(--maroon);
 	}
+	#prizes-content tr:first-child{
+		padding: var(--pad-weeny);
+		font-size: var(--font-slight);
+		background: var(--maroon);
+	}
+
 	.rounded-table, .schedule-table tbody tr th:first-child, td:first-child {
 		border-top-left-radius: var(--radius);
 		border-bottom-left-radius: var(--radius);
@@ -897,14 +913,45 @@ this is so hamburger menu does not show for safari*/
 		border-top-right-radius: var(--radius);
 		border-bottom-right-radius: var(--radius);
 	}
+
+	#prizes-content tr th:first-child {
+		border-top-left-radius: var(--radius);
+		border-bottom-left-radius: var(--radius);
+	}
+	#prizes-content tr th:last-child {
+		border-top-right-radius: var(--radius);
+		border-bottom-right-radius: var(--radius);
+	}
+	#prizes-content tr td:first-child {
+		border-top-left-radius: var(--radius);
+		border-bottom-left-radius: var(--radius);
+	}
+	#prizes-content tr td:last-child {
+		border-top-right-radius: var(--radius);
+		border-bottom-right-radius: var(--radius);
+	}
+	
 	.rounded-table, .schedule-table tbody tr td {
 		background: var(--blood);
 		font-size: var(--font-medium);
 		text-align: center;
 	}
-	.rounded-table, .schedule-table.table-spacer {
+	#prizes {
+		background: var(--blood-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+	}
+	.rounded-table, .schedule-table .table-spacer {
 		height: var(--pad-teeny);
 	}
+
+
+
+
+
+
+
+
 	/* announcements */
 	.announcement, .log {
 		margin: var(--pad-tiny);
@@ -985,24 +1032,37 @@ this is so hamburger menu does not show for safari*/
 
 	/* #schedule  */
 	#schedule .map img {
+		margin: 0px 0px 0px var(--pad-tiny);
 		padding: var(--pad-small) 0;
 		max-width: 200px;
 	}
-	#schedule.info, .description {
+	#schedule .info, .description {
 		padding-top: var(--pad-small);
 		vertical-align: top;
 	}
-	#schedule.info, .description p {
+	#schedule .info, .description p {
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-left: var(--pad-small);
 		text-align: left;
 	}
-	#schedule.info, .description.time {
+	#schedule .info, .description .time {
+		/* margin: 0px var(--pad-tiny) 0px 0px; */
 		padding: var(--pad-tiny) var(--pad-small);
 		background: var(--maroon);
 		border-radius: var(--radius);
 	}
+	#schedule td.info{
+		background: var(--blood);
+		border-radius: 0%;
+	}
+	#schedule .event-current td {
+		background-color: var(--dark-peach);
+	}
+	#schedule .event-current .time {
+		background-color: var(--peach);
+	}
+	
 
 	/*punches */
 	#punches {
@@ -1021,9 +1081,10 @@ this is so hamburger menu does not show for safari*/
 	#punches td {
 		padding: var(--pad-small);
 		background: var(--orange-glass-less);
-		&:not(:first-child):not(:last-child) {
-			width: 48px;
-		}
+		
+	}
+	#punches td:not(:first-child):not(:last-child) {
+		width: 48px;
 	}
 	#punches .title {
 		padding-left: var(--pad-big);
@@ -1079,6 +1140,50 @@ this is so hamburger menu does not show for safari*/
 		}
 	}
 
+	/*prizes in supports */
+
+	#balance {
+		margin-top: var(--pad-medium);
+		text-align: right;
+		color: var(--faded-white-glass);
+	}
+	#balance #points {
+		padding: 0 2em;
+	}
+	
+	#prizes td {
+		padding: var(--pad-tiny) 0;
+	}
+	#prizes td .claim {
+		padding: var(--pad-tiny) var(--pad-small);
+		margin: var(--pad-small) 0;
+		color: var(--faded-white-glass);
+		font-size: var(--font-medium);
+		text-align: center;
+		background: var(--blue-purple);
+		border: none;
+		border-radius: var(--radius);
+	}
+	#prizes td .claim:hover {
+		cursor: pointer;
+	}
+	#prizes td .claim .claimed {
+		background: gray;
+		
+	}
+	#prizes td .claim .retrieved:hover {
+		cursor: default;
+	}
+	#prizes td .claim .retrieved {
+		background: gray;
+	}
+	#prizes td .claim .retrieved:hover {
+		cursor: default;
+	}
+	.claim-button{
+		min-width: 10em;
+	}
+
     @media screen and (min-width:300px) and (max-width:880px)  {
         
 		.link{
@@ -1111,6 +1216,56 @@ this is so hamburger menu does not show for safari*/
 		#navbar .link:first-child{
 			margin-left: calc(var(--pad-tiny) + 20px);
 		}
+
+		/* schedule in media in supports */
+		#schedule td.info{
+			background: var(--blood);
+			border-radius: 0%;
+			margin: 0px;
+		}
+		#schedule .event-current td.info {
+			background-color: var(--dark-peach);
+			margin: 0px;
+		}
+
+		/*punches */
+		#punches td{
+			padding: 0.1em;
+		}
+		#punches .title{
+			padding-left: var(--pad-small);
+		}
+		#punches .punch{
+			width: 30px;
+			height: 30px;
+		}
+		/* prizes */
+		.prizes-container{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.claim{
+			font-size: small;
+			padding: 1em;
+		}
+		.claim-button{
+			min-width: 3em;
+			font-size:small;
+			margin: 1em;
+		}
+		#prizes tr{
+			align-self: center;
+		}
+		#prizes td{
+			font-size: small;
+			margin: var(--pad-tiny) 0;
+		}
+		.claimed, .retrieved {
+			margin: 10px !important;
+		}
+		/*End prizes*/
     }
 }
 /*End Safari Filter*/
