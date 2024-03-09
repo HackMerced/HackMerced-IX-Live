@@ -763,9 +763,8 @@ input[type="submit"] {
         transition-duration: 0.4s;
     }
     
-    
-
    /*END Hamburger Menu*/
+
 }
 /*End Viewports*/
 
@@ -777,6 +776,7 @@ this is so hamburger menu does not show for safari*/
     .hamburger-menu{
         display: none;
     }
+   
     @media screen and (min-width:300px) and (max-width:880px)  {
         
 		.link{
@@ -786,6 +786,26 @@ this is so hamburger menu does not show for safari*/
             border-radius: 5px;
             box-shadow: 5px 5px 5px #241930;
         }
+      
     }
 }
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
+  .banner{
+    padding: unset !important;
+  }
+  /*Punches*/
+  .punches-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  #punches{
+    width: 90%;
+    font-size: large;
+    align-self: flex-start;
+  }
+}
+
 /*End Safari Filter*/
