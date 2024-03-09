@@ -260,6 +260,12 @@ input {
 }
 
 input[type="submit"] {
+	background-color: #D77B2691;
+	font-size: 16px;
+	padding: 12px 32px;
+	border: none;
+	color: white;
+	border-radius: 10px;
   padding: var(--pad-tiny) 1em;
   color: var(--faded-white-glass);
   font-size: var(--font-big);
@@ -460,6 +466,43 @@ input[type="submit"] {
 /* Punch Card */
 
 #punches {
+	font-size: 30px;
+	width: 90%;
+	border-spacing: 0px 10px;
+}
+
+#punches tr {
+	margin: 16px;
+	background-color: #D77B2691;
+	border-radius: 20px;
+}
+
+#punches td {
+	padding: 16px;
+}
+
+.punch {
+	width: 48px;
+}
+
+.punch img {
+	width: 48px;
+	border-radius: 50%;
+}
+
+.punch-spacer {
+	width: 4px;
+}
+
+.punch-rounded-start {
+	border-top-left-radius: 10px; /* Set your desired border radius for the top-left corner */
+	border-bottom-left-radius: 10px; /* Set your desired border radius for the bottom-left corner */
+  }
+
+  .punch-rounded-end {
+	border-top-right-radius: 10px; /* Set your desired border radius for the top-right corner */
+	border-bottom-right-radius: 10px; /* Set your desired border radius for the bottom-right corner */
+  }
   width: 90%;
   margin: 0 auto;
   padding-top: var(--pad-medium);

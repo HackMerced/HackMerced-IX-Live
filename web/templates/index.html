@@ -12,7 +12,15 @@
 				<h1>User Login</h1>
 				<form action="/login" method="POST">
 					<input type="text" id="uid" name="uid" placeholder="Badge Code" />
-					<br><br>
+					<div class="handwriting-reminders" tabindex="0">
+						<h3 class="badgeCodeTips">Badge Code Tips:</h3>
+						<div class="tipslist" tabindex="0">
+							<h4 class="tips">1. NO SPACES</h4>
+							<h4 class="tips">2. All Letters are CAPITALIZED</h4>
+							<h4 class="tips">3. All Zeros are Slashed "Ø"</h4>
+							<h4 class="tips">4. Ask an Organizer if unsure</h4>
+						</div>
+					</div>
 					<input type="submit" value="Log In" />
 				</form>
 

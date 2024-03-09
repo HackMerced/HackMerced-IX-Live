@@ -52,6 +52,61 @@ input::placeholder{
 	color: var(--white);
 }
 
+.handwriting-reminders{
+	padding: 0.005rem 1rem 0rem 1rem;
+	
+	margin: 1em 0rem 1em 0rem;
+	
+	text-align: center;
+	height: fit-content;
+	width: fit-content;
+	position: relative;
+	-o-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.tipslist{
+	display: none;
+	position: absolute;
+	top: 0rem;
+	right: -18rem;
+	padding: 1rem;
+	border: hidden;
+	border-radius: var(--radius);
+	background: var(--bg-gradient-B);
+	box-shadow: var(--shadow);
+	-o-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+.tips{
+	margin: 0rem;
+	text-align: left;
+}
+.tips:nth-child(even){
+	background: var(--orange-glass-less);
+}
+.tips:nth-child(odd){
+	background: var(--orange-glass);
+}
+*:focus {
+	outline: none;
+}
+.handwriting-reminders:hover{
+	cursor: pointer;
+}
+.handwriting-reminders:focus .tipslist{
+	cursor: pointer;
+	display: block;
+	-o-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
 
 body {
 	margin: 0;
@@ -543,6 +598,12 @@ input[type="submit"] {
 /* Viewports */
 
 @media screen and (min-width: 300px) and (max-width: 880px) {
+
+	.tipslist{
+		top: -8rem;
+		right: -9rem;
+		max-width: min-content;
+	}
 
 	body {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
