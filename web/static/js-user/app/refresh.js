@@ -9,7 +9,7 @@ function update_rewards(rewards)
 			"<th>Description</th>"+
 			"<th>Cost</th>"+
 			"<th>Qty</th>"+
-			"<th style='min-width: 10em'></th>"+
+			"<th class='claim-button'></th>"+
 		"</tr>"
 	);
 

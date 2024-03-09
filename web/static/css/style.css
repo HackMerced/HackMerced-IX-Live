@@ -102,25 +102,6 @@ body.sunrise-effect::before {
 }
 /* END Sunrise*/
 
-
-.main {
-	margin: var(--pad-big) auto;
-	width: 75%;
-	.header {
-		margin-bottom: var(--pad-small);
-		color: var(--faded-white-glass);
-		text-align: center;
-		background: var(--purple);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		& * {
-			padding: var(--pad-small) 0;
-		}
-	}
-}
-
-
-
 .main {
 	margin: var(--pad-big) auto;
 	width: 75%;
@@ -314,7 +295,9 @@ input[type="submit"] {
 		}
 	}
 }
-
+.claim-button{
+	min-width: 10em
+}
 
 
 /* End Prizes */
@@ -444,23 +427,54 @@ input[type="submit"] {
 	font-size: var(--font-huge);
 	font-weight: var(--font-heavier);
 }
-
+#profile-edit-form, #profile-password-form, #profile-code-form{
+	width: 100%;
+  	display: flex;
+	justify-content: center;
+}
 .flexbox-container{
 	display: inline-flex;
 	flex-wrap: wrap;
-	flex-direction: column;
-	align-content: stretch;
-	padding: 1em;
-	height: 25vh;
-	column-gap: 5%;
-	width: 100%;
-	overflow-x: hidden;
+	flex-direction: row;
+	padding: .5em;
+	width: 80%;
+	overflow: hidden;
+	justify-content: space-between;
+	align-content: center;
+	gap:1em;
 }
 .flexbox-container>*{
-	display: flex;
-	flex-basis: 0px;
 	width: 40%;
 	margin: 2px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.flexbox-container-child{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap:1em;
+}
+
+@-moz-document url-prefix(){
+	.flexbox-container-child{
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		gap: .4em;
+		
+	}
+}
+.logout-container{
+	display: flex;
+	justify-content: center;
+	text-decoration: none !important;
+}
+#profile-logout{
+	align-self: center;
+	width: 80%;
+	background-color: #77232A;
 }
 /* End Profile */
 
@@ -521,14 +535,19 @@ input[type="submit"] {
 }
    
 /*END Hamburger Menu*/
-
+/*REGISTER*/
+#register-button{
+	width: 100%;
+}
+/*end register*/
 /* Viewports */
 
 @media screen and (min-width: 300px) and (max-width: 880px) {
 
 	body {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat;
-		overflow-x: hidden;
+		flex-direction: column;
+		height: 100vh;
 	}
 
 	.main {
@@ -541,7 +560,36 @@ input[type="submit"] {
 			margin-right: 0;
 		}
 	}
-
+	/*LOGIN and Registration*/
+	.article{
+		padding: var(--pad-tiny) var(--pad-tiny) !important;
+	}
+	.flex-container-login {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#login-form .absolute-center,
+	#registration-form, .absolute-center{
+		transform: unset;
+		top:unset;
+		left: unset;
+		position: unset;
+	}
+	#uid, #password, #confirm, #main, #name, #surname, #email, #phone, #school, #major{
+		font-size: var(--font-slight);
+	}
+	.mobile-h1{
+		font-size: x-large;
+	}
+	.register-container{
+		padding: var(--pad-tiny) var(--pad-medium) !important;
+	}
+	@-moz-document url-prefix(){ 
+		.register-container form{
+			gap: .5em;
+		}
+	}
 	/* Navbar */
 
 	#navbar {
@@ -594,6 +642,7 @@ input[type="submit"] {
         position: absolute;
         top: -30rem;
         left: 0rem;
+		z-index: 3;
     }
     .hamburger-menu input:checked {
         opacity: 0;
@@ -692,21 +741,51 @@ input[type="submit"] {
 	.schedule-table > tbody > tr > td:last-child {
 		border-top-right-radius: unset;
 		border-bottom-right-radius: unset;
-	}	
+	}
+	.table-spacer{
+		height: 1em !important;
+	}
 
 	/*End Schedule*/
+	/*Prizes*/
+	.prizes-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.claim{
+		font-size: small;
+		padding: 1em;
+	}
+	.claim-button{
+		min-width: 3em;
+		font-size:small;
+		margin: 1em;
+	}
+	#prizes tr{
+		align-self: center;
+	}
+	#prizes td{
+		font-size: small;
+		margin: var(--pad-tiny) 0;
+	}
+	.claimed, .retrieved {
+		margin: 10px !important;
+	}
+	/*End prizes*/
 	/*Profile*/
 	.flexbox-container{
 		display: flex;
 		flex-direction: column;
 		height: unset;
-		width: unset;
+		width: 90%;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
+		gap: .5em;
 	}
 	.flexbox-container > *{
 		max-width: unset;
-		width: auto;
 	}
 	.flexbox-item{
 		
@@ -714,15 +793,17 @@ input[type="submit"] {
 		font-size: medium;
 		flex-grow: 1;
 	}
-	.flexbox-container :nth-child(10){
-		order: 7;
-		
-	}
 	.flexbox-item input , .flexbox-button{
 		font-size: medium;
 	}
 	/*End Profile*/
-
+	.order-rows :nth-child(1) { 
+		order: 3; 
+		flex-direction: column-reverse;
+	}
+	.order-rows :nth-child(2) { 
+		flex-direction: column-reverse;
+	}
 
 }
 
@@ -734,9 +815,7 @@ input[type="submit"] {
 this is so hamburger menu does not show for safari*/
 /*when safari browser is small make the buttons small*/ 
 @supports not (backdrop-filter: blur()){
-    .hamburger-menu{
-        display: none;
-    }
+
 	/* in body */
 	body.no-graphic {
 		background: linear-gradient(to bottom, var(--bg-gradient-A) 0%, var(--bg-gradient-B) 100%) fixed no-repeat
@@ -990,7 +1069,7 @@ this is so hamburger menu does not show for safari*/
 		transition-duration: 0.4s;
 	}
 	
-
+	/*profile*/
 	#profile {
 		margin-left: auto;
 		margin-right: var(--pad-medium);
@@ -1003,7 +1082,7 @@ this is so hamburger menu does not show for safari*/
     @media screen and (min-width:300px) and (max-width:880px)  {
         
 		.link{
-            display: block;
+            display: none;
             background-color: #D77B2633;
             padding: 0.5rem;
             border-radius: 5px;
